@@ -1,0 +1,8 @@
+{     "useSideMenu": true,
+      "additionalFooterText": "",
+      "copyright": :"© 2016 千橙 ",
+      "title": "读书笔记－ 千橙工坊",
+      "anchorCharacter": "#" ,
+      "tocAnchor": "[ &uarr; ]",
+      "lineBreaks": "gfm"
+}
