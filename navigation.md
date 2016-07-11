@@ -1,7 +1,7 @@
 # 千橙工坊
 ======
 [读书笔记](notes.md)
-[归档](http://qiancheng.me/archive)
+[归档](archive.md)
 #[关于](about.md)
 #[Menu]()
 
