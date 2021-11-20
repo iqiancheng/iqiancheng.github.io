@@ -52,7 +52,7 @@ bundle*.js
 .DS_Store
 Thumbs.db
 db.json
-#package-lock.json
+package-lock.json
 
 
 # ------------------------------- intellij -------------------------------
