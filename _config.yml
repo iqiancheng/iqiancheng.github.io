@@ -175,4 +175,3 @@ deploy:
   type: git
   repo: git@github.com:iqiancheng/iqiancheng.github.io.git
   branch: master
-  message: Update blog.
