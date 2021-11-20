@@ -44,7 +44,7 @@ future: true
 #   auto_detect: true
 #   tab_replace:
 highlight:
-  enable: true
+  enable: false
   auto_detect: false
   line_number: false
   tab_replace: ''
@@ -159,7 +159,7 @@ index2_generator:
 
 # https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus
 markdown_it_plus:
-  highlight: true
+  highlight: false
   html: true
   xhtmlOut: true
   breaks: true
