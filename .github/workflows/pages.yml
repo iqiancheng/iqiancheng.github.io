@@ -31,4 +31,4 @@ jobs:
         with:
           github_token: ${{ secrets.DEPLOY_GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gp-pages
+          publish_branch: gh-pages
