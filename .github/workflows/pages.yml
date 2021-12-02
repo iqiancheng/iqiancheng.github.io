@@ -26,12 +26,9 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-          run: |
-            npm -v
-            npm ci
-            npm install -g hexo-cli
-            npm install
-            npm run build 
+      - run: npm -v
+      - run: npm ci
+      - run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
