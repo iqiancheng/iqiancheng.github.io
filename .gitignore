@@ -38,3 +38,4 @@ db.json
 *.iml
 .classpath
 .project
+.deploy_git
