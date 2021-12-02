@@ -22,7 +22,8 @@ jobs:
       - name: npm install and build hexo
         run: | 
            npm install yarn -g
-           yarn install 
+           yarn install
+           yarn build 
         env: 
            CI: true 
 
