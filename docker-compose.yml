@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  blog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: hexo-blog
+    container_name: hexo-blog
+    ports:
+      - '5230:4000'
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - './source:/app/source'
+    environment:
+      - 'TZ:Asia/Taipei'
+    logging:
+      options:
+        max-size: 256m
