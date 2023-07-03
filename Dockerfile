@@ -7,11 +7,9 @@ WORKDIR /app
 # 将 start.sh 文件复制到容器中的 /app 目录下
 ADD scaffolds /app/scaffolds
 ADD themes /app/themes
-COPY start.sh _config.yml package.json yarn.lock /app
+COPY start.sh _config.yml package.json /app
 
-# 使用 Yarn 安装项目依赖
-RUN yarn install --production --frozen-lockfile
-
+RUN npm install 
 # 安装依赖
 RUN npm install hexo-cli -g
 RUN hexo generate

@@ -8,7 +8,7 @@ services:
     image: hexo-blog
     container_name: hexo-blog
     ports:
-      - '5230:4000'
+      - '5120:4000'
     volumes:
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
