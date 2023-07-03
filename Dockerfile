@@ -1,5 +1,5 @@
 # 设置基础镜像
-FROM node:latest
+FROM node:20.2-slim
 
 # 在容器中创建工作目录
 WORKDIR /app

@@ -10,8 +10,7 @@ services:
     ports:
       - '5120:4000'
     volumes:
-      - "/etc/timezone:/etc/timezone:ro"
-      - "/etc/localtime:/etc/localtime:ro"
+      # - "/etc/localtime:/etc/localtime:ro"
       - './source:/app/source'
     environment:
       - 'TZ:Asia/Taipei'
