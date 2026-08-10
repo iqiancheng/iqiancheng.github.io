@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Practical SSH Port Forwarding Scenarios
-date: 2014-05-27 00:33 +0800  
+date: 2014-05-27 00:33:00 +0800
 categories: [Tips, CLI]  
 tags: [SSH]
 ---

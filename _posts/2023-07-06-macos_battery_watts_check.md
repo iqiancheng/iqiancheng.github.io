@@ -1,6 +1,7 @@
 ---
+layout: post
 title: How to Check Charging Power (Watts) on macOS
-date: 2023-07-06 00:33 +0800
+date: 2023-07-06 00:33:00 +0800
 categories: [Gadgets, Mac]
 tags: [macOS]
 ---
@@ -75,7 +76,7 @@ AC Charger Information:
 
 2. The app displays **live power draw**, helping you understand charging behavior dynamically.
 
-![screenshot\_powerflow](assets/static/2025/macos_battery_watts_check/screenshot_powerflow_2025.png)
+![screenshot_powerflow](/assets/static/2025/macos_battery_watts_check/screenshot_powerflow_2025.png)
 
 ---
 
