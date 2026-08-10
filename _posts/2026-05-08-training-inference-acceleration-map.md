@@ -66,7 +66,7 @@ Serving / Inference → 延迟 + 吞吐 + 成本三角
 | **Memory-bound** | MFU 低，BW util 高 | Kernel fusion / AI 提升 / KV quant |
 | **Communication-bound** | 多机 scaling 效率低 | Overlap / 拓扑优化 / ZeRO++ |
 | **Launch-bound** | 大量小 kernel | CUDA Graph / torch.compile / fused kernel |
-| **IO-bound** | DataLoader / checkpoint 慢 | 见 [CPU SOP §六/七](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html) |
+| **IO-bound** | DataLoader / checkpoint 慢 | 见 [CPU SOP §六/七](/posts/python-cpu-bottleneck-troubleshooting-sop/) |
 
 ### 2.3 按触达层
 
@@ -201,16 +201,16 @@ graph TD
 
 | 本系列 post | 对应技术地图区域 |
 |---|---|
-| [CLI 工具栈](/2026/05/07/training-inference-engineer-cli-toolkit.html) | 工具层，无具体技术 |
-| [GPU/NCCL SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html) | 瓶颈诊断总纲 |
-| [CPU 侧 SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html) | IO-bound / CPU 瓶颈 |
-| [Qwen3 fusion 识别](/2026/05/07/qwen3-understand-model-identify-fusion.html) | Fusion 理论 + 访存比 |
-| [Triton kernel 实战](/2026/05/07/triton-kernel-fusion-practice.html) | Kernel Fusion / Custom Triton |
-| [精度对齐](/2026/05/08/fused-kernel-accuracy-alignment.html) | 精度验证 SOP |
-| [Gradient Checkpointing](/2026/05/08/gradient-checkpointing-qwen3-dense.html) | 显存优化 / Selective GC |
-| [CUDA Graph 实战](/2026/05/08/cuda-graph-qwen3-dense.html) | Graph Optim / Launch-bound |
-| [效率指标](/2026/05/08/training-inference-efficiency-metrics.html) | 测度 / 诊断基础 |
-| [效果指标](/2026/05/08/training-inference-quality-metrics.html) | 效果验证 / 评测 |
+| [CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/) | 工具层，无具体技术 |
+| [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/) | 瓶颈诊断总纲 |
+| [CPU 侧 SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/) | IO-bound / CPU 瓶颈 |
+| [Qwen3 fusion 识别](/posts/qwen3-understand-model-identify-fusion/) | Fusion 理论 + 访存比 |
+| [Triton kernel 实战](/posts/triton-kernel-fusion-practice/) | Kernel Fusion / Custom Triton |
+| [精度对齐](/posts/fused-kernel-accuracy-alignment/) | 精度验证 SOP |
+| [Gradient Checkpointing](/posts/gradient-checkpointing-qwen3-dense/) | 显存优化 / Selective GC |
+| [CUDA Graph 实战](/posts/cuda-graph-qwen3-dense/) | Graph Optim / Launch-bound |
+| [效率指标](/posts/training-inference-efficiency-metrics/) | 测度 / 诊断基础 |
+| [效果指标](/posts/training-inference-quality-metrics/) | 效果验证 / 评测 |
 | **本文** | 全局地图 + 术语表 |
 
 **还没写的 / 待补**：MoE 专篇、Speculative Decoding 专篇、FP8/FP4 专篇、PagedAttention 与 vLLM 深度剖析。
@@ -308,8 +308,8 @@ graph TD
 
 ### A–E
 
-- **AI (Arithmetic Intensity / 访存比)** = FLOPs/Bytes。[见 Qwen3 fusion §3.4](/2026/05/07/qwen3-understand-model-identify-fusion.html)
-- **Activation Checkpointing** = Gradient Checkpointing，同义。[见 GC 篇](/2026/05/08/gradient-checkpointing-qwen3-dense.html)
+- **AI (Arithmetic Intensity / 访存比)** = FLOPs/Bytes。[见 Qwen3 fusion §3.4](/posts/qwen3-understand-model-identify-fusion/)
+- **Activation Checkpointing** = Gradient Checkpointing，同义。[见 GC 篇](/posts/gradient-checkpointing-qwen3-dense/)
 - **All-Reduce** = 分布式通信原语，汇总 N 个 rank 的 tensor 再广播。
 - **AMP (Automatic Mixed Precision)** = PyTorch 自动混精，配合 `GradScaler` 保持数值稳定。
 - **AReaL** = 蚂蚁 / 清华开源的 async RL 训练框架，主打 fully-async actor/learner/rollout。
@@ -317,10 +317,10 @@ graph TD
 - **Aux-Loss-Free Balance** = DeepSeek-V3 提出的 MoE 负载均衡方案，通过动态偏置替代辅助损失，不牺牲主任务 loss。
 - **BF16 (bfloat16)** = 1 sign + 8 exp + 7 mantissa，范围大精度低，训练友好。
 - **Batch Size** = 单次前向/反向处理的样本数。
-- **CUDA Graph** = 预录 kernel 序列 + 回放，消除 launch 开销。[专篇](/2026/05/08/cuda-graph-qwen3-dense.html)
+- **CUDA Graph** = 预录 kernel 序列 + 回放，消除 launch 开销。[专篇](/posts/cuda-graph-qwen3-dense/)
 - **Continuous Batching** = vLLM 把不同请求动态拼进同一 batch，提升 serving 吞吐。
 - **Context Parallel (CP)** = Megatron / FSDP2 提供的长序列并行方式，把 seq 维度切到多卡。
-- **CE (Cross-Entropy)** = 分类 loss 标准形式。[公式](/2026/05/08/training-inference-quality-metrics.html)
+- **CE (Cross-Entropy)** = 分类 loss 标准形式。[公式](/posts/training-inference-quality-metrics/)
 - **Chunked Prefill** = 把长 prefill 切片和 decode 拼一起处理，降 TTFT 尾部。
 - **DAPO** = Decoupled advantage-based PPO，ByteDance 提出的 GRPO 变体，分离长序列 vs 短序列 advantage。
 - **DeepEP** = DeepSeek 开源的 Expert Parallel 通信库，优化 MoE all-to-all，是 DeepSeek-V3 能高效训练的基建之一。
@@ -352,8 +352,8 @@ graph TD
 - **FP8** = 1+4+3 或 1+5+2 两种格式，H100/B200 支持。训练和推理都能用。
 - **FP4** = 新一代低精度，B200 原生支持，Weight-only 已落地。
 - **GQA (Grouped-Query Attention)** = 多个 Q head 共享一个 KV head，省 KV 显存。Qwen3 标配。
-- **Gradient Checkpointing** = 丢中间 activation、backward 重算。[专篇](/2026/05/08/gradient-checkpointing-qwen3-dense.html)
-- **Goodput** = 满足 SLO 的吞吐（vLLM 提出）。[公式](/2026/05/08/training-inference-efficiency-metrics.html)
+- **Gradient Checkpointing** = 丢中间 activation、backward 重算。[专篇](/posts/gradient-checkpointing-qwen3-dense/)
+- **Goodput** = 满足 SLO 的吞吐（vLLM 提出）。[公式](/posts/training-inference-efficiency-metrics/)
 - **GRPO (Group Relative Policy Optimization)** = DeepSeek-R1 使用的 RL 算法，用 group-mean 作 baseline 替代 critic。
 - **GSPO** = 2025 提出的 RL 算法，改进 GRPO 的方差估计。
 - **Grouped GeMM** = MoE 训练中对不同 expert 的 GeMM 批量合并调度，减少 kernel launch 和内存碎片。
@@ -362,7 +362,7 @@ graph TD
 - **H2O (Heavy Hitter Oracle)** = KV cache 驱逐算法，只保留"重要 token"的 KV，长上下文显存打折扣。
 - **HyperSD** = ByteDance 的多步 → 单/四步扩散蒸馏方案，和 DMD / LCM 齐名。
 - **ITL (Inter-Token Latency)** = 流式 decode 相邻 token 间隔。
-- **KL Divergence** = 两概率分布的差异度量。[公式](/2026/05/08/training-inference-quality-metrics.html)
+- **KL Divergence** = 两概率分布的差异度量。[公式](/posts/training-inference-quality-metrics/)
 - **KV Cache** = decode 时缓存历史 token 的 K/V，避免重算。
 - **LCM (Latent Consistency Model)** = 扩散模型的步数蒸馏路线之一，4 步推理可用。
 - **Liger Kernel** = LinkedIn 为 Qwen/Llama 家族做的 fused kernel 集合。
@@ -400,7 +400,7 @@ graph TD
 - **PEFT (Parameter-Efficient Fine-Tuning)** = LoRA / QLoRA / Prefix Tuning / DoRA / IA³ / GaLore 等总称。
 - **PLD (Prompt Lookup Decoding)** = 从 prompt 中直接"复制"作为 draft 的 Speculative 变体，适合代码 / 问答等 prompt-output 相似场景。
 - **PyramidKV / SnapKV / ScissorHands** = KV cache 驱逐家族，2024-2025 主流方案。
-- **Perplexity (PPL)** = `exp(CE)`，模型困惑度。[公式](/2026/05/08/training-inference-quality-metrics.html)
+- **Perplexity (PPL)** = `exp(CE)`，模型困惑度。[公式](/posts/training-inference-quality-metrics/)
 - **PP (Pipeline Parallel)** = 模型分阶段放到不同卡。
 - **Prefix Caching** = 共享 prompt 前缀的 KV 重用。
 - **QLoRA** = 4-bit 量化 + LoRA 微调。
@@ -408,7 +408,7 @@ graph TD
 - **ROLL** = 阿里开源的 RL 训练框架，主打 fully-async + reasoning 场景。
 - **RoPE (Rotary Position Embedding)** = Llama/Qwen 系列的位置编码方式。
 - **RLHF** = Reinforcement Learning from Human Feedback。
-- **Roofline** = 算力/带宽 vs 访存比的性能上限图。[专篇](/2026/05/07/qwen3-understand-model-identify-fusion.html)
+- **Roofline** = 算力/带宽 vs 访存比的性能上限图。[专篇](/posts/qwen3-understand-model-identify-fusion/)
 
 ### S–Z
 
@@ -424,11 +424,11 @@ graph TD
 - **Step Distillation (步数蒸馏)** = Diffusion 把 50 步采样蒸馏到 1~4 步（DMD / LCM / Lightning / HyperSD）。
 - **SVDQuant** = MIT 提出的 4-bit 扩散模型 weight + activation 量化方案。
 - **SwiGLU** = `silu(W_gate x) * W_up x`，Llama / Qwen MLP 激活。
-- **TGS (Tokens per GPU per Second)** = 分布式训练扩展性指标。[公式](/2026/05/08/training-inference-efficiency-metrics.html)
+- **TGS (Tokens per GPU per Second)** = 分布式训练扩展性指标。[公式](/posts/training-inference-efficiency-metrics/)
 - **TP (Tensor Parallel)** = 矩阵按列或行 shard 到多卡。
 - **TPOT (Time Per Output Token)** = decode 平均每 token 时间。
 - **TTFT (Time To First Token)** = prefill 阶段延迟。
-- **Triton** = OpenAI 的 GPU DSL，Python 写 kernel。[实战](/2026/05/07/triton-kernel-fusion-practice.html)
+- **Triton** = OpenAI 的 GPU DSL，Python 写 kernel。[实战](/posts/triton-kernel-fusion-practice/)
 - **torch.compile** = PyTorch 2.x 的图编译器（Inductor 后端）。
 - **torchtitan** = Meta 开源的 PyTorch-native 大模型训练框架，核心路线是 FSDP2 + DTensor，目标是"不用 Megatron 也能训 Llama 规模模型"。
 - **Tutel** = 微软开源的 MoE 训练加速库，主打 all-to-all 调度 + grouped GeMM。
@@ -439,7 +439,7 @@ graph TD
 - **TCD (Trajectory Consistency Distillation)** = Diffusion 步数蒸馏的一个变体，强调训练稳定性。
 - **MeanFlow** = 一步 Flow Matching 推理的蒸馏方案之一。
 - **Wan 2.x / 万象** = 阿里的开源视频生成模型系列（Wan 2.1 / 2.2），配套 FastWan 训推加速栈；Wan 2.1 可用 VSA finetune 后再上 DMD，组合收益显著。
-- **WER / CER (Word/Character Error Rate)** = 语音识别评测。[公式](/2026/05/08/training-inference-quality-metrics.html)
+- **WER / CER (Word/Character Error Rate)** = 语音识别评测。[公式](/posts/training-inference-quality-metrics/)
 - **xDiT** = 扩散模型的并行推理框架，专做 SD / Flux / CogVideoX 的多卡加速。
 - **YaRN** = RoPE 的长度外推方案之一，Qwen2.5-long / Llama-3.1 均采用。
 - **ZeRO (Zero Redundancy Optimizer)** = DeepSpeed 提出；ZeRO-1/2/3 分别 shard 优化器 / 梯度 / 参数。
@@ -551,16 +551,16 @@ TTS 管线里最后一步——acoustic model 产生 mel-spectrogram，再由 vo
 - [MT-Bench / Chatbot Arena](https://arxiv.org/abs/2306.05685)
 - [Speculative Decoding (Google)](https://arxiv.org/abs/2211.17192)
 - 本系列：
-  - [CLI 工具栈](/2026/05/07/training-inference-engineer-cli-toolkit.html)
-  - [GPU/NCCL SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
-  - [CPU 侧 SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html)
-  - [Qwen3 fusion 识别](/2026/05/07/qwen3-understand-model-identify-fusion.html)
-  - [Triton 实战](/2026/05/07/triton-kernel-fusion-practice.html)
-  - [精度对齐](/2026/05/08/fused-kernel-accuracy-alignment.html)
-  - [Gradient Checkpointing](/2026/05/08/gradient-checkpointing-qwen3-dense.html)
-  - [CUDA Graph](/2026/05/08/cuda-graph-qwen3-dense.html)
-  - [效率指标](/2026/05/08/training-inference-efficiency-metrics.html)
-  - [效果指标](/2026/05/08/training-inference-quality-metrics.html)
+  - [CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/)
+  - [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
+  - [CPU 侧 SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
+  - [Qwen3 fusion 识别](/posts/qwen3-understand-model-identify-fusion/)
+  - [Triton 实战](/posts/triton-kernel-fusion-practice/)
+  - [精度对齐](/posts/fused-kernel-accuracy-alignment/)
+  - [Gradient Checkpointing](/posts/gradient-checkpointing-qwen3-dense/)
+  - [CUDA Graph](/posts/cuda-graph-qwen3-dense/)
+  - [效率指标](/posts/training-inference-efficiency-metrics/)
+  - [效果指标](/posts/training-inference-quality-metrics/)
 
 ---
 

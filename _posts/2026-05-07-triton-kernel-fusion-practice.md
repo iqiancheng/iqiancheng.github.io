@@ -8,7 +8,7 @@ tags: [attention, kernels, triton, pytorch, qwen]
 mermaid: true
 ---
 
-> 前篇：[训推加速 Qwen3 实战：看懂模型结构 + 识别算子融合机会](/2026/05/07/qwen3-understand-model-identify-fusion.html)
+> 前篇：[训推加速 Qwen3 实战：看懂模型结构 + 识别算子融合机会](/posts/qwen3-understand-model-identify-fusion/)
 >
 > 前一篇教你"识别 fusion 机会"，这一篇讲"**有了机会怎么落地**"——先看现成的 fused kernel 库够不够用，不够再自己写 Triton。重头戏是 **backward kernel**：多数教程只讲 forward，但训练场景 forward + backward 都要亲自写才能吃完整收益。
 >
@@ -584,10 +584,10 @@ def rms_norm_fwd_kernel_autotuned(...):
 - [Horace He — Making Deep Learning Go Brrrr](https://horace.io/brrr_intro.html)
 - [PyTorch 2 GPT-Fast 系列博客（Triton 集成）](https://pytorch.org/blog/accelerating-generative-ai-2/)
 - 系列姊妹篇：
-  - [训推加速 Qwen3 实战：看懂模型 + 识别融合机会（前篇）](/2026/05/07/qwen3-understand-model-identify-fusion.html)
-  - [训推加速 GPU/NCCL 侧 SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
-  - [训推加速 Python 侧排障 SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html)
-  - [高效 CLI 工具栈](/2026/05/07/training-inference-engineer-cli-toolkit.html)
+  - [训推加速 Qwen3 实战：看懂模型 + 识别融合机会（前篇）](/posts/qwen3-understand-model-identify-fusion/)
+  - [训推加速 GPU/NCCL 侧 SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
+  - [训推加速 Python 侧排障 SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
+  - [高效 CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/)
 
 ---
 

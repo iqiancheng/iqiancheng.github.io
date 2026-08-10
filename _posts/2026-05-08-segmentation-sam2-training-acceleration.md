@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"视觉分割"专题。2024 SAM 2 把"可提示分割"从图像扩到视频，2025~2026 Grounded-SAM / Florence-2 / SAM 3 进一步把分割和**开放词汇检测 / VLM** 打通。这一篇讲清 **分割任务的独有加速挑战**（Mask Head / Memory Attention / 视频一致性）和训练端的工程套路。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [图像 Diffusion 深化](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html) · [视频 & 3D 扩散加速](/2026/05/08/video-3d-diffusion-acceleration.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/) · [视频 & 3D 扩散加速](/posts/video-3d-diffusion-acceleration/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：SAM 2 是 Meta 2024-07 开源，SAM 3 / Grounded-SAM 2 / Florence-2 都是 2024~2025 的新东西，数值为公开资料量级。
 
@@ -535,9 +535,9 @@ $$
 - [LVIS](https://www.lvisdataset.org/)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [图像 Diffusion 深化](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html)
-- [视频 & 3D 扩散加速](/2026/05/08/video-3d-diffusion-acceleration.html)
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/)
+- [视频 & 3D 扩散加速](/posts/video-3d-diffusion-acceleration/)
 
 ---
 

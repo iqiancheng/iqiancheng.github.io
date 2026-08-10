@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"MoE 训练加速"专题。2024~2026 开源 SOTA 基本都走 MoE 路线（DeepSeek-V3 / Qwen3-MoE / Mixtral / GPT-OSS），但 MoE 训练的**通信瓶颈 / 负载均衡 / 路由数值**是三大独立痛点。本篇以 **Qwen3.5 / Qwen3.6 MoE** 级别的训练为 standing example，拆解从 DeepEP 到 Aux-Loss-Free 的完整栈。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [MoE→Dense 蒸馏](/2026/05/08/moe-to-dense-distillation.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：DeepEP 是 DeepSeek 2025 开源，Aux-Loss-Free 是 DeepSeek-V3 的主要贡献之一。本文反映 2026 年中 SOTA。
 
@@ -426,8 +426,8 @@ gantt
 
 **Qwen3.5-MoE 训好后通常**：
 1. SFT（合成 + 人工指令数据）
-2. RLHF / GRPO / DAPO（见 [篇 N](/2026/05/08/rl-training-qwen3-vllm-verl.html)）
-3. **蒸馏到小 Dense**（见 [篇 K](/2026/05/08/moe-to-dense-distillation.html)）
+2. RLHF / GRPO / DAPO（见 [篇 N](/posts/rl-training-qwen3-vllm-verl/)）
+3. **蒸馏到小 Dense**（见 [篇 K](/posts/moe-to-dense-distillation/)）
 
 ---
 
@@ -477,9 +477,9 @@ gantt
 - [vLLM MoE 支持](https://github.com/vllm-project/vllm)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [MoE→Dense 蒸馏](/2026/05/08/moe-to-dense-distillation.html)
-- [RL 训练加速](/2026/05/08/rl-training-qwen3-vllm-verl.html)
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)
+- [RL 训练加速](/posts/rl-training-qwen3-vllm-verl/)
 
 ---
 

@@ -12,7 +12,7 @@ mermaid: true
 
 **OpenAI Codex CLI + Codex 桌面 App 都支持任意 OpenAI Responses API 兼容的网关**，通过 `~/.codex/config.toml` 的 `[model_providers.<id>]` 自定义即可。最简场景只改一行 `openai_base_url` 就能把 built-in openai provider 指向代理；复杂场景可以自定义多个 provider、env header、命令式动态 token、profile 多账号切换。
 
-> 配 **Claude Code CLI** 看 [这篇](/2026/05/07/claude-code-cli-third-party-gateway.html)；**Claude Desktop App** 看 [这篇](/2026/05/07/claude-desktop-third-party-inference.html)。本文覆盖 Codex CLI 和 Codex App。
+> 配 **Claude Code CLI** 看 [这篇](/posts/claude-code-cli-third-party-gateway/)；**Claude Desktop App** 看 [这篇](/posts/claude-desktop-third-party-inference/)。本文覆盖 Codex CLI 和 Codex App。
 
 ### App 与 CLI 共享配置（反编译验证）
 
@@ -594,8 +594,8 @@ codex -c 'model_providers.tmp.base_url="https://x.com/v1"'
 
 ### 相关文章
 
-- [Claude Code CLI 接入第三方 API Key 和 Base URL 实战指南](/2026/05/07/claude-code-cli-third-party-gateway.html)
-- [Claude Desktop for Mac 配置第三方 API Key 和 Base URL 完整指南](/2026/05/07/claude-desktop-third-party-inference.html)
+- [Claude Code CLI 接入第三方 API Key 和 Base URL 实战指南](/posts/claude-code-cli-third-party-gateway/)
+- [Claude Desktop for Mac 配置第三方 API Key 和 Base URL 完整指南](/posts/claude-desktop-third-party-inference/)
 
 ### 调试命令速查
 

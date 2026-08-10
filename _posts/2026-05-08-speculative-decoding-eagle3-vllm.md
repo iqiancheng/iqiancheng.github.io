@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"解码优化专题"。以 **vLLM 框架**为基础，拆解 **EAGLE-3** 的原理、数据流、训练 / 推理实战。Speculative Decoding 是 2023~2026 解码加速最重要的一条路线，EAGLE-3 又是这条路线的 2025 SOTA。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [效率指标全景](/2026/05/08/training-inference-efficiency-metrics.html)（TPOT / Goodput 定义）· [CUDA Graph 实战](/2026/05/08/cuda-graph-qwen3-dense.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [效率指标全景](/posts/training-inference-efficiency-metrics/)（TPOT / Goodput 定义）· [CUDA Graph 实战](/posts/cuda-graph-qwen3-dense/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：EAGLE-3 是 2025 发布，vLLM Speculative 相关 API 在 0.6.x~0.7.x 逐步演进。本文以 **vLLM 0.7.x** 为基线；具体命令请以官方文档为准。
 
@@ -481,10 +481,10 @@ Target: Qwen3-0.5B 或 Gemma-3n
 - [TensorRT-LLM Speculative](https://nvidia.github.io/TensorRT-LLM/)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [效率指标全景](/2026/05/08/training-inference-efficiency-metrics.html)
-- [CUDA Graph 实战](/2026/05/08/cuda-graph-qwen3-dense.html)
-- [Qwen3-8B Triton Kernel 实战](/2026/05/07/triton-kernel-fusion-practice.html)
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [效率指标全景](/posts/training-inference-efficiency-metrics/)
+- [CUDA Graph 实战](/posts/cuda-graph-qwen3-dense/)
+- [Qwen3-8B Triton Kernel 实战](/posts/triton-kernel-fusion-practice/)
 
 ---
 

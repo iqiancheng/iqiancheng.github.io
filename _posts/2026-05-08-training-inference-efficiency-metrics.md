@@ -11,7 +11,7 @@ math: true
 
 > 本系列前面 8 篇讲"怎么加速"——但团队协作时经常发现**每个人说的"快"都不是一回事**：训练组说 tokens/sec，推理组说 TTFT，infra 说 MFU。这篇把训推加速里所有高价值指标一次摆清楚，**每个都给数学公式 + Qwen3-8B 示意数字**。
 >
-> 姊妹篇：[训推加速系列导航](.#)（在做） · [GPU/NCCL SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html) · [Python CPU SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html)
+> 姊妹篇：[训推加速系列导航](.#)（在做） · [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/) · [Python CPU SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
 
 ---
 
@@ -80,7 +80,7 @@ $$
 **为什么不用总 tokens/sec**：总吞吐随 GPU 线性增长是"假快"；TGS 才能反映**分布式 scaling efficiency**。
 
 - **TGS 高 + GPU 数多** → 扩展性好
-- **TGS 随 GPU 数增加反而下降** → 通信瓶颈或 overlap 做得差（[见 GPU SOP §四 NCCL](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)）
+- **TGS 随 GPU 数增加反而下降** → 通信瓶颈或 overlap 做得差（[见 GPU SOP §四 NCCL](/posts/training-inference-acceleration-troubleshooting-sop/)）
 
 **Qwen3-8B 参考值**（示意，取决于并行策略）：
 
@@ -309,7 +309,7 @@ Nsight Compute 出这个数字。**不是越高越好**——低 occupancy 但�
 
 ### 4.5 Roofline 位置
 
-[前篇 §3.4](/2026/05/07/qwen3-understand-model-identify-fusion.html) 已讲。一句话回顾：算子在 Roofline 上的位置 = `min(AI × BW, Peak FLOPS)`，H100 Ridge Point ≈ 330 FLOPs/byte。
+[前篇 §3.4](/posts/qwen3-understand-model-identify-fusion/) 已讲。一句话回顾：算子在 Roofline 上的位置 = `min(AI × BW, Peak FLOPS)`，H100 Ridge Point ≈ 330 FLOPs/byte。
 
 ![Roofline Model](https://upload.wikimedia.org/wikipedia/commons/9/99/Roofline_model_example.png)  
 *图：Roofline 模型——横轴算术强度 (FLOP/Byte)，纵轴性能 (GFLOPS)。斜线 = 带宽上限，水平线 = 算力上限。Ridge Point 左边的算子是 memory-bound（RMSNorm / RoPE / SwiGLU elementwise），右边是 compute-bound（大 matmul）。来源：Wikimedia Commons*
@@ -449,10 +449,10 @@ $$
 - [MLPerf Inference](https://mlcommons.org/benchmarks/inference-datacenter/)
 - [Meta — Llama 3 training efficiency report](https://ai.meta.com/research/publications/the-llama-3-herd-of-models/)
 - 系列：
-  - [GPU/NCCL SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
-  - [CPU 侧排障 SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html)
-  - [CUDA Graph 实战](/2026/05/08/cuda-graph-qwen3-dense.html)
-  - [Gradient Checkpointing 最大化](/2026/05/08/gradient-checkpointing-qwen3-dense.html)
+  - [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
+  - [CPU 侧排障 SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
+  - [CUDA Graph 实战](/posts/cuda-graph-qwen3-dense/)
+  - [Gradient Checkpointing 最大化](/posts/gradient-checkpointing-qwen3-dense/)
 
 ---
 

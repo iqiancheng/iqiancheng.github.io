@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"音乐生成"专题。音乐生成是个独立于 TTS 的生成方向——**多轨 / 长序列 / 高保真 / 风格多样**是它独有的挑战。本篇拆解 2024~2026 的两大范式（Audio Token AR vs Latent Diffusion）、加速专项、主流系统。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [语音 / 音频加速](/2026/05/08/speech-audio-acceleration-stack.html)（补前置概念）
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [语音 / 音频加速](/posts/speech-audio-acceleration-stack/)（补前置概念）
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：音乐生成领域 2024-2026 闭源（Suno / Udio）遥遥领先开源，本文开源栈侧重 MusicGen / UniAudio / Stable Audio Open；闭源侧基于公开技术推测。
 
@@ -401,9 +401,9 @@ SOTA: Stable Audio Open 2.0（步数蒸馏版）+ SageAttention
 - [AIVA](https://www.aiva.ai/)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [语音 / 音频加速](/2026/05/08/speech-audio-acceleration-stack.html)
-- [图像 Diffusion 深化](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html)（共享 Flow Matching / 步数蒸馏）
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [语音 / 音频加速](/posts/speech-audio-acceleration-stack/)
+- [图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/)（共享 Flow Matching / 步数蒸馏）
 
 ---
 

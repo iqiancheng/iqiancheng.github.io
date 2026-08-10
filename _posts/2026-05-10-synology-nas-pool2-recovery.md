@@ -13,7 +13,7 @@ toc: true
 
 ## 背景
 
-[上一篇 GFW 审计](/2026/05/10/synology-nas-gfw-audit-mihomo.html) 结束后重启 NAS 做存活验证，结果 Package Center 全线崩溃：
+[上一篇 GFW 审计](/posts/synology-nas-gfw-audit-mihomo/) 结束后重启 NAS 做存活验证，结果 Package Center 全线崩溃：
 
 - ContainerManager error 272 → 所有 Docker 容器不可用
 - CloudSync error 272 → Google Drive 同步中断

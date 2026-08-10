@@ -8,7 +8,7 @@ tags: [training, rope, kernels, pytorch, qwen]
 mermaid: true
 ---
 
-> 姊妹篇：[高效 CLI 工具栈](/2026/05/07/training-inference-engineer-cli-toolkit.html) · [GPU/NCCL 侧 SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html) · [Python CPU 侧 SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html)
+> 姊妹篇：[高效 CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/) · [GPU/NCCL 侧 SOP](/posts/training-inference-acceleration-troubleshooting-sop/) · [Python CPU 侧 SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
 >
 > 前面三篇讲"定位问题 + 调参"，这篇开始讲**"读懂模型 + 改模型"**：从 Qwen3 的源码和 profile 里识别算子融合机会。下篇讲"如果现成的 fusion 库也不够，怎么自己写 Triton kernel"。
 
@@ -183,7 +183,7 @@ FX trace 的主要用处**不是**直接修改，而是拿到 graph 后**做模�
 
 静态看得到"有哪些算子"，但**算子的时间消耗**只有跑起来才知道。
 
-前置：`torch.profiler` 用法见 [GPU/NCCL 侧 SOP §4.5](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)、[CLI toolkit §4.5 Trace 可视化](/2026/05/07/training-inference-engineer-cli-toolkit.html)。
+前置：`torch.profiler` 用法见 [GPU/NCCL 侧 SOP §4.5](/posts/training-inference-acceleration-troubleshooting-sop/)、[CLI toolkit §4.5 Trace 可视化](/posts/training-inference-engineer-cli-toolkit/)。
 
 ### 3.1 采一段 trace
 
@@ -446,7 +446,7 @@ Qwen3-8B bf16 + seqlen=4096 在 H100 上，`torch.compile` 对训练典型带来
 
 自动 fusion 有边界：
 
-- Graph break 会让优化区间碎片化（见 [GPU SOP §七](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)）
+- Graph break 会让优化区间碎片化（见 [GPU SOP §七](/posts/training-inference-acceleration-troubleshooting-sop/)）
 - Inductor 模板能覆盖的 pattern 有限，对 **attention / SwiGLU / 跨层 fusion** 经常打不过手写
 - 长序列的 attention 还是得靠 Flash-Attention 级别的专用实现
 
@@ -470,9 +470,9 @@ Qwen3-8B bf16 + seqlen=4096 在 H100 上，`torch.compile` 对训练典型带来
 - [Flash-Attention 论文](https://arxiv.org/abs/2205.14135)
 - [Liger Kernel GitHub](https://github.com/linkedin/Liger-Kernel)
 - 前篇姊妹系列：
-  - [高效 CLI 工具栈](/2026/05/07/training-inference-engineer-cli-toolkit.html)
-  - [GPU/NCCL 侧 SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
-  - [Python CPU 侧 SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html)
+  - [高效 CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/)
+  - [GPU/NCCL 侧 SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
+  - [Python CPU 侧 SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
 
 ---
 

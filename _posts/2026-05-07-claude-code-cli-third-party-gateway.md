@@ -12,7 +12,7 @@ mermaid: true
 
 **Claude Code CLI 支持任意 Anthropic Messages 协议兼容的网关**，只需要两个环境变量 `ANTHROPIC_BASE_URL` + `ANTHROPIC_API_KEY`，或者写到 `~/.claude/settings.json` 的 `env` 段里持久化。全程不需要 Anthropic 官方账号登录。本文覆盖四种配置方式、优先级顺序、多账号切换、以及几个常见坑。
 
-> 配 **Claude Desktop App** 的第三方网关看 [这篇](/2026/05/07/claude-desktop-third-party-inference.html)；本文专讲 CLI。
+> 配 **Claude Desktop App** 的第三方网关看 [这篇](/posts/claude-desktop-third-party-inference/)；本文专讲 CLI。
 
 ---
 
@@ -346,7 +346,7 @@ cc openrouter --model opus       # 试试别家 opus
 
 ### 相关文章
 
-- [Claude Desktop for Mac 配置第三方 API Key 和 Base URL 完整指南](/2026/05/07/claude-desktop-third-party-inference.html)
+- [Claude Desktop for Mac 配置第三方 API Key 和 Base URL 完整指南](/posts/claude-desktop-third-party-inference/)
 
 ### 调试命令速查
 

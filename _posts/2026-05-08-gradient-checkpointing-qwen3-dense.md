@@ -9,7 +9,7 @@ mermaid: true
 math: true
 ---
 
-> 系列姊妹篇：[看懂 Qwen3 + 识别算子融合机会](/2026/05/07/qwen3-understand-model-identify-fusion.html) · [手写 Triton Kernel](/2026/05/07/triton-kernel-fusion-practice.html) · [精度对齐实战](/2026/05/08/fused-kernel-accuracy-alignment.html) · [GPU SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
+> 系列姊妹篇：[看懂 Qwen3 + 识别算子融合机会](/posts/qwen3-understand-model-identify-fusion/) · [手写 Triton Kernel](/posts/triton-kernel-fusion-practice/) · [精度对齐实战](/posts/fused-kernel-accuracy-alignment/) · [GPU SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
 >
 > 大多数 Qwen3 / Llama 训练教程给的 gradient checkpointing 指引都是"`model.gradient_checkpointing_enable()` 打开就行"——这其实是**最粗粒度**的配置，显存换算力的比例通常不划算。本篇讲怎么把它从"一键开关"升级到"**按访存比选择性重算**"，在 Qwen3-8B dense 上吃回 50%+ 的 step time 损失。
 
@@ -171,7 +171,7 @@ class CustomQwen3Layer(nn.Module):
 
 ### 3.3 Selective：按 AI 挑
 
-最细粒度：**按 [访存比 (AI)](/2026/05/07/qwen3-understand-model-identify-fusion.html#访存比arithmetic-intensity与-roofline) 来选**——AI 低的算子重算便宜（反正是 memory-bound），AI 高的算子重算贵（要重跑 compute）。
+最细粒度：**按 [访存比 (AI)](/posts/qwen3-understand-model-identify-fusion/#访存比arithmetic-intensity与-roofline) 来选**——AI 低的算子重算便宜（反正是 memory-bound），AI 高的算子重算贵（要重跑 compute）。
 
 ![Roofline 模型](https://upload.wikimedia.org/wikipedia/commons/4/41/Roofline_model.png)  
 *图：Roofline 模型。横轴是访存比 $AI = \text{FLOPs}/\text{Bytes}$，纵轴是性能 (FLOP/s)。低 AI 算子卡在斜线（带宽上限），高 AI 算子顶到屋顶（算力上限）。来源：Wikimedia Commons*
@@ -361,10 +361,10 @@ apply_activation_checkpointing(
 - [FSDP Checkpointing 文档](https://pytorch.org/docs/stable/fsdp.html)
 - [Megatron-LM Selective Recompute 论文](https://arxiv.org/abs/2205.05198)
 - 系列文：
-  - [看懂 Qwen3 + 识别算子融合机会](/2026/05/07/qwen3-understand-model-identify-fusion.html)
-  - [从"调包"到手写 Triton Kernel](/2026/05/07/triton-kernel-fusion-practice.html)
-  - [替换 Fused Kernel 后的精度对齐实战](/2026/05/08/fused-kernel-accuracy-alignment.html)
-  - [GPU/NCCL SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
+  - [看懂 Qwen3 + 识别算子融合机会](/posts/qwen3-understand-model-identify-fusion/)
+  - [从"调包"到手写 Triton Kernel](/posts/triton-kernel-fusion-practice/)
+  - [替换 Fused Kernel 后的精度对齐实战](/posts/fused-kernel-accuracy-alignment/)
+  - [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
 
 ---
 

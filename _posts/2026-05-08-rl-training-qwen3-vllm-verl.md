@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"RL 训练"专题。2024~2026 o1 系 reasoning 模型火爆后，**大规模 RL post-training** 成为所有头部实验室的必修课。本篇以 **Qwen3.5 + vLLM + veRL** 为 standing example，讲清 RL 训练的瓶颈、fully-async 架构、GRPO / DAPO / GSPO 等算法、工程陷阱。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [Speculative Decoding + EAGLE-3](/2026/05/08/speculative-decoding-eagle3-vllm.html) · [MoE→Dense 蒸馏](/2026/05/08/moe-to-dense-distillation.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [Speculative Decoding + EAGLE-3](/posts/speculative-decoding-eagle3-vllm/) · [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：veRL / AReaL / OpenRLHF 都在快速迭代，算法（GRPO 家族）2024~2025 涌现多个变体。本文反映 2026 年中 SOTA 配置。
 
@@ -533,7 +533,7 @@ $$
 
 ### 9.2 下游 benchmark
 
-按 [效果指标篇](/2026/05/08/training-inference-quality-metrics.html#三下游客观指标) 分层：
+按 [效果指标篇](/posts/training-inference-quality-metrics/#三下游客观指标) 分层：
 
 | 任务类 | Benchmark | Qwen3.5-8B SFT → GRPO 期望提升 |
 |---|---|---|
@@ -569,10 +569,10 @@ $$
 - [vLLM](https://github.com/vllm-project/vllm)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [Speculative Decoding + EAGLE-3](/2026/05/08/speculative-decoding-eagle3-vllm.html)
-- [MoE→Dense 蒸馏](/2026/05/08/moe-to-dense-distillation.html)
-- [效率指标全景](/2026/05/08/training-inference-efficiency-metrics.html)
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [Speculative Decoding + EAGLE-3](/posts/speculative-decoding-eagle3-vllm/)
+- [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)
+- [效率指标全景](/posts/training-inference-efficiency-metrics/)
 
 ---
 

@@ -13,7 +13,7 @@ math: true
 >
 > ⚠️ **声明**：本文讲**训练加速与模型技术**。实际水印消除应用时请尊重版权、商标和素材授权——只对自己拥有版权的图像或合法场景（去除历史扫描件中的污渍、修复老照片、消除自拍误入的路人）使用这类技术。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [图像 Diffusion 深化](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html) · [分割模型](/2026/05/08/segmentation-sam2-training-acceleration.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/) · [分割模型](/posts/segmentation-sam2-training-acceleration/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：Flux Fill 2024-11 发布，BrushNet / PowerPaint 2024 开源，数值为公开资料量级。
 
@@ -270,7 +270,7 @@ Flux Fill 走的是**在 Flux DiT 上做 Fill 特化**：
 - 保持 Flow Matching 训练目标
 - **数据依赖 mask 分布 + 合成 caption**
 
-训练加速点和 [图像 Diffusion 篇](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html) 一致：
+训练加速点和 [图像 Diffusion 篇](/posts/image-diffusion-acceleration-flux-sd3-dmd2/) 一致：
 - **bf16 + FSDP2**
 - **SageAttention**
 - **梯度累积 + Activation Checkpointing**
@@ -432,9 +432,9 @@ Inpaint: SDXL Inpaint LCM 4 步 或 LaMa (速度优先)
 - [ComfyUI (workflow)](https://github.com/comfyanonymous/ComfyUI)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [图像 Diffusion 深化](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html)（共享步数蒸馏 / SageAttention）
-- [视觉分割模型](/2026/05/08/segmentation-sam2-training-acceleration.html)（上游 mask 来源）
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/)（共享步数蒸馏 / SageAttention）
+- [视觉分割模型](/posts/segmentation-sam2-training-acceleration/)（上游 mask 来源）
 
 ---
 

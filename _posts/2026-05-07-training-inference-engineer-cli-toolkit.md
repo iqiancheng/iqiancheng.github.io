@@ -412,9 +412,9 @@ sequenceDiagram
 ### 6.3 Claude Code 和 Codex CLI 的第三方网关
 
 不再展开——见本站：
-- [Claude Code CLI 第三方网关](/2026/05/07/claude-code-cli-third-party-gateway.html)
-- [Codex CLI 第三方网关](/2026/05/07/codex-cli-third-party-gateway.html)
-- [Cursor Free Plan BlueRouter（WIP）](/2026/05/07/cursor-free-plan-bluerouter-gateway-wip.html)
+- [Claude Code CLI 第三方网关](/posts/claude-code-cli-third-party-gateway/)
+- [Codex CLI 第三方网关](/posts/codex-cli-third-party-gateway/)
+- [Cursor Free Plan BlueRouter（WIP）](/posts/cursor-free-plan-bluerouter-gateway-wip/)
 
 ---
 
@@ -881,7 +881,7 @@ graph TD
 
 这一章原本写在本文里，内容量涨到 9 个子节 + 40+ 条权威参考后，已经够独立成文。完整版见：
 
-👉 **[训推加速问题定位 SOP 与 Know-how：从 GPU 低利用率到 NCCL hang 到推理吞吐](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)**
+👉 **[训推加速问题定位 SOP 与 Know-how：从 GPU 低利用率到 NCCL hang 到推理吞吐](/posts/training-inference-acceleration-troubleshooting-sop/)**
 
 覆盖 6 条主流症状的排障 SOP：GPU Util 低 / OOM / NCCL hang / Loss NaN / 推理延迟 / torch.compile，每节都给了体检命令 + 分诊表 + 权威资料。最后一节是可以直接粘进 `AGENTS.md` 的 Agent 版完整 Triage SOP。
 

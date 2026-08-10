@@ -10,8 +10,8 @@ mermaid: true
 
 > 这是"训推加速三部曲"的 **CPU 侧补完**：
 >
-> 1. [高效 CLI 工具栈](/2026/05/07/training-inference-engineer-cli-toolkit.html) —— 讲工具
-> 2. [训推加速问题定位 SOP (GPU/NCCL 侧)](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html) —— 讲 CUDA kernel / NCCL / torch.compile
+> 1. [高效 CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/) —— 讲工具
+> 2. [训推加速问题定位 SOP (GPU/NCCL 侧)](/posts/training-inference-acceleration-troubleshooting-sop/) —— 讲 CUDA kernel / NCCL / torch.compile
 > 3. **本篇** —— 讲系统 RAM OOM / numpy / GIL / asyncio / DataLoader / IO
 >
 > 做训推的人经常"**GPU 看得很熟、Python 侧当黑盒**"。结果训练一卡顿就反射性去看 nvidia-smi，却忘了 CPU 端的 DataLoader worker 死锁、numpy 奇葩 stride、GIL 抢占、asyncio 阻塞——这些才是大多数"非 CUDA 错"的根源。
@@ -1073,7 +1073,7 @@ graph TD
 
 ## 十、给 AI Agent 的 CPU 侧诊断指引
 
-配合 [CLI toolkit §11 Agent 规则](/2026/05/07/training-inference-engineer-cli-toolkit.html#十一给-ai-agent-的-cli-优先使用指引)、[GPU 侧 SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)，把下面这段粘进 `AGENTS.md`：
+配合 [CLI toolkit §11 Agent 规则](/posts/training-inference-engineer-cli-toolkit/#十一给-ai-agent-的-cli-优先使用指引)、[GPU 侧 SOP](/posts/training-inference-acceleration-troubleshooting-sop/)，把下面这段粘进 `AGENTS.md`：
 
 ````markdown
 # Python 侧性能瓶颈 Triage 规则
@@ -1132,8 +1132,8 @@ graph TD
 
 ## 十二、相关文章
 
-- [训推工程师 & AI Agent 时代的高效 CLI 工具栈](/2026/05/07/training-inference-engineer-cli-toolkit.html) —— 讲工具
-- [训推加速问题定位 SOP（GPU/NCCL 侧）](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html) —— 讲 CUDA/NCCL/compile
+- [训推工程师 & AI Agent 时代的高效 CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/) —— 讲工具
+- [训推加速问题定位 SOP（GPU/NCCL 侧）](/posts/training-inference-acceleration-troubleshooting-sop/) —— 讲 CUDA/NCCL/compile
 - 本文 —— 讲 Python CPU 侧（系统 OOM / numpy / GIL / asyncio / DataLoader / IO）
 
 三篇一起构成 2026 年训推工程师的**完整排障 playbook**。

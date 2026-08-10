@@ -9,7 +9,7 @@ mermaid: true
 math: true
 ---
 
-> 系列姊妹篇：[从"调包"到手写 Triton Kernel](/2026/05/07/triton-kernel-fusion-practice.html) · [看懂 Qwen3 + 识别算子融合机会](/2026/05/07/qwen3-understand-model-identify-fusion.html) · [GPU/NCCL SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html) · [Python CPU SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html)
+> 系列姊妹篇：[从"调包"到手写 Triton Kernel](/posts/triton-kernel-fusion-practice/) · [看懂 Qwen3 + 识别算子融合机会](/posts/qwen3-understand-model-identify-fusion/) · [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/) · [Python CPU SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
 >
 > 前篇教你怎么**写** fused kernel，这篇教你怎么**验证它和原版数值一致**——这是替换后能不能真正上训练的最后一关。最常见的翻车场景：kernel 写对了、loss 能收敛，但下游任务指标偷偷掉了 1~2 个点，等跑完 100B tokens 才发现就晚了。
 
@@ -382,10 +382,10 @@ Liger Kernel 的测试策略非常值得复用：
 - [NVIDIA Training with Mixed Precision](https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html)
 - [Flash-Attention 论文 — Softmax 数值稳定性讨论](https://arxiv.org/abs/2205.14135)
 - 系列文：
-  - [训推加速 Qwen3 实战：看懂模型 + 识别融合机会](/2026/05/07/qwen3-understand-model-identify-fusion.html)
-  - [从"调包"到手写 Triton Kernel（含 backward）](/2026/05/07/triton-kernel-fusion-practice.html)
-  - [GPU/NCCL SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
-  - [Python CPU SOP](/2026/05/07/python-cpu-bottleneck-troubleshooting-sop.html)
+  - [训推加速 Qwen3 实战：看懂模型 + 识别融合机会](/posts/qwen3-understand-model-identify-fusion/)
+  - [从"调包"到手写 Triton Kernel（含 backward）](/posts/triton-kernel-fusion-practice/)
+  - [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
+  - [Python CPU SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
 
 ---
 

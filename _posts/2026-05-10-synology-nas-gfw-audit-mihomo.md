@@ -13,7 +13,7 @@ toc: true
 
 ## 背景
 
-[上一篇 Docker 镜像加速](/2026/05/10/docker-registry-mirrors-china.html) 解决了 `docker pull` 的问题，但 NAS 上还有更多服务受 GFW 影响——Git clone 超时、raw 脚本下载失败、部分容器注册表不可达。
+[上一篇 Docker 镜像加速](/posts/docker-registry-mirrors-china/) 解决了 `docker pull` 的问题，但 NAS 上还有更多服务受 GFW 影响——Git clone 超时、raw 脚本下载失败、部分容器注册表不可达。
 
 这篇对 NAS 做一个**全量 GFW 连通性审计**，然后部署 mihomo（原 Clash.Meta）作为代理层，最终形成「mirror 加速 + 代理兜底」的分层访问策略。
 
@@ -642,7 +642,7 @@ alias nas-check="cat ~/claudespace/nas_gfw_check.sh | ssh opennas 'bash -s'"
 
 ## 总结
 
-与 [Docker 镜像加速](/2026/05/10/docker-registry-mirrors-china.html) 博文配套食用。整体反墙架构演进：
+与 [Docker 镜像加速](/posts/docker-registry-mirrors-china/) 博文配套食用。整体反墙架构演进：
 
 ```
 v1: Docker mihomo (HTTP/SOCKS proxy)
@@ -664,4 +664,4 @@ v2: 宿主机 mihomo + TUN 透明代理（最终形态）
 
 二者互补，不是替代。这个分层策略同样适用于任何在中国大陆运行的家用服务器——NAS、软路由、开发机都适用。
 
-> 与 NAS 系列联动：mihomo TUN 打通后，[之前的自建 DERP 计划](/2026/05/10/synology-nas-advanced-exploration.html)（Task 13）的 AWS EC2 新加坡节点也可以通过代理 SSH 部署。GitHub 可达性为后续 Gitea + Docsify 文档流水线扫清了障碍。Cloud Sync 恢复后，NAS 可以正常同步国内外多网盘。
+> 与 NAS 系列联动：mihomo TUN 打通后，[之前的自建 DERP 计划](/posts/synology-nas-advanced-exploration/)（Task 13）的 AWS EC2 新加坡节点也可以通过代理 SSH 部署。GitHub 可达性为后续 Gitea + Docsify 文档流水线扫清了障碍。Cloud Sync 恢复后，NAS 可以正常同步国内外多网盘。

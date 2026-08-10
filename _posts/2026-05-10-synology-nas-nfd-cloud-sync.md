@@ -144,7 +144,7 @@ touch "$(echo 'café' | iconv -t UTF-8-MAC | iconv -f UTF-8-MAC)"
 
 ## 相关资源
 
-- [前一篇：pool2 掉盘修复](/2026/05/10/synology-nas-pool2-recovery.html)
+- [前一篇：pool2 掉盘修复](/posts/synology-nas-pool2-recovery/)
 - [Reddit: Cloud Sync does not synchronize Google Drive files with NFD characters](https://www.reddit.com/r/synology/comments/1f0z9zn/)
 - [Unicode 归一化形式规范 (UAX #15)](https://unicode.org/reports/tr15/)
 - [Apple 文档：文件系统与 Unicode 归一化](https://developer.apple.com/library/archive/qa/qa1235/_index.html)

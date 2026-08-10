@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"视频 & 3D 扩散"专题。视频时间维 + 3D 空间维让 attention 复杂度直接上升 1~2 个数量级——**这是一套独立于图像 Diffusion 的加速体系**。
 >
-> 姊妹篇：[图像 Diffusion 深化](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html)（先看这篇理解基础）· [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
+> 姊妹篇：[图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/)（先看这篇理解基础）· [训推加速技术地图](/posts/training-inference-acceleration-map/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：视频生成是 2025 下半年才开始"开源可用"级别（Wan 2.1 / HunyuanVideo / Mochi），技术迭代极快，本文反映 2026 年中快照。
 
@@ -424,9 +424,9 @@ Cache: TeaCache + FBCache
 - [DreamGaussian](https://github.com/dreamgaussian/dreamgaussian)
 
 **系列文**：
-- [图像 Diffusion 深化](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html)
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [语音 / 音频加速](/2026/05/08/speech-audio-acceleration-stack.html)
+- [图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/)
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [语音 / 音频加速](/posts/speech-audio-acceleration-stack/)
 
 ---
 

@@ -13,7 +13,7 @@ toc: true
 
 ## 背景
 
-[上一篇 GFW 审计博文](/2026/05/10/synology-nas-gfw-audit-mihomo.html) 收尾时做了 NAS 重启演练，验证 mihomo TUN、Cloud Sync、Container Manager 等组件在重启后能否自动恢复。
+[上一篇 GFW 审计博文](/posts/synology-nas-gfw-audit-mihomo/) 收尾时做了 NAS 重启演练，验证 mihomo TUN、Cloud Sync、Container Manager 等组件在重启后能否自动恢复。
 
 结果没通过。重启后 Package Center 里三个包全挂：
 - **Container Manager** error 272（"not startable"），所有 Docker 容器不可用

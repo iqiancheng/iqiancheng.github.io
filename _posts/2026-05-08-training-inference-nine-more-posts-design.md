@@ -9,7 +9,7 @@ tags: [inference, training, methodology]
 
 ---- 作者：Austin
 - 状态：draft（outlines approved，待实施）
-- 关联：基于 [训推加速技术地图 post](/2026/05/08/training-inference-acceleration-map.html) 的各行展开深化
+- 关联：基于 [训推加速技术地图 post](/posts/training-inference-acceleration-map/) 的各行展开深化
 
 ## 0. 共享约定（所有 9 篇通用）
 

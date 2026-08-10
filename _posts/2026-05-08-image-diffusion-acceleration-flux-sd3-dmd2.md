@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"图像 Diffusion 专题"。2024~2026 图像扩散领域同时上演三条加速主线——**步数蒸馏**（DMD2 / LCM 系）、**新架构**（DiT / MMDiT / Rectified Flow）、**低精度 Attention**（SageAttention / SVDQuant）。本文聚焦**图像**（视频 / 3D 扩散见下一篇）。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [Speculative Decoding + EAGLE-3](/2026/05/08/speculative-decoding-eagle3-vllm.html) · [MoE → Dense 蒸馏](/2026/05/08/moe-to-dense-distillation.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [Speculative Decoding + EAGLE-3](/posts/speculative-decoding-eagle3-vllm/) · [MoE → Dense 蒸馏](/posts/moe-to-dense-distillation/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：Diffusion 加速在 2024~2026 两年迭代极快（FLUX.1 / SD3.5 / DMD2 / Wan 2.2 / SageAttention / Flash-SD3 都是这两年出来的），本文反映 2026 年中快照。
 
@@ -477,9 +477,9 @@ Cache: TeaCache + DeepCache
 - [TeaCache](https://github.com/ali-vilab/TeaCache)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [Speculative Decoding + EAGLE-3](/2026/05/08/speculative-decoding-eagle3-vllm.html)
-- [MoE→Dense 蒸馏](/2026/05/08/moe-to-dense-distillation.html)
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [Speculative Decoding + EAGLE-3](/posts/speculative-decoding-eagle3-vllm/)
+- [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)
 
 ---
 

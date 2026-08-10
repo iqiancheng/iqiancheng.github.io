@@ -12,7 +12,7 @@ toc: true
 
 ## 背景
 
-同一台 Synology NAS（DSM 7.x, SA6400），在完成 [Tailscale 组网和 WebDAV 部署](/2026/05/10/tailscale-synology-nas-real-world.html) 后，进行了一次完整的安全审计。
+同一台 Synology NAS（DSM 7.x, SA6400），在完成 [Tailscale 组网和 WebDAV 部署](/posts/tailscale-synology-nas-real-world/) 后，进行了一次完整的安全审计。
 
 **审计前的状态**：DSM 基本默认配置 + Tailscale + WebDAV + SSH 密钥登录。没有做过任何安全加固。
 

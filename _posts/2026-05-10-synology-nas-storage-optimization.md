@@ -13,7 +13,7 @@ toc: true
 
 ## 背景
 
-[前一篇网络优化](/2026/05/10/tailscale-synology-nas-real-world.html) 已经把局域网 WebDAV 速度从 4.2 MB/s 推到 9.8 MB/s，[安全加固](/2026/05/10/synology-nas-security-hardening.html) 把端口从 27 个砍到 16 个。这一篇往下走一层：存储。
+[前一篇网络优化](/posts/tailscale-synology-nas-real-world/) 已经把局域网 WebDAV 速度从 4.2 MB/s 推到 9.8 MB/s，[安全加固](/posts/synology-nas-security-hardening/) 把端口从 27 个砍到 16 个。这一篇往下走一层：存储。
 
 NAS 的最终瓶颈永远在磁盘。网络再快、协议再好，落到存储层该有的问题一个不少——静默数据损坏、空间浪费、缓存配置错误。
 

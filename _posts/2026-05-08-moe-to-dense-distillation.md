@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"MoE → Dense 蒸馏"专题。2024~2026 开源社区最成功的一条落地路线——**先用巨大 MoE 预训练到 SOTA，再蒸馏成消费级 Dense 模型**。代表作：Qwen3-MoE → Qwen3-Dense / Gemma-Large → Gemma-3n / DeepSeek-V3 → DeepSeek-R1-Distill 系列。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [Speculative Decoding 实战](/2026/05/08/speculative-decoding-eagle3-vllm.html) · [效果指标全景](/2026/05/08/training-inference-quality-metrics.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [Speculative Decoding 实战](/posts/speculative-decoding-eagle3-vllm/) · [效果指标全景](/posts/training-inference-quality-metrics/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：蒸馏方法论在 2024~2026 快速演进，On-Policy KD + vLLM 批量 rollout 是当前事实标准，本文以此为基线。
 
@@ -267,7 +267,7 @@ On-Policy KD 一个 epoch 的算力分配：
 - **Continuous batching**：多条 prompt 的 decode 同时进行
 - **PagedAttention**：KV cache 碎片化管理
 - **Prefix caching**：相同 prompt 前缀的 KV 复用
-- **Speculative Decoding**（见 [篇 O](/2026/05/08/speculative-decoding-eagle3-vllm.html)）：teacher 自己上 EAGLE-3 也能加速
+- **Speculative Decoding**（见 [篇 O](/posts/speculative-decoding-eagle3-vllm/)）：teacher 自己上 EAGLE-3 也能加速
 
 ### 6.3 典型 Pipeline 架构
 
@@ -346,7 +346,7 @@ gantt
 
 ### 8.1 评测维度
 
-按 [效果指标篇](/2026/05/08/training-inference-quality-metrics.html) 的分层：
+按 [效果指标篇](/posts/training-inference-quality-metrics/) 的分层：
 
 | 维度 | 典型 benchmark | 蒸馏后掉点容忍 |
 |---|---|---|
@@ -424,9 +424,9 @@ Step 3: 切到 On-Policy KD，同参数 → 期望再 +2~3 个 benchmark 点
 - [Liger Kernel KD loss](https://github.com/linkedin/Liger-Kernel)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [Speculative Decoding + EAGLE-3](/2026/05/08/speculative-decoding-eagle3-vllm.html)
-- [效率指标 / 效果指标](/2026/05/08/training-inference-quality-metrics.html)
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [Speculative Decoding + EAGLE-3](/posts/speculative-decoding-eagle3-vllm/)
+- [效率指标 / 效果指标](/posts/training-inference-quality-metrics/)
 
 ---
 

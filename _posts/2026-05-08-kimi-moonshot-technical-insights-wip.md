@@ -11,7 +11,7 @@ math: true
 
 > 一篇公司技术洞察。内容基于公开论文 / 技术报告 / HuggingFace / GitHub 的可核实材料整理，细节以 Moonshot 官方发布为准。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [MoE 训练加速](/2026/05/08/moe-training-acceleration-deepep-qwen3.html) · [RL 训练加速](/2026/05/08/rl-training-qwen3-vllm-verl.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [MoE 训练加速](/posts/moe-training-acceleration-deepep-qwen3/) · [RL 训练加速](/posts/rl-training-qwen3-vllm-verl/)
 >
 > **最后更新：2026-05-08**
 
@@ -628,9 +628,9 @@ Moonshot 自家 **Kimi-Audio / Kimi-VL** 是否用 MuonClip，**公开资料未�
 - [IntuitionLabs — K2 Technical Deep Dive](https://intuitionlabs.ai/articles/kimi-k2-technical-deep-dive)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [MoE 训练加速](/2026/05/08/moe-training-acceleration-deepep-qwen3.html)
-- [RL 训练加速](/2026/05/08/rl-training-qwen3-vllm-verl.html)
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [MoE 训练加速](/posts/moe-training-acceleration-deepep-qwen3/)
+- [RL 训练加速](/posts/rl-training-qwen3-vllm-verl/)
 
 ---
 

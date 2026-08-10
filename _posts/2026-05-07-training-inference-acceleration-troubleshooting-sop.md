@@ -8,7 +8,7 @@ tags: [pytorch, vllm, agent, methodology, debugging]
 mermaid: true
 ---
 
-> 这是 [《训推工程师 & AI Agent 时代的高效 CLI 工具栈》](/2026/05/07/training-inference-engineer-cli-toolkit.html) 的姊妹篇。
+> 这是 [《训推工程师 & AI Agent 时代的高效 CLI 工具栈》](/posts/training-inference-engineer-cli-toolkit/) 的姊妹篇。
 >
 > 前一篇讲"**用什么工具**"，这一篇讲"**遇到问题怎么从症状一路打到根因**"——训推工程师的排障地图。每个症状下给出定位动线 + 对应工具 + 关键决策点 + 权威资料链接。
 >
@@ -340,7 +340,7 @@ torch.compile(model, fullgraph=True, mode="max-autotune")
 
 ## 八、让 AI Agent 跑完整 SOP 的一段 prompt
 
-把下面这段塞进 `AGENTS.md`，配合 CLI toolkit 文里的 [§11.6 Trace 分析规则](/2026/05/07/training-inference-engineer-cli-toolkit.html#116-让-agent-分析性能-trace)，Agent 能从"出症状"一路走到"定位 + 建议"：
+把下面这段塞进 `AGENTS.md`，配合 CLI toolkit 文里的 [§11.6 Trace 分析规则](/posts/training-inference-engineer-cli-toolkit/#116-让-agent-分析性能-trace)，Agent 能从"出症状"一路走到"定位 + 建议"：
 
 ````markdown
 # Training/Inference Performance Triage SOP
@@ -402,9 +402,9 @@ torch.compile(model, fullgraph=True, mode="max-autotune")
 
 ## 十、相关文章
 
-- [训推工程师 & AI Agent 时代的高效 CLI 工具栈](/2026/05/07/training-inference-engineer-cli-toolkit.html)（本篇姊妹篇：讲工具）
-- [语音模型预处理流程及常用术语详解](/2026/05/07/speech-model-preprocessing-glossary.html)
-- [语音识别模型架构演进：从 HMM-GMM 到 Whisper 到 Qwen3-ASR](/2026/05/07/speech-recognition-architecture-evolution.html)
+- [训推工程师 & AI Agent 时代的高效 CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/)（本篇姊妹篇：讲工具）
+- [语音模型预处理流程及常用术语详解](/posts/speech-model-preprocessing-glossary/)
+- [语音识别模型架构演进：从 HMM-GMM 到 Whisper 到 Qwen3-ASR](/posts/speech-recognition-architecture-evolution/)
 
 ---
 

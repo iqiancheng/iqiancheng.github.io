@@ -10,7 +10,7 @@ mermaid: true
 
 > 训推加速系列深化之"端侧多模态"专题。2024~2026 多模态模型从"云端专属"下沉到"手机 / 笔记本 / 嵌入式"——**<3B 参数 + <5GB 显存 + 实时性** 三重约束下的端到端多模态加速栈。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [语音 / 音频加速](/2026/05/08/speech-audio-acceleration-stack.html) · [MoE→Dense 蒸馏](/2026/05/08/moe-to-dense-distillation.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [语音 / 音频加速](/posts/speech-audio-acceleration-stack/) · [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：MiniCPM-o 4.0 / Gemma 3n / Qwen3-Omni 手机端都是 2025~2026 的新东西，本文反映 2026 年中快照。
 
@@ -449,9 +449,9 @@ NPU: 无 / Jetson GPU
 - [Gemma 3n Hugging Face](https://huggingface.co/google/gemma-3n-E4B-it)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [语音 / 音频加速](/2026/05/08/speech-audio-acceleration-stack.html)
-- [MoE → Dense 蒸馏](/2026/05/08/moe-to-dense-distillation.html)（端侧模型往往是 MoE 蒸馏出来的）
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [语音 / 音频加速](/posts/speech-audio-acceleration-stack/)
+- [MoE → Dense 蒸馏](/posts/moe-to-dense-distillation/)（端侧模型往往是 MoE 蒸馏出来的）
 
 ---
 

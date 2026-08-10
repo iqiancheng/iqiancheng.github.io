@@ -11,7 +11,7 @@ math: true
 
 > 训推加速系列深化之"机器人 VLA"专题。**Vision-Language-Action（VLA）模型**是 2024~2026 机器人领域最大范式变化——把 VLM backbone 接上 action head，输出关节 / 末端控制。和对话 LLM 不同，VLA 的加速核心目标不是吞吐而是**控制频率（20~50 Hz）** 和 **sim-to-real 一致性**。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html) · [端侧多模态](/2026/05/08/edge-multimodal-end-to-end.html) · [RL 训练加速](/2026/05/08/rl-training-qwen3-vllm-verl.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [端侧多模态](/posts/edge-multimodal-end-to-end/) · [RL 训练加速](/posts/rl-training-qwen3-vllm-verl/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：OpenVLA / π0 / RDT-1B / GR00T 都是 2024~2025 新东西，本文反映 2026 年中快照，数值为公开资料量级。
 
@@ -401,10 +401,10 @@ System 1: 100M policy bf16 @ 100 Hz (低层控制)
 - [1X Technologies](https://www.1x.tech/)
 
 **系列文**：
-- [训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)
-- [端侧多模态](/2026/05/08/edge-multimodal-end-to-end.html)
-- [RL 训练加速](/2026/05/08/rl-training-qwen3-vllm-verl.html)
-- [图像 Diffusion 深化](/2026/05/08/image-diffusion-acceleration-flux-sd3-dmd2.html)（共享 Flow Matching）
+- [训推加速技术地图](/posts/training-inference-acceleration-map/)
+- [端侧多模态](/posts/edge-multimodal-end-to-end/)
+- [RL 训练加速](/posts/rl-training-qwen3-vllm-verl/)
+- [图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/)（共享 Flow Matching）
 
 ---
 

@@ -9,7 +9,7 @@ tags: [agent, proxy, methodology]
 
 > **状态**：WIP。这篇是调研笔记，不是完整教程。结论很快就到：**Free Plan 能配置，但 Agent / Composer / Edit 都跑不动，只有 Ask 聊天模式可用**。下面把坑列清楚，给有同样诉求的同学少踩几次。
 >
-> 相关背景：本站 [Claude Code CLI 第三方网关](/2026/05/07/claude-code-cli-third-party-gateway.html)、[Codex CLI 第三方网关](/2026/05/07/codex-cli-third-party-gateway.html)。
+> 相关背景：本站 [Claude Code CLI 第三方网关](/posts/claude-code-cli-third-party-gateway/)、[Codex CLI 第三方网关](/posts/codex-cli-third-party-gateway/)。
 >
 > 本文所有"网关域名"都用 `https://gateway.example.com` 作占位；实际替换成你的 BlueRouter 部署地址。
 

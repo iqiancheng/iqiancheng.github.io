@@ -9,7 +9,7 @@ mermaid: true
 math: true
 ---
 
-> 姊妹篇：[效率指标全景](/2026/05/08/training-inference-efficiency-metrics.html) · [精度对齐实战](/2026/05/08/fused-kernel-accuracy-alignment.html) · [GPU SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
+> 姊妹篇：[效率指标全景](/posts/training-inference-efficiency-metrics/) · [精度对齐实战](/posts/fused-kernel-accuracy-alignment/) · [GPU SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
 >
 > 效率指标讲"多快"，效果指标讲"没变差"。加速最大的陷阱不是"跑不起来"，而是**跑起来了但效果悄悄掉了**。这篇梳理训推加速场景下所有常用效果指标——从 loss 和 perplexity 这些"模型自己考自己"的，到 MMLU/GSM8K 这些"下游任务"的，到 Elo 和 MOS 这些"人来判的"——一次讲清什么情况用什么。
 >
@@ -461,7 +461,7 @@ graph TD
 
 ## 九、加速后的对齐工作流（简述）
 
-详见 [《精度对齐实战》](/2026/05/08/fused-kernel-accuracy-alignment.html)。本篇视角下的**评测节点**：
+详见 [《精度对齐实战》](/posts/fused-kernel-accuracy-alignment/)。本篇视角下的**评测节点**：
 
 ```mermaid
 sequenceDiagram
@@ -507,9 +507,9 @@ sequenceDiagram
 - [ECE — Calibration of Modern NN](https://arxiv.org/abs/1706.04599)
 - [DNSMOS — 语音质量自动评估](https://arxiv.org/abs/2110.01763)
 - 系列：
-  - [效率指标全景](/2026/05/08/training-inference-efficiency-metrics.html)
-  - [精度对齐实战](/2026/05/08/fused-kernel-accuracy-alignment.html)
-  - [GPU/NCCL SOP](/2026/05/07/training-inference-acceleration-troubleshooting-sop.html)
+  - [效率指标全景](/posts/training-inference-efficiency-metrics/)
+  - [精度对齐实战](/posts/fused-kernel-accuracy-alignment/)
+  - [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
 
 ---
 

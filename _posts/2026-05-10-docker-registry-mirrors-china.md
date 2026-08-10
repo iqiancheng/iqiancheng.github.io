@@ -13,7 +13,7 @@ toc: true
 
 ## 背景
 
-[前三篇 NAS 博文](/2026/05/10/synology-nas-advanced-exploration.html) 规划了 Docker 容器扩展路线，但在实际 `docker pull` 时发现 Docker Hub (`registry-1.docker.io`) 被墙，所有国内传统镜像站也大面积停服。需要找到 2026 年仍可用的镜像加速方案。
+[前三篇 NAS 博文](/posts/synology-nas-advanced-exploration/) 规划了 Docker 容器扩展路线，但在实际 `docker pull` 时发现 Docker Hub (`registry-1.docker.io`) 被墙，所有国内传统镜像站也大面积停服。需要找到 2026 年仍可用的镜像加速方案。
 
 测试环境：Synology SA6400, DSM 7.x, Docker 24.0.2, 中国移动宽带。
 

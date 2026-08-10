@@ -11,7 +11,7 @@ math: true
 
 > 本文是训推加速系列里第一篇专门讲**语音 / 音频**的 post。系列前面的篇讲的都是 LLM、Diffusion、MoE——这篇聚焦语音栈独有的加速技术：**Audio Tokenizer / AuT / K2 / Zipformer / Flow Matching TTS / Mimi codec / HiFi-GAN / Full-duplex 对话**。
 >
-> 姊妹篇：[训推加速技术地图](/2026/05/08/training-inference-acceleration-map.html)（全局视角 + 术语表）· [语音模型基础篇](/2026/05/07/speech-models-fundamentals-pretrained-asr.html)（CTC vs Seq2Seq）· [语音识别架构演进](/2026/05/07/speech-recognition-architecture-evolution.html)（从 HMM-GMM 到 Qwen3-ASR）· [语音模型预处理与术语](/2026/05/07/speech-model-preprocessing-glossary.html)
+> 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/)（全局视角 + 术语表）· [语音模型基础篇](/posts/speech-models-fundamentals-pretrained-asr/)（CTC vs Seq2Seq）· [语音识别架构演进](/posts/speech-recognition-architecture-evolution/)（从 HMM-GMM 到 Qwen3-ASR）· [语音模型预处理与术语](/posts/speech-model-preprocessing-glossary/)
 >
 > ⚠️ **时效声明（最后更新：2026-05-08）**：语音模型生态在 2024~2026 两年里迭代极快（Moshi / Qwen3-ASR / CosyVoice 2 / F5-TTS / GPT-4o Realtime 等都是这两年新出）。本文清单反映**2026 年中**的主流配置，半年到一年后可能部分被取代。
 
@@ -65,7 +65,7 @@ graph LR
 
 ## 二、基础 recap
 
-完整基础见 [语音模型预处理与术语](/2026/05/07/speech-model-preprocessing-glossary.html)。这里只放加速需要的最小集：
+完整基础见 [语音模型预处理与术语](/posts/speech-model-preprocessing-glossary/)。这里只放加速需要的最小集：
 
 **采样定理**：连续信号要无损数字化，采样率 $f_s$ 需满足
 
@@ -658,10 +658,10 @@ Tokenizer: Mimi（Moshi 用）或 自研 audio token
 - [TTS Arena](https://huggingface.co/spaces/TTS-AGI/TTS-Arena)
 
 **系列文**：
-- [训推加速技术地图 + 术语表](/2026/05/08/training-inference-acceleration-map.html)
-- [语音模型基础篇](/2026/05/07/speech-models-fundamentals-pretrained-asr.html)
-- [语音识别架构演进](/2026/05/07/speech-recognition-architecture-evolution.html)
-- [语音模型预处理与术语](/2026/05/07/speech-model-preprocessing-glossary.html)
+- [训推加速技术地图 + 术语表](/posts/training-inference-acceleration-map/)
+- [语音模型基础篇](/posts/speech-models-fundamentals-pretrained-asr/)
+- [语音识别架构演进](/posts/speech-recognition-architecture-evolution/)
+- [语音模型预处理与术语](/posts/speech-model-preprocessing-glossary/)
 
 ---
 
