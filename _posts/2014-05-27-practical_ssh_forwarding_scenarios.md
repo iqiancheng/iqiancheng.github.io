@@ -11,6 +11,7 @@ SSH port forwarding is a powerful tool for securely tunneling network traffic. H
 ## 1. Local Forwarding (`-L`)
 
 **Usage:**
+
 ```bash
 ssh user@remote_host -L 8080:target_host:80
 ```
@@ -31,6 +32,7 @@ The SSH client listens on your local port 8080, forwards traffic through the SSH
 ## 2. Remote Forwarding (`-R`)
 
 **Usage:**
+
 ```bash
 ssh user@remote_host -R 9090:localhost:3000
 ```
@@ -51,6 +53,7 @@ The SSH server (`remote_host`) listens on port `9090` and forwards incoming traf
 ## 3. Dynamic Forwarding (`-D`)
 
 **Usage:**
+
 ```bash
 ssh user@remote_host -D 1080
 ```

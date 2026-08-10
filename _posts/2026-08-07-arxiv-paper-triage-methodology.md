@@ -81,6 +81,7 @@ tags: [llm, paper, methodology, workflow]
 这套方法论的输出是排序后的短名单，然后自动交给 paper-post 做精读——自动提取论文中的 1-3 张关键插图（架构图、核心机制、主要结果），验证图片链接，然后写一篇紧扣插图的高信息密度博文。
 
 两个工具配合使用，完整的流程是：
+
 ```
 arXiv 关键词搜索 → paper-triage 筛选 → paper-post 精读
 ```

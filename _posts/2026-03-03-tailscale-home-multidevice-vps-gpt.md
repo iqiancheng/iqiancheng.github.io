@@ -179,6 +179,7 @@ Tailscale 的 ACL/Via 是**按 IP 段与策略（tag/group）**做路由与访�
    ```bash
    sudo tailscale up --advertise-routes=192.168.1.0/24
    ```
+
    若有多段可写：`--advertise-routes=192.168.1.0/24,10.0.0.0/24`
 3. 在 Admin 控制台：Machines → 找到 Mac mini → **Edit route settings** → 启用对应子网路由。
 

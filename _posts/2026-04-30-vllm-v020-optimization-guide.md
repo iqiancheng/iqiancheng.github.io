@@ -232,6 +232,7 @@ vllm serve <model> \
 | **FA4** | Blackwell SM100（B200） | 最新 |
 
 自动选择，也可手动指定：
+
 ```bash
 vllm serve <model> --attention-config '{"flash_attn_version": 3}'
 ```

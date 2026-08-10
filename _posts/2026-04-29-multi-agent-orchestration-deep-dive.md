@@ -364,12 +364,15 @@ graph LR
 ### 5.3 Goal 编写的好坏对比
 
 **❌ Too broad（太宽泛）：**
+
 ```
 goal: "Fix all the tests"
 ```
+
 子 Agent 拿到后不知道从哪开始，可能浪费大量 token 探索。
 
 **✅ Specific（具体聚焦）：**
+
 ```
 goal: "Fix the 3 failing tests in src/agents/agent-tool-abort.test.ts:
 
@@ -387,11 +390,13 @@ Return: Summary of root cause and changes."
 ```
 
 **❌ No context（没有上下文）：**
+
 ```
 goal: "Fix the race condition"
 ```
 
 **✅ Context-rich（上下文丰富）：**
+
 ```
 goal: "Fix the race condition in tool-approval.test.ts"
 context: "

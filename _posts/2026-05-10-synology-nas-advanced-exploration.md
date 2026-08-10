@@ -213,6 +213,7 @@ fs = FileStation(ip, port, user, password, dsm_version=7)
 这是最高优先级的方向，因为立即可行且有直接收益。
 
 **Docker 容器监控 + 自愈脚本**：
+
 ```python
 from synology_api.docker_api import DockerAPI
 import smtplib

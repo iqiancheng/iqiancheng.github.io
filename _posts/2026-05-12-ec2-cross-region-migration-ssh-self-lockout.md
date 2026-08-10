@@ -558,6 +558,7 @@ logingracetime 120
 两种防线：
 
 **① 告警：Budget 通知**（被动）
+
 ```bash
 ACCT=$(aws sts get-caller-identity --query Account --output text)
 

@@ -87,6 +87,7 @@ a  = attention heads
 | 输出投影后 | (b, s, h) | 2bsh |
 
 **Attention 小计：**
+
 ```
 ≈ 10bsh + 5bas²
 ```
@@ -101,6 +102,7 @@ a  = attention heads
 | 第二个线性层输出 | (b, s, h) | 2bsh |
 
 **FFN 小计：**
+
 ```
 ≈ 20bsh
 ```

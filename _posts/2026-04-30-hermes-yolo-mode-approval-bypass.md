@@ -157,6 +157,7 @@ grep HERMES_YOLO_MODE ~/.hermes/.env
 ```
 
 期望输出：
+
 ```
 mode: off
 cron_mode: approve
