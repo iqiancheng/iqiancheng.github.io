@@ -2,8 +2,8 @@
 layout: post
 title: How to Check Charging Power (Watts) on macOS
 date: 2023-07-06 00:33:00 +0800
-categories: [Gadgets, Mac]
-tags: [macOS]
+categories: [tooling, hardware]
+tags: [tooling, hardware, cli]
 ---
 
 Want to know exactly how much power your MacBook is drawing from its charger? Here are several ways—ranging from command-line tools to a GUI app—that help you find out the charging wattage on macOS.
