@@ -111,7 +111,7 @@
     input.addEventListener('focus', () => { ensureIndex(); }, { passive: true });
     input.addEventListener('input', () => { if (!ready) ensureIndex(); }, { passive: true });
 
-    // Optional warm on idle (after post content has had time to paint)
+    /* Optional warm on idle after post content has had time to paint. */
     if ('requestIdleCallback' in window) {
       requestIdleCallback(() => { ensureIndex(); }, { timeout: 8000 });
     }

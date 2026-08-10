@@ -94,8 +94,8 @@
 
       function upgradeBlocks() {
         document.querySelectorAll('pre.language-mermaid, code.language-mermaid').forEach(function (node) {
-          // Chirpy post.min.js uses .language-mermaid → pre.mermaid when mermaid is present.
-          // Replicate the conversion if post.min.js skipped init.
+          /* Chirpy post.min.js uses .language-mermaid -> pre.mermaid when mermaid is present.
+             Replicate the conversion if post.min.js skipped init. */
           var el = node.classList.contains('language-mermaid') && node.tagName === 'CODE'
             ? node
             : node.querySelector('code') || node;
@@ -164,7 +164,7 @@
           targets.forEach(function (t) { io.observe(t); });
         }
 
-        // Idle / timeout fallback so diagrams still render without scroll
+        /* Idle / timeout fallback so diagrams still render without scroll. */
         var idle = function () { loadMermaid(); };
         if ('requestIdleCallback' in window) {
           requestIdleCallback(idle, { timeout: 2500 });
@@ -202,7 +202,7 @@
           mj.async = true;
           mj.src = {{ site.data.origin[type].mathjax.js | jsonify }};
           mj.onload = function () {
-            // Ensure a second pass after async fonts/layout (inline next to ** / text).
+            /* Ensure a second pass after async fonts/layout (inline next to ** / text). */
             if (window.MathJax && MathJax.typesetPromise) {
               MathJax.typesetPromise().catch(function (err) {
                 console.warn('[mathjax]', err);
@@ -213,7 +213,7 @@
         };
         document.head.appendChild(conf);
       }
-      // Prefer quick idle; fall back to load. Keep timeout short so formulas appear soon.
+      /* Prefer quick idle; fall back to load. Keep timeout short so formulas appear soon. */
       if ('requestIdleCallback' in window) {
         requestIdleCallback(loadMathJax, { timeout: 800 });
       } else {
