@@ -1,28 +1,65 @@
-# Bundler cache
-.bundle
-vendor
-Gemfile.lock
-
-# Jekyll cache
-.jekyll-cache
-.jekyll-metadata
-_site
-
-# RubyGems
+# ── Ruby / Bundler ──────────────────────────────────────────
+.bundle/
+vendor/bundle/
+vendor/cache/
+vendor/gems/
+vendor/ruby/
 *.gem
+*.gemspec
 
-# NPM dependencies
-node_modules
+# Keep Gemfile.lock for reproducible CI (ruby/setup-ruby bundler-cache)
+# (do not ignore Gemfile.lock)
+
+# ── Jekyll ──────────────────────────────────────────────────
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.jekyll-cache/**/*
+
+# ── Node (if used for tooling) ──────────────────────────────
+node_modules/
 package-lock.json
+npm-debug.log*
+yarn-error.log*
 
-# IDE configurations
-.idea
+# ── Chirpy build artifacts ──────────────────────────────────
+_sass/vendors/
+assets/js/dist/
+
+# ── OS / Editor ─────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+*.swo
+
+# IDE — keep shared VS Code workspace settings
+.idea/
+*.iml
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/tasks.json
 
-# Misc
-_sass/vendors
-assets/js/dist
-.DS_Store
+# ── Env / secrets / local overrides ─────────────────────────
+.env
+.env.*
+!.env.example
+*.local
+_config.local.yml
+local_config.yml
+
+# ── Logs & temp ─────────────────────────────────────────────
+*.log
+tmp/
+temp/
+.cache/
+
+# ── Misc ────────────────────────────────────────────────────
+.direnv/
+.ruby-version
+.ruby-gemset
