@@ -1,0 +1,227 @@
+<!--
+  Site override of Chirpy js-selector — post-page critical path optimized.
+
+  Profile findings (local post pages):
+  - mermaid.min.js  ≈ 2.5 MB  (loaded on ~90 posts when page.mermaid)
+  - mathjax tex-chtml ≈ 1.1 MB (page.math)
+  - combined vendor bundle + search on every post even if unused
+
+  Strategy:
+  1) Keep dayjs / toc / clipboard / lazy-polyfill on the deferred combine URL
+     (needed for post chrome: dates, TOC, code copy).
+  2) Do NOT put mermaid or simple-jekyll-search into the combine URL.
+  3) Lazy-load mermaid when a diagram nears the viewport (or on idle).
+  4) Lazy-load MathJax after first paint / idle.
+  5) Glightbox only if the article actually contains <img>.
+  6) Search lib is loaded by search-loader.html on demand.
+-->
+
+{% assign urls = '' %}
+
+{% if page.layout == 'post' or page.layout == 'page' or page.layout == 'home' %}
+  {% assign urls = urls | append: site.data.origin[type]['lazy-polyfill'].js %}
+
+  {% unless page.layout == 'home' %}
+    {% if page.content contains '<img' %}
+      {% assign urls = urls
+        | append: ','
+        | append: site.data.origin[type].glightbox.js
+      %}
+    {% endif %}
+    {% if page.content contains '<code' or page.content contains '<pre' %}
+      {% assign urls = urls
+        | append: ','
+        | append: site.data.origin[type].clipboard.js
+      %}
+    {% endif %}
+  {% endunless %}
+{% endif %}
+
+{% if page.layout == 'home'
+  or page.layout == 'post'
+  or page.layout == 'archives'
+  or page.layout == 'category'
+  or page.layout == 'tag'
+%}
+  {% assign locale = include.lang | split: '-' | first %}
+  {% if urls != '' %}
+    {% assign urls = urls | append: ',' %}
+  {% endif %}
+  {% assign urls = urls
+    | append: site.data.origin[type].dayjs.js.common
+    | append: ','
+    | append: site.data.origin[type].dayjs.js.locale
+    | replace: ':LOCALE', locale
+    | append: ','
+    | append: site.data.origin[type].dayjs.js.relativeTime
+    | append: ','
+    | append: site.data.origin[type].dayjs.js.localizedFormat
+  %}
+{% endif %}
+
+{% if page.content contains '<h2' or page.content contains '<h3' and site.toc and page.toc %}
+  {% if urls != '' %}
+    {% assign urls = urls | append: ',' %}
+  {% endif %}
+  {% assign urls = urls | append: site.data.origin[type].toc.js %}
+{% endif %}
+
+{% comment %} Search JS intentionally omitted — see search-loader.html {% endcomment %}
+{% comment %} Mermaid intentionally omitted — lazy loader below {% endcomment %}
+
+{% if urls != '' %}
+  {% include jsdelivr-combine.html urls=urls %}
+{% endif %}
+
+{% case page.layout %}
+  {% when 'home', 'categories', 'post', 'page' %}
+    {% assign js = page.layout %}
+  {% when 'archives', 'category', 'tag' %}
+    {% assign js = 'misc' %}
+  {% else %}
+    {% assign js = 'commons' %}
+{% endcase %}
+
+{% capture script %}/assets/js/dist/{{ js }}.min.js{% endcapture %}
+<script defer src="{{ script | relative_url }}"></script>
+
+{% if page.mermaid %}
+  <!-- Mermaid: ~2.5MB — load only when a diagram is near the viewport (fallback: idle). -->
+  <script>
+    (function () {
+      var MERMAID_SRC = {{ site.data.origin[type].mermaid.js | jsonify }};
+      var loading = null;
+
+      function upgradeBlocks() {
+        document.querySelectorAll('pre.language-mermaid, code.language-mermaid').forEach(function (node) {
+          // Chirpy post.min.js uses .language-mermaid → pre.mermaid when mermaid is present.
+          // Replicate the conversion if post.min.js skipped init.
+          var el = node.classList.contains('language-mermaid') && node.tagName === 'CODE'
+            ? node
+            : node.querySelector('code') || node;
+          var text = el.textContent;
+          var pre = document.createElement('pre');
+          pre.className = 'mermaid';
+          pre.textContent = text;
+          var hide = node.closest('div.highlight') || node.parentElement;
+          if (hide && hide !== document.body) {
+            hide.classList.add('d-none');
+            hide.after(pre);
+          } else {
+            node.replaceWith(pre);
+          }
+        });
+      }
+
+      function runMermaid() {
+        if (typeof mermaid === 'undefined' || typeof mermaid.initialize !== 'function') return;
+        var theme = 'default';
+        try {
+          if (window.Theme && Theme.visualState === Theme.DARK) theme = 'dark';
+        } catch (e) {}
+        upgradeBlocks();
+        mermaid.initialize({ startOnLoad: false, theme: theme });
+        if (typeof mermaid.run === 'function') {
+          mermaid.run({ querySelector: 'pre.mermaid' });
+        } else {
+          mermaid.init(null, 'pre.mermaid');
+        }
+      }
+
+      function loadMermaid() {
+        if (window.mermaid) {
+          runMermaid();
+          return Promise.resolve();
+        }
+        if (loading) return loading;
+        loading = new Promise(function (resolve, reject) {
+          var s = document.createElement('script');
+          s.src = MERMAID_SRC;
+          s.async = true;
+          s.onload = function () { runMermaid(); resolve(); };
+          s.onerror = reject;
+          document.head.appendChild(s);
+        });
+        return loading;
+      }
+
+      function arm() {
+        var targets = document.querySelectorAll(
+          'pre.language-mermaid, div.language-mermaid, code.language-mermaid, pre.mermaid'
+        );
+        if (!targets.length) return;
+
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            for (var i = 0; i < entries.length; i++) {
+              if (entries[i].isIntersecting) {
+                io.disconnect();
+                loadMermaid();
+                break;
+              }
+            }
+          }, { rootMargin: '200px 0px' });
+          targets.forEach(function (t) { io.observe(t); });
+        }
+
+        // Idle / timeout fallback so diagrams still render without scroll
+        var idle = function () { loadMermaid(); };
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(idle, { timeout: 2500 });
+        } else {
+          setTimeout(idle, 1500);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', arm);
+      } else {
+        arm();
+      }
+    })();
+  </script>
+{% endif %}
+
+{% if page.math %}
+  <!-- MathJax: ~1.1MB — defer until after first paint / idle so text appears first. -->
+  <script>
+    (function () {
+      var loaded = false;
+      function loadMathJax() {
+        if (loaded) return;
+        loaded = true;
+        var conf = document.createElement('script');
+        conf.src = '{{ "/assets/js/data/mathjax.js" | relative_url }}';
+        conf.onload = function () {
+          var poly = document.createElement('script');
+          poly.src = 'https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6';
+          poly.async = true;
+          document.head.appendChild(poly);
+          var mj = document.createElement('script');
+          mj.id = 'MathJax-script';
+          mj.async = true;
+          mj.src = {{ site.data.origin[type].mathjax.js | jsonify }};
+          document.head.appendChild(mj);
+        };
+        document.head.appendChild(conf);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadMathJax, { timeout: 1800 });
+      } else {
+        window.addEventListener('load', function () { setTimeout(loadMathJax, 0); });
+      }
+    })();
+  </script>
+{% endif %}
+
+{% if page.layout == 'post' %}
+  {% assign provider = site.pageviews.provider %}
+  {% if provider and provider != empty %}
+    {% case provider %}
+      {% when 'goatcounter' %}
+        {% if site.analytics[provider].id != empty and site.analytics[provider].id %}
+          {% include pageviews/{{ provider }}.html %}
+        {% endif %}
+    {% endcase %}
+  {% endif %}
+{% endif %}

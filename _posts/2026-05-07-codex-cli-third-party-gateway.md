@@ -5,6 +5,7 @@ date: 2026-05-07 00:00:00 +0800
 author: Joseph
 categories: [工具, LLM]
 tags: [llm, agent, cli, proxy]
+mermaid: true
 ---
 
 ## TL;DR

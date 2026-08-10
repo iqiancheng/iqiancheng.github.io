@@ -5,6 +5,7 @@ date: 2026-04-30 00:00:00 +0800
 author: Joseph
 categories: [工具, Agent]
 tags: [agent, github]
+mermaid: true
 ---
 
 ## 背景

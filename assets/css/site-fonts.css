@@ -1,0 +1,22 @@
+/* Local system font stack — no remote font download on post navigation */
+:root {
+  --site-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Source Han Sans SC", sans-serif;
+  --site-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+html,
+body {
+  font-family: var(--site-font-sans) !important;
+}
+
+code,
+pre,
+kbd,
+samp,
+.highlight,
+.rouge-code {
+  font-family: var(--site-font-mono) !important;
+}

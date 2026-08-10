@@ -5,6 +5,7 @@ date: 2026-04-29 00:00:00 +0800
 author: Joseph
 categories: [AI Agent, 架构]
 tags: [agent]
+mermaid: true
 ---
 
 ## 引子

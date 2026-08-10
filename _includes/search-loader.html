@@ -1,0 +1,119 @@
+<!--
+  Search loader — library + index both on-demand (not on critical post path).
+-->
+
+{% capture result_elem %}
+  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">
+    <header>
+      <h2><a href="{url}">{title}</a></h2>
+      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">
+        {categories}
+        {tags}
+      </div>
+    </header>
+    <p>{content}</p>
+  </article>
+{% endcapture %}
+
+{% capture not_found %}<p class="mt-5">{{ site.data.locales[include.lang].search.no_results }}</p>{% endcapture %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const jsonUrl = '{{ "/assets/js/data/search.json" | relative_url }}';
+    const SEARCH_JS = {{ site.data.origin.cors.search.js | jsonify }};
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('search-results');
+    if (!input || !results) return;
+
+    let ready = false;
+    let loading = null;
+
+    const template = '{{ result_elem | strip_newlines }}';
+    const noResults = '{{ not_found | strip_newlines }}';
+
+    function middleware(prop, value) {
+      if (prop === 'categories') {
+        if (!value) return '';
+        return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+      }
+      if (prop === 'tags') {
+        if (!value) return '';
+        return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+      }
+      return undefined;
+    }
+
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        if (document.querySelector('script[src="' + src + '"]') && window.SimpleJekyllSearch) {
+          resolve();
+          return;
+        }
+        const s = document.createElement('script');
+        s.src = src;
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+
+    function wireSearch(data) {
+      if (typeof SimpleJekyllSearch !== 'function') {
+        throw new Error('SimpleJekyllSearch missing');
+      }
+      SimpleJekyllSearch({
+        searchInput: input,
+        resultsContainer: results,
+        json: data,
+        searchResultTemplate: template,
+        noResultsText: noResults,
+        limit: 20,
+        fuzzy: false,
+        exclude: ['url', 'date'],
+        templateMiddleware: middleware
+      });
+      ready = true;
+    }
+
+    function ensureIndex() {
+      if (ready) return Promise.resolve();
+      if (loading) return loading;
+
+      loading = loadScript(SEARCH_JS)
+        .then(() => fetch(jsonUrl, { credentials: 'same-origin' }))
+        .then((r) => {
+          if (!r.ok) throw new Error('search.json HTTP ' + r.status);
+          return r.json();
+        })
+        .then((data) => {
+          if (!Array.isArray(data)) throw new Error('search.json is not an array');
+          wireSearch(data);
+          if (input.value) {
+            const v = input.value;
+            input.value = v + ' ';
+            input.dispatchEvent(new Event('input'));
+            input.value = v;
+            input.dispatchEvent(new Event('input'));
+          }
+        })
+        .catch((err) => {
+          console.error('[search]', err);
+          results.innerHTML = '<p class="mt-5 text-muted">Search index failed to load.</p>';
+          loading = null;
+        });
+
+      return loading;
+    }
+
+    const trigger = document.getElementById('search-trigger');
+    if (trigger) trigger.addEventListener('click', () => { ensureIndex(); }, { passive: true });
+    input.addEventListener('focus', () => { ensureIndex(); }, { passive: true });
+    input.addEventListener('input', () => { if (!ready) ensureIndex(); }, { passive: true });
+
+    // Optional warm on idle (after post content has had time to paint)
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => { ensureIndex(); }, { timeout: 8000 });
+    }
+  });
+</script>

@@ -6,6 +6,7 @@ author: Joseph
 categories: [工具, LLM]
 tags: [agent, tooling, cli]
 math: true
+mermaid: true
 ---
 
 ## TL;DR

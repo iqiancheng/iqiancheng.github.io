@@ -5,6 +5,7 @@ date: 2026-04-30 00:00:00 +0800
 author: Joseph
 categories: [LLM推理, 优化]
 tags: [inference, attention, kv-cache, quantization, speculative-decoding]
+mermaid: true
 ---
 
 ## 引子

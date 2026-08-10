@@ -138,7 +138,7 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: false  # disabled: avoid SW overhead on every navigation
   cache:
     enabled: false # The option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
@@ -147,7 +147,7 @@ pwa:
     deny_paths:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
-paginate: 10
+paginate: 12
 
 # The base URL of your site
 baseurl: ""
@@ -163,7 +163,7 @@ kramdown:
     span:
       line_numbers: false
     block:
-      line_numbers: true
+      line_numbers: false
       start_line: 1
 
 collections:
@@ -208,6 +208,10 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - ".DS_Store"
+  - "**/.DS_Store"
+  - "tmp"
+  - "temp"
   - docs
   - tools
   - README.md

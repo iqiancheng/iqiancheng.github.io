@@ -7,6 +7,14 @@ swcache: true
 {%- for post in site.posts -%}
   {%- if post.title == nil or post.title == "" -%}{%- continue -%}{%- endif -%}
 
+  {%- comment -%}
+    Search index tuned for Simple-Jekyll-Search (literal strategy):
+    - jsonify everywhere → valid JSON (fixes \sum etc. breaking parse)
+    - body: title + tags (+ hyphen→space) + categories + description + ~1200 body chars
+    - content: short snippet for the result list UI only
+    - exclude url/date at query time so long body drives recall
+  {%- endcomment -%}
+
   {%- capture raw_body -%}
     {{- post.content | strip_html | strip_newlines | normalize_whitespace -}}
   {%- endcapture -%}

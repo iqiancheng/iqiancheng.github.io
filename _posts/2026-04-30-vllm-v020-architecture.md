@@ -5,6 +5,7 @@ date: 2026-04-30 00:00:00 +0800
 author: Joseph
 categories: [LLM推理, 架构]
 tags: [attention, kv-cache, speculative-decoding, kernels, vllm]
+mermaid: true
 ---
 
 ## 引子
