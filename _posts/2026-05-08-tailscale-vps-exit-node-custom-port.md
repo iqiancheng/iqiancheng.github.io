@@ -17,7 +17,7 @@ tags: [networking, security, devops]
 4. **防火墙/内核转发**规范配置，避免装完用不了
 5. **DNS 不泄漏**给运营商
 
-这篇把从零到手机能刷 YouTube 的整个流程固化下来，含踩坑点。另一篇更偏 overview 的笔记见 [2026-03-03 Tailscale 家庭多设备与 VPS 组网](2026-03-03-tailscale-home-multidevice-vps-gpt.md)，本文聚焦**单台 VPS exit node 的极简实操**。
+这篇把从零到手机能刷 YouTube 的整个流程固化下来，含踩坑点。另一篇更偏 overview 的笔记见 [2026-03-03 Tailscale 家庭多设备与 VPS 组网](/posts/tailscale-home-multidevice-vps-gpt/)，本文聚焦**单台 VPS exit node 的极简实操**。
 
 ---
 
@@ -349,4 +349,4 @@ sudo sysctl -p
 ---
 
 _相关笔记_：
-- [2026-03-03 Tailscale 家庭多设备与 VPS 组网：GPT 访问、出口节点与文件共享](2026-03-03-tailscale-home-multidevice-vps-gpt.md) — 更偏 overview 的家庭组网场景
+- [2026-03-03 Tailscale 家庭多设备与 VPS 组网：GPT 访问、出口节点与文件共享](/posts/tailscale-home-multidevice-vps-gpt/) — 更偏 overview 的家庭组网场景

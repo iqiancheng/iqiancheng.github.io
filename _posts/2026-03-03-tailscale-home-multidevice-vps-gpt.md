@@ -247,7 +247,7 @@ Tailscale 的 ACL/Via 是**按 IP 段与策略（tag/group）**做路由与访�
 **自建 DERP / Headscale**
 
 - [Self-built tailscale derp relay server](https://xlog.zjan.me/tailscale-drep)（ZDawn）— 自建 DERP 中继步骤与要求。
-- [Self-hosted Headscale + DERP server](http://core.moe/self-hosted-headscale-derper)（kotoyuuko）— Headscale 控制面 + DERP 自建部署。
+- [Self-hosted Headscale + DERP server](https://core.moe/self-hosted-headscale-derper)（kotoyuuko）— Headscale 控制面 + DERP 自建部署。
 - [Headscale — DERP](https://juanfont.github.io/headscale/development/ref/derp/) — Headscale 官方 DERP 配置说明。
 
 ---

@@ -686,8 +686,8 @@ aws budgets create-budget-action --cli-input-json file:///tmp/action.json
 
 ## 延伸阅读
 
-- [Tailscale VPS Exit Node 实战](2026-05-08-tailscale-vps-exit-node-custom-port.md) —— 同一台 VPS 的 Tailscale 侧配置
-- [Tailscale 家庭多设备与 VPS 组网](2026-03-03-tailscale-home-multidevice-vps-gpt.md) —— 这套 exit node 的上游应用场景
+- [Tailscale VPS Exit Node 实战](/posts/tailscale-vps-exit-node-custom-port/) —— 同一台 VPS 的 Tailscale 侧配置
+- [Tailscale 家庭多设备与 VPS 组网](/posts/tailscale-home-multidevice-vps-gpt/) —— 这套 exit node 的上游应用场景
 - Ubuntu 官方 [SSH socket activation changelog](https://ubuntu.com/blog/openssh-editions-on-ubuntu) —— 24.04 切到 socket activation 的背景
 
 ---
