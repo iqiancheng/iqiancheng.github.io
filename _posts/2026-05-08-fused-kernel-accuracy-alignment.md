@@ -51,7 +51,7 @@ $$
 | 2 | **中间是否上 fp32** | Reference 可能全程 bf16，你的 kernel 中间上 fp32 → 更准但**不一致** | 同上 |
 | 3 | **Atomic add 顺序不确定** | 多 block 对同一地址累加，每次运行顺序都可能变 | 每次运行都抖，难复现 |
 | 4 | **Dtype cast 时机** | `x.to(fp32) * w` vs `(x * w).to(fp32)` 结果不同 | `1e-4 ~ 5e-3` |
-| 5 | **ε 的位置** | `1/sqrt(var + ε)` vs `1/sqrt(var) + ε` vs `1/(sqrt(var)+ε)` 物理含义不同 | `1e-6 ~ 1e-3`（var 小时差距明显） |
+| 5 | **ε 的位置** | `1/sqrt(var + ε)` vs `1/sqrt(var) + ε` vs $$1/(sqrt(var)+\varepsilon)$$ 物理含义不同 | `1e-6 ~ 1e-3`（var 小时差距明显） |
 | 6 | **RNG 状态** | Triton 的 PRNG 和 `torch.cuda.manual_seed` 不同流 | Dropout 位置完全不同 |
 | 7 | **Mask / 边界** | Causal mask 用 `-inf` 还是 `-1e9`？下标差一位？ | 第一个 token 可能整个错 |
 
