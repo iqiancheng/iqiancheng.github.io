@@ -6,10 +6,6 @@ author: Joseph
 tags: [training, memory, efficiency, methodology]
 ---
 
----- 作者：Austin
-- 日期：2026-05-07
-- 状态：draft（approved outline）
-
 ## 1. 定位
 
 延续训推加速系列（已完成 6 篇：CLI toolkit / GPU SOP / CPU SOP / Qwen3 fusion 识别 / Triton 实战 / 以及其他预处理姊妹篇），新增 3 篇**实战技巧深化**：
@@ -35,6 +31,7 @@ tags: [training, memory, efficiency, methodology]
 **核心价值**：给出"替换后怎么验证才算对齐"的完整 SOP
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §零 | 骨架 |
@@ -54,6 +51,7 @@ tags: [training, memory, efficiency, methodology]
 **核心价值**：把 gradient checkpointing 从"粗粒度一键开关"升级到"按 AI 值选择性开启"
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §零 | 骨架 |
@@ -75,6 +73,7 @@ tags: [training, memory, efficiency, methodology]
 **核心价值**：明确 CUDA Graph 适用边界，别在动态 shape 场景踩坑
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §零 | 骨架 |

@@ -7,9 +7,7 @@ math: true
 tags: [inference, training, methodology]
 ---
 
----- 作者：Austin
-- 状态：draft（outlines approved，待实施）
-- 关联：基于 [训推加速技术地图 post](/posts/training-inference-acceleration-map/) 的各行展开深化
+本篇基于 [训推加速技术地图 post](/posts/training-inference-acceleration-map/) 的各行展开深化。
 
 ## 0. 共享约定（所有 9 篇通用）
 
@@ -27,6 +25,7 @@ tags: [inference, training, methodology]
 **定位**：区别于 TTS 的"歌曲 / 音乐"生成加速栈；2024~2026 这条路线独立成型。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | 为什么音乐生成和 TTS 不是一回事（旋律 / 伴奏 / 人声多轨） |
@@ -49,6 +48,7 @@ tags: [inference, training, methodology]
 **定位**：把视频时间维度和 3D 空间维度的独特挑战拎出来单讲。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | 视频 ≠ 图像的加速挑战（时间一致性 / attention 立方复杂度 / 显存 N × H × W） |
@@ -71,6 +71,7 @@ tags: [inference, training, methodology]
 **定位**：具身智能 / 机器人 VLA（Vision-Language-Action）的独特加速问题——**实时性 50Hz + 精细操作 + sim2real**。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | VLA 是什么：视觉 + 语言 + 动作的端到端 |
@@ -94,6 +95,7 @@ tags: [inference, training, methodology]
 **定位**：和篇 H 区分——**这篇专注图像**（FLUX / SD3 / SDXL / Qwen-Image），篇 H 专注视频 / 3D。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | Diffusion 训推 2024~2026 时间线 |
@@ -116,6 +118,7 @@ tags: [inference, training, methodology]
 **定位**：这是 2024~2026 开源社区最重要的"落地"范式——Qwen3-MoE / DeepSeek-V3 先训练到 SOTA，再蒸馏成消费级 dense。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | 为什么要蒸馏：MoE 训得好但部署贵、Dense 部署便宜但训不过 MoE |
@@ -138,6 +141,7 @@ tags: [inference, training, methodology]
 **定位**：深入讲 **MoE 训练** 栈——假设 Qwen3.5 / 3.6 MoE 已发布或即将发布，复盘工业级 MoE 训练的真实瓶颈。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | MoE 训练的 5 大痛点：通信 / 负载均衡 / 显存 / 路由数值 / 收敛 |
@@ -160,6 +164,7 @@ tags: [inference, training, methodology]
 **定位**：端侧 + 多模态 + 端到端的**三重约束**下如何落地（Qwen2.5-Omni 手机端 / MiniCPM-o / Gemma 3n）。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | 端侧多模态的 3 个硬约束：< 3B 参数 + < 5GB 显存 + 实时性 |
@@ -183,6 +188,7 @@ tags: [inference, training, methodology]
 **定位**：RL 训练里 **rollout 阶段** 占 > 70% 时间——vLLM 成为核心组件。veRL / OpenRLHF / AReal 都用。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | RL 训练 pipeline 分析：Actor / Critic / Reward / Rollout |
@@ -206,6 +212,7 @@ tags: [inference, training, methodology]
 **定位**：把技术地图里"解码优化"行展开——从 Speculative Decoding 家族到 Chunked Prefill + Decode 混批。
 
 **章节**：
+
 | § | 主题 |
 |---|---|
 | §一 | 解码阶段的本质瓶颈：memory-bound 而非 compute-bound |

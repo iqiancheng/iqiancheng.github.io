@@ -433,7 +433,7 @@ $$
 | 利用率 | BW Util | ${\text{Bytes}}/({\text{PeakBW} \cdot T_\text{step}})$ | % |
 | 显存 | Peak | $\text{Params+Grads+Opt+Act+Temp}$ | GB |
 | 显存 | KV cache | $2\cdot L\cdot H_{kv}\cdot d \cdot T_\text{seq} \cdot B \cdot \text{bytes}$ | GB |
-| 成本 | $/1M tokens \| ${\text{Rate} \cdot T}/({N / 10^6})$ | USD |
+| 成本 | USD / 1M tokens | $$\frac{\text{Rate} \cdot T}{N / 10^6}$$ | USD |
 | 综合 | Goodput | $\lvert\{r: \text{TTFT}(r) < \text{SLO}\}\rvert / T$ | req/s |
 | 综合 | SLO Rate | $N_\text{within}/N_\text{total}$ | % |
 

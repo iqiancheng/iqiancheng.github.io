@@ -6,10 +6,6 @@ author: Joseph
 tags: [qwen, triton, kernels, methodology]
 ---
 
----- 作者：Austin
-- 日期：2026-05-07
-- 状态：draft（approved outline，待实施）
-
 ## 1. 系列定位
 
 两篇姊妹篇，延续训推加速 playbook：

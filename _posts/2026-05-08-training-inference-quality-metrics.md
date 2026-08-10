@@ -125,7 +125,7 @@ print(f"KL(baseline || accelerated) = {kl.item():.6f}")
 | 指标 | 公式 | 用途 |
 |---|---|---|
 | **Top-1 Agreement** | $\frac{1}{N}\sum \mathbb{1}[\arg\max P = \arg\max Q]$ | 两模型最可能的下一 token 一致性 |
-| **Top-K Overlap** | $\|$topk$(P) \cap $ topk$(Q)\|/K$ | Top-K 候选集的 Jaccard 相似 |
+| **Top-K Overlap** | $$\lvert \mathrm{topk}(P) \cap \mathrm{topk}(Q) \rvert / K$$ | Top-K 候选集的 Jaccard 相似 |
 | **Max Abs Logit Diff** | $\max_x \|P(x) - Q(x)\|$ | 最大偏离 |
 | **JS Divergence** | $\frac{1}{2}(D_\text{KL}(P\|M) + D_\text{KL}(Q\|M)), M=\frac{P+Q}{2}$ | 对称版 KL |
 
