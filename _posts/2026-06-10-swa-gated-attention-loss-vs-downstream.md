@@ -5,9 +5,9 @@ date: 2026-06-10 10:00:00 +0800
 author: Joseph
 mermaid: true
 math: true
+categories: [ai-ml]
 tags: [architecture, attention, metrics, llm]
 ---
-
 某 3B 模型预训练实验中，SWA128 的 loss 比 SWA512 低了 0.003，我们本以为找到了更优配置。评测结果出来傻了——ceval 直接掉了 7 个点。
 
 这篇文章记录这次 Sliding Window Attention + Gated Attention 的完整实验过程，以及它教会我们的一个朴素道理：**loss 不是唯一的 North Star**。

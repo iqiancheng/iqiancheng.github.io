@@ -3,11 +3,10 @@ layout: post
 title: "Codex App & CLI 接入第三方 API Key 和 Base URL 实战指南"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [工具, LLM]
+categories: [networking]
 tags: [llm, agent, cli, proxy]
 mermaid: true
 ---
-
 ## TL;DR
 
 **OpenAI Codex CLI + Codex 桌面 App 都支持任意 OpenAI Responses API 兼容的网关**，通过 `~/.codex/config.toml` 的 `[model_providers.<id>]` 自定义即可。最简场景只改一行 `openai_base_url` 就能把 built-in openai provider 指向代理；复杂场景可以自定义多个 provider、env header、命令式动态 token、profile 多账号切换。

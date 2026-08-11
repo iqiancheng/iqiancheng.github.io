@@ -3,12 +3,11 @@ layout: post
 title: "GRPO 训了 3 天模型反而不调工具了：Tool Use RL 的 Interaction Collapse 与六个结构性修复"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 强化学习]
+categories: [tools]
 tags: [rl]
 mermaid: true
 math: true
 ---
-
 ## 一个真实的训练事故
 
 某团队在一个 4B 参数的端侧模型上做 Tool-Integrated Reasoning (TIR) 的 GRPO 训练。任务是数学推理 + 代码解释器调用。训练配置如下：

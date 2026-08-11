@@ -4,11 +4,10 @@ title: "目标数据重复 15-20 遍不过拟合：混合训练的 Scaling Law �
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 数据工程]
+categories: [ai-ml]
 tags: [scaling-law, data]
 math: true
 ---
-
 > 通用 Scaling Law 说目标数据重复超过 4 轮就开始退化。我们在混合训练中发现完全不是这回事——目标数据可以重复 15-20 轮而不退化，前提是有通用数据持续注入"新鲜梯度"。这个发现来自 2000+ 次训练实验的 power-law 拟合。
 
 ## "4-epoch 定律"以及它在混合训练中为什么不成立

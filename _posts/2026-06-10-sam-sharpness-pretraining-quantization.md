@@ -3,12 +3,11 @@ layout: post
 title: "SAM in Annealing: Loss Landscape Geometry Determines Quantization Robustness"
 date: 2026-06-10 20:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练工程]
+categories: [ai-ml]
 tags: [training, quantization, diffusion, stability]
 mermaid: true
 math: true
 ---
-
 某 1B 模型做 4-bit 量化后精度掉了一截。调了各种量化方案都不管用。最后发现问题出在预训练阶段——换了一下退火阶段的优化器（仅最后 10% 步数），4-bit 量化退化直接减少了 40%。原因是 loss landscape 的几何形状比 loss 值本身更重要。
 
 ---

@@ -3,11 +3,10 @@ layout: post
 title: "训推加速 Qwen3 实战：看懂模型结构 + 识别算子融合机会"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [ai-ml]
 tags: [training, rope, kernels, pytorch, qwen]
 mermaid: true
 ---
-
 > 姊妹篇：[高效 CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/) · [GPU/NCCL 侧 SOP](/posts/training-inference-acceleration-troubleshooting-sop/) · [Python CPU 侧 SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
 >
 > 前面三篇讲"定位问题 + 调参"，这篇开始讲**"读懂模型 + 改模型"**：从 Qwen3 的源码和 profile 里识别算子融合机会。下篇讲"如果现成的 fusion 库也不够，怎么自己写 Triton kernel"。

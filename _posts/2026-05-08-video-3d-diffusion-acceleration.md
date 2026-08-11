@@ -3,12 +3,11 @@ layout: post
 title: "视频 & 3D 扩散训推加速：Wan 2.2 / HunyuanVideo / VSA / Gaussian Splatting "
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化, 视频生成]
+categories: [ai-ml]
 tags: [attention, diffusion]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"视频 & 3D 扩散"专题。视频时间维 + 3D 空间维让 attention 复杂度直接上升 1~2 个数量级——**这是一套独立于图像 Diffusion 的加速体系**。
 >
 > 姊妹篇：[图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/)（先看这篇理解基础）· [训推加速技术地图](/posts/training-inference-acceleration-map/)

@@ -4,10 +4,9 @@ title: "Token Superposition Training：2.5x 预训练加速但重新初始化 em
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 训练加速]
+categories: [ai-ml]
 tags: [training, efficiency]
 ---
-
 某 10B MoE 模型预训练，用 Token Superposition Training 消耗了 2T tokens 但只花了 4768 B200-hours——baseline 的 1.05T tokens 反而花了 12311 B200-hours。等效加速 2.5 倍，loss 还低了 0.016。但有个致命约束：如果在阶段切换时重新初始化 embedding，loss 直接比 baseline 还差。
 
 这篇文章拆解 TST 的机制、scaling 表现、以及那个看起来不起眼但足以毁掉整个训练的 design constraint。

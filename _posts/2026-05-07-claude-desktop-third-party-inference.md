@@ -3,11 +3,10 @@ layout: post
 title: "Claude Desktop for Mac 配置第三方 API Key 和 Base URL 完整指南"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [工具, LLM]
+categories: [networking]
 tags: [agent, proxy]
 mermaid: true
 ---
-
 ## TL;DR
 
 Claude Desktop for Mac（v1.4758.0 起）**支持接入任意 Anthropic Messages 兼容的网关**，通过 Developer Mode 下的 "Configure Third-Party Inference" 窗口配置即可。全程不需要 Anthropic 官方账号。本文以接入本地自建网关 BlueRouter（`http://127.0.0.1:18966`）为例，记录完整配置步骤、底层机制、以及实际踩过的坑。

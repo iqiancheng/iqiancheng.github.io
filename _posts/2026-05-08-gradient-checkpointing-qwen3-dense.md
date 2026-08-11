@@ -3,12 +3,11 @@ layout: post
 title: "Qwen3-8B 下让 Gradient Checkpointing 收益最大化：选择性重算 + Pareto 曲线"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [ai-ml]
 tags: [attention, kernels, pytorch, qwen, memory]
 mermaid: true
 math: true
 ---
-
 > 系列姊妹篇：[看懂 Qwen3 + 识别算子融合机会](/posts/qwen3-understand-model-identify-fusion/) · [手写 Triton Kernel](/posts/triton-kernel-fusion-practice/) · [精度对齐实战](/posts/fused-kernel-accuracy-alignment/) · [GPU SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
 >
 > 大多数 Qwen3 / Llama 训练教程给的 gradient checkpointing 指引都是"`model.gradient_checkpointing_enable()` 打开就行"——这其实是**最粗粒度**的配置，显存换算力的比例通常不划算。本篇讲怎么把它从"一键开关"升级到"**按访存比选择性重算**"，在 Qwen3-8B dense 上吃回 50%+ 的 step time 损失。

@@ -3,9 +3,9 @@ layout: post
 title: "大模型训推高质量社区、技术博客与资源索引"
 date: 2026-02-27 10:00:00 +0800
 author: Joseph
+categories: [ai-ml]
 tags: [inference, serving, methodology, llm]
 ---
-
 > 大模型训练与推理相关的高质量社区、技术博客、官方资源索引。按类型分类，表格形式便于快速查阅。
 
 ---

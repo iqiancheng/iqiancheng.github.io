@@ -3,11 +3,10 @@ layout: post
 title: "语音模型基础篇：用预训练 ASR 模型搞定语音识别（从 Wav2Vec2 到 Whisper 实战）"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [语音, 深度学习]
+categories: [cloud-devops]
 tags: [llm, speech, tooling]
 mermaid: true
 ---
-
 > 本文是"语音模型三部曲"的**基础篇**。前两篇分别讲 [预处理与术语](/posts/speech-model-preprocessing-glossary/)（讲输入怎么来）和 [架构演进](/posts/speech-recognition-architecture-evolution/)（讲模型代际）。这一篇换个视角——**动手用预训练 ASR 模型**，把两大经典架构 Wav2Vec2（CTC）和 Whisper（Seq2Seq）的特性、差异、长音频处理全跑一遍。
 >
 > 内容整合自 [HuggingFace Audio Course Unit 5](https://huggingface.co/learn/audio-course/en/chapter5/asr_models)，用中文重写并补充 mermaid 流程图与实战坑点。

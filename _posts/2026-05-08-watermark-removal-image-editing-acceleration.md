@@ -3,12 +3,11 @@ layout: post
 title: "水印消除 / 图像编辑模型训练加速：Inpainting / Instruct-Edit / Flux Fill 的 2024~2026 栈"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化, 图像编辑]
+categories: [ai-ml]
 tags: [diffusion]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"图像编辑"专题。水印消除是**可控 Inpainting** 的一个子任务——更大的家族包括**局部重绘 / 指令式编辑 / 内容擦除**。2024~2026 的 SOTA 从 SDXL Inpaint 跳到 **Flux Fill / BrushNet / PowerPaint**，训练端有独特挑战（**mask-aware 训练 / 合成数据 / 指令对齐**）。
 >
 > ⚠️ **声明**：本文讲**训练加速与模型技术**。实际水印消除应用时请尊重版权、商标和素材授权——只对自己拥有版权的图像或合法场景（去除历史扫描件中的污渍、修复老照片、消除自拍误入的路人）使用这类技术。

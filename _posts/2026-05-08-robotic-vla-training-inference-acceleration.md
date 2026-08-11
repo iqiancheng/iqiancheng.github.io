@@ -3,12 +3,11 @@ layout: post
 title: "机器人 VLA 训推加速：OpenVLA / π0 / RDT-1B / GR00T 的实时控制工程"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 机器人, 性能优化]
+categories: [ai-ml]
 tags: [multimodal]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"机器人 VLA"专题。**Vision-Language-Action（VLA）模型**是 2024~2026 机器人领域最大范式变化——把 VLM backbone 接上 action head，输出关节 / 末端控制。和对话 LLM 不同，VLA 的加速核心目标不是吞吐而是**控制频率（20~50 Hz）** 和 **sim-to-real 一致性**。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [端侧多模态](/posts/edge-multimodal-end-to-end/) · [RL 训练加速](/posts/rl-training-qwen3-vllm-verl/)

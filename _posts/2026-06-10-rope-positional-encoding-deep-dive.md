@@ -3,12 +3,11 @@ layout: post
 title: "长文 Loss 突然涨了 0.004：一次 RoPE × SWA 的冲突复盘与位置编码扩展全解"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, 位置编码]
+categories: [ai-ml]
 tags: [attention, rope, long-context, pytorch]
 mermaid: true
 math: true
 ---
-
 ## 引子：一次出乎意料的长文 Loss 恶化
 
 某 3B 模型项目中，我们尝试将 SWA（Sliding Window Attention）与 Hybrid RoPE 组合使用。假设很简单：SWA 节省长序列显存，RoPE 负责长距离位置建模，各司其职。短文本 PT（Pretraining）阶段的指标也确实验证了这个预期——**loss 下降了 0.002**，一切看起来很美好。

@@ -3,12 +3,11 @@ layout: post
 title: "Speculative Decoding 实战：vLLM 框架下 EAGLE-3 原理与工程落地"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [ai-ml]
 tags: [inference, kv-cache, speculative-decoding, vllm, qwen]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"解码优化专题"。以 **vLLM 框架**为基础，拆解 **EAGLE-3** 的原理、数据流、训练 / 推理实战。Speculative Decoding 是 2023~2026 解码加速最重要的一条路线，EAGLE-3 又是这条路线的 2025 SOTA。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [效率指标全景](/posts/training-inference-efficiency-metrics/)（TPOT / Goodput 定义）· [CUDA Graph 实战](/posts/cuda-graph-qwen3-dense/)

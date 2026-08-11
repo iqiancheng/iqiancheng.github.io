@@ -3,12 +3,11 @@ layout: post
 title: "只在 Answer 上算 Loss、MTP λ=0.3 到底带来多少：从实验配置反推 Loss 设计的工程决策"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练工程]
+categories: [ai-ml]
 tags: [speculative-decoding, multimodal, metrics, stability]
 mermaid: true
 math: true
 ---
-
 翻一个 3B 多模态模型的 SFT 配置文件，第一个值得注意的参数是 `only-answer-loss=yes`。这个开关意味着：system prompt、user message、所有非 answer 的 token 全部被 mask 掉，只有 assistant response 那部分贡献 loss。听起来理所当然？但它背后藏着一条影响全局的工程推导链——从 loss mask 策略，到多模态梯度稀释，到辅助损失的 ROI 计算，最终落到 validation 监控的粒度设计。
 
 这篇文章从真实训练配置出发，反推每个 loss 设计选择背后的工程决策逻辑。

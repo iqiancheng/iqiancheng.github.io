@@ -3,12 +3,11 @@ layout: post
 title: "512 Expert 里 80% 是死的：从 MuonClip 到 Expert Upcycling，MoE 训练稳定性的三个生死问题"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 模型架构]
+categories: [tools]
 tags: [moe, optimizer, stability]
 mermaid: true
 math: true
 ---
-
 ## 开场：一个 962B 模型的训练噩梦
 
 上个月我参与调试某 962B MoE 的训练稳定性问题，这个模型的配置如下：

@@ -3,10 +3,9 @@ layout: post
 title: "工程师的 Downloads 目录整理方法论：PARA + 时间线 + 工程实践"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [效率, 方法论]
+categories: [tools]
 tags: [tooling, workflow]
 ---
-
 ## 先安利一个工具：HoudahSpot + Raycast
 
 在讲方法论之前，先推荐一个我用下来真心觉得 **Powerful** 的 macOS 工具——[**HoudahSpot**](https://www.houdah.com/houdahSpot/)。

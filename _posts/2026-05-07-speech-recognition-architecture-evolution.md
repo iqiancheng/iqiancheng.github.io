@@ -3,10 +3,9 @@ layout: post
 title: "语音识别模型架构演进：从 HMM-GMM 到 Whisper 到 Qwen3-ASR"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [语音, 深度学习]
+categories: [engineering]
 tags: [speech]
 ---
-
 > 本文是 [《语音模型预处理流程及常用术语详解》](/posts/speech-model-preprocessing-glossary/) 的姊妹篇。前一篇讲"输入怎么来"，这一篇讲"模型怎么吃"。把 2012 ~ 2026 十四年的 ASR 架构演进捋清楚，并且重点拆解最新的 **Qwen3-ASR（2026）**。
 
 ---

@@ -3,11 +3,10 @@ layout: post
 title: "训推加速 Qwen3 实战：从\"调包\"到手写 Triton Kernel（含 backward）"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [ai-ml]
 tags: [attention, kernels, triton, pytorch, qwen]
 mermaid: true
 ---
-
 > 前篇：[训推加速 Qwen3 实战：看懂模型结构 + 识别算子融合机会](/posts/qwen3-understand-model-identify-fusion/)
 >
 > 前一篇教你"识别 fusion 机会"，这一篇讲"**有了机会怎么落地**"——先看现成的 fused kernel 库够不够用，不够再自己写 Triton。重头戏是 **backward kernel**：多数教程只讲 forward，但训练场景 forward + backward 都要亲自写才能吃完整收益。

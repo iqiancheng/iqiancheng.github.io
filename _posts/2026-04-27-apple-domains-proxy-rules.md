@@ -3,10 +3,9 @@ layout: post
 title: "Apple 子域名功能梳理与代理规则配置指南"
 date: 2026-04-27 00:00:00 +0800
 author: Joseph
-categories: [网络, iOS]
+categories: [networking]
 tags: [networking, proxy]
 ---
-
 Apple 生态中大量系统级服务依赖特定子域名通信，了解这些域名的功能归属，有助于在 Stash / Surge 等代理工具中精准编写分流规则，避免误拦截或漏放。本文按服务分组梳理关键域名及其用途，并给出可直接使用的规则片段。
 
 ---

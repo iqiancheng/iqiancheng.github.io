@@ -3,12 +3,11 @@ layout: post
 title: "MoE 训练加速实战：DeepEP + Grouped GeMM + Aux-Loss-Free 的 Qwen3.5 配方"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化, MoE]
+categories: [ai-ml]
 tags: [moe, pytorch, qwen]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"MoE 训练加速"专题。2024~2026 开源 SOTA 基本都走 MoE 路线（DeepSeek-V3 / Qwen3-MoE / Mixtral / GPT-OSS），但 MoE 训练的**通信瓶颈 / 负载均衡 / 路由数值**是三大独立痛点。本篇以 **Qwen3.5 / Qwen3.6 MoE** 级别的训练为 standing example，拆解从 DeepEP 到 Aux-Loss-Free 的完整栈。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)

@@ -3,12 +3,11 @@ layout: post
 title: "多教师蒸馏的温度工程：从 T=1 到 per-teacher adaptive temperature 的实验叙事"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [训练策略, 蒸馏]
+categories: [ai-ml]
 tags: [distillation, rl]
 mermaid: true
 math: true
 ---
-
 某 3B 多模态模型的多教师蒸馏实验，统一用 T=6 做 caption 教师的温度，F1 涨了 0.029。第三天加入更多教师后，caption 质量突然掉了 0.985——"budget dilution" 让每个教师的信号都被稀释了。这篇文章记录从 uniform temperature 到 per-teacher adaptive temperature 的完整实验路径，以及为什么温度设计本质上是一个 RL 问题。
 
 ---

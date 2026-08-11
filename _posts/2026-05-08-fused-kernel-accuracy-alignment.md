@@ -3,12 +3,11 @@ layout: post
 title: "替换 Fused Kernel 后如何对齐训推精度：7 类差异来源 + 3 道验证 Gate + 8 个实战技巧"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [ai-ml]
 tags: [kernels, triton]
 mermaid: true
 math: true
 ---
-
 > 系列姊妹篇：[从"调包"到手写 Triton Kernel](/posts/triton-kernel-fusion-practice/) · [看懂 Qwen3 + 识别算子融合机会](/posts/qwen3-understand-model-identify-fusion/) · [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/) · [Python CPU SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)
 >
 > 前篇教你怎么**写** fused kernel，这篇教你怎么**验证它和原版数值一致**——这是替换后能不能真正上训练的最后一关。最常见的翻车场景：kernel 写对了、loss 能收敛，但下游任务指标偷偷掉了 1~2 个点，等跑完 100B tokens 才发现就晚了。

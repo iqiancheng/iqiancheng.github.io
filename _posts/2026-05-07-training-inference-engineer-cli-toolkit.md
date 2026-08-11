@@ -3,11 +3,10 @@ layout: post
 title: "训推工程师 & AI Agent 时代的高效 CLI 工具栈：从 zoxide 到 nvitop 到 Claude Code"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [工具, 效率]
+categories: [tools]
 tags: [agent, cli]
 mermaid: true
 ---
-
 > 写给一手训模型 / 调推理 / 和 AI Agent 协作编程的工程师。全文不堆砌 "100 个 CLI 工具" 清单，而是按**真实工作流的动线**给出每个阶段的首选+备选，再配 mermaid 动线图和实测截图。**能实测的我自己用过，不能实测的标"未实测"。**
 >
 > 参考: [豆包总结的高效 CLI 工具清单](https://www.doubao.com/thread/wab7643019a77af82)。本文在它基础上做了大量筛选 + 训推/Agent 视角的重构。

@@ -2,10 +2,10 @@
 title: "从 vanilla RoPE 到多模态 RoPE：位置编码的「解耦」之路"
 layout: post
 date: 2026-08-10 15:30:00 +0800
+categories: [ai-ml]
 tags: [llm, rope, multimodal, paper]
 math: true
 ---
-
 RoPE（Rotary Position Embedding）是当下 LLM 的事实标准位置编码——Llama、Qwen、DeepSeek 全在用。但当模型从纯文本走向多模态（图像、视频、音频），RoPE 这套为 1D 序列设计的机制开始失灵。过去两年出现了一批多模态 RoPE 变体（MRoPE、VideoRoPE、Circle-RoPE、HoPE…），表面上看是各种补丁，实际上它们都在攻击同一个根因。
 
 这篇博客把 vanilla RoPE 和三个代表性的多模态变体放在一起深读，梳理出一条清晰的演化脉络：**位置编码如何从「编码距离」走向「解耦语义」**。最后落到我自己的 ASR MTP 研究方向上，看看这些设计原则能迁移什么。

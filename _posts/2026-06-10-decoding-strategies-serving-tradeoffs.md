@@ -3,12 +3,11 @@ layout: post
 title: "MTP 白送 1.8x 加速、接受率还能当质量探针：从辅助 Loss 到推理加速的意外收获"
 date: 2026-06-10 16:00:00 +0800
 author: Joseph
-categories: [深度学习, 推理优化]
+categories: [ai-ml]
 tags: [rl, speculative-decoding, serving, metrics]
 mermaid: true
 math: true
 ---
-
 训练时加一个 Multi-Token Prediction (MTP) 辅助 loss，目的是提升表征质量。但到了推理阶段，这个"免费赠品"忽然变成了 speculative decoding 的 draft head —— 不需要额外训练 draft model，不需要额外显存加载小模型，直接拿训练时的 MTP module 当 drafter，acceptance rate 85-90%，吞吐提升 ~1.8x。
 
 这篇文章从这个 case 出发，重新审视 decoding 策略的工程选型：什么场景选什么方案，生产环境的真实约束是什么，以及一个常被忽视的视角 —— RL 阶段的 length penalty 如何反向塑造 decoding 行为。

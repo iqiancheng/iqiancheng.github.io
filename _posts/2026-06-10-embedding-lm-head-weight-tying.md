@@ -3,12 +3,11 @@ layout: post
 title: "Embedding 占了模型 10% 参数却只做查表：从 tie-embeddings=yes 到 PLE 的工程演化"
 date: 2026-06-10 14:00:00 +0800
 author: Joseph
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [architecture, multimodal, tokenizer]
 mermaid: true
 math: true
 ---
-
 一个 3B 多模态模型的配置文件里写着 `tie-embeddings=yes`、`embed-layernorm=yes`、`vocab_size=100096`、`hidden_size=2560`。这几个数字背后藏着一笔精确的参数账：embedding matrix = 100096 × 2560 = **256,245,760 参数**，占 2.46B 总参数的 **10.4%**。Weight tying 让这 256M 参数同时服务输入查表和输出分类——看起来是白送的效率。但这个"正确答案"其实暗含三个工程取舍，而 2025 年以来的多篇工作正在系统性地挑战它。
 
 ---

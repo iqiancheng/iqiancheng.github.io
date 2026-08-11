@@ -3,12 +3,11 @@ layout: post
 title: "Vocab 100K 吃掉模型 10% 参数：一个 Tokenizer 决策如何锁死后续所有训练"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, NLP基础]
+categories: [ai-ml]
 tags: [llm, tokenizer, edge]
 mermaid: true
 math: true
 ---
-
 一个 3B 参数的端侧模型，加载 tokenizer 的代码长这样：
 
 ```python

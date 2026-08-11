@@ -5,9 +5,9 @@ date: 2026-02-26 10:00:00 +0800
 author: Joseph
 # categories: [deep-learning, llm, training]
 # tags: [ZeRO, LoRA, MoE, memory, GPU, transformer]
+categories: [ai-ml]
 tags: [memory, training, moe]
 ---
-
 > 本文是我在研究 LLM 训练显存开销过程中的系统性梳理，从 ZeRO 论文的 16 Φ bytes/param 公式出发，逐步拆解激活值、DataLoader、冻结层、LoRA，最后延伸到 MoE 架构的特殊性。每一部分都尽量给出可量化的公式和真实 case，方便直接用于工程估算。
 
 ---

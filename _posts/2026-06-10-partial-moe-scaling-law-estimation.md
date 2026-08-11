@@ -4,11 +4,10 @@ title: "Partial MoE Scaling Law: 后16层换MoE、1/8激活比丢了17-19%性能
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [inference, architecture, moe, scaling-law]
 math: true
 ---
-
 某 4B Dense 模型想要推理加速——把后 16 层 FFN 换成 MoE。Scaling Law 估算的结论出人意料：1/8 激活比直接丢了 17-19% 性能（判死刑），即使 1/2 激活也要把总参数从 4B 扩到 5.2B（+28-33%）才能追平。这笔账到底该怎么算？
 
 ## 为什么只换"后半段"？

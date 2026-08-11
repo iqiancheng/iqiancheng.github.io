@@ -3,14 +3,13 @@ layout: post
 author: Joseph
 title: "Cloud Sync 静默丢文件：一个 NFD/NFC 编码踩出的坑"
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, storage]
+categories: [homelab]
 tags: [tooling, nas]
 description: >
   Cloud Sync 同步 Google Drive 时静默跳过含重音字符的文件，日志提示 "EVENT is not NFC Form"。
   原因是 macOS 使用 NFD 编码文件名而 Linux/Synology 期望 NFC。记录问题根因与解决方案。
 toc: true
 ---
-
 ## 问题现象
 
 配置 Cloud Sync 同步 Google Drive 后，发现部分文件**静默丢失**——不报错、不同步、日志里只有一行 warning：

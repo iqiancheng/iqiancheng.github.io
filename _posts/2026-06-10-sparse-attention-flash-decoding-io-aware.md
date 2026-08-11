@@ -3,12 +3,11 @@ layout: post
 title: "81% Sparsity 只掉 0.48 分却快了 7 倍：从 Flash Attention 到训练时稀疏的 IO-Aware 全景"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 推理优化]
+categories: [ai-ml]
 tags: [training, attention, kv-cache, kernels]
 mermaid: true
 math: true
 ---
-
 ## 开场：Post-hoc 剪枝为什么在实测中翻车
 
 我们在某 2.7B 端侧模型上做 128K 长文推理加速。第一个尝试是 post-hoc Top-K attention pruning——推理时对每个 query 只保留 attention score 最高的 19% KV block（81% sparsity）。

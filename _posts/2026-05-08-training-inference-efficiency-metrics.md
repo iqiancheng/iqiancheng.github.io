@@ -3,12 +3,11 @@ layout: post
 title: "训推加速效率指标全景：吞吐 / 延迟 / MFU / TGS / SLO（含数学公式）"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [productivity]
 tags: [metrics]
 mermaid: true
 math: true
 ---
-
 > 本系列前面 8 篇讲"怎么加速"——但团队协作时经常发现**每个人说的"快"都不是一回事**：训练组说 tokens/sec，推理组说 TTFT，infra 说 MFU。这篇把训推加速里所有高价值指标一次摆清楚，**每个都给数学公式 + Qwen3-8B 示意数字**。
 >
 > 姊妹篇：[训推加速系列导航](.#)（在做） · [GPU/NCCL SOP](/posts/training-inference-acceleration-troubleshooting-sop/) · [Python CPU SOP](/posts/python-cpu-bottleneck-troubleshooting-sop/)

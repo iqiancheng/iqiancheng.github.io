@@ -3,11 +3,10 @@ layout: post
 title: "五次排除实验定位 Attention 门控最优解：Sink 无效、RoPE 反噬、小窗口翻车"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [architecture, attention, rope]
 mermaid: true
 ---
-
 ## 开场：一个 3B 模型的 Attention 选型决策
 
 某 3B 端侧模型的架构选型阶段，团队在 Attention 机制上做了 5 轮排除实验。最终结论只有一句话——**SWA512 + Elementwise Gated Attention**——但排除过程中暴露的反直觉现象，几乎打翻了所有先验假设：

@@ -5,9 +5,9 @@ date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
 math: true
+categories: [productivity]
 tags: [architecture, multimodal]
 ---
-
 ## 开场：一个反直觉的实验结果
 
 PLE 从 dP=64 扩到 dP=128，参数多花了 220M，loss 一丝不动——2.149→2.149。而从 128 跳到 256，突然降了 0.017。

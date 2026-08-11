@@ -3,12 +3,11 @@ layout: post
 title: "图像 Diffusion 训推加速深化：FLUX / SD3 / DMD2 / SageAttention "
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化, 生成模型]
+categories: [ai-ml]
 tags: [attention, quantization, diffusion]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"图像 Diffusion 专题"。2024~2026 图像扩散领域同时上演三条加速主线——**步数蒸馏**（DMD2 / LCM 系）、**新架构**（DiT / MMDiT / Rectified Flow）、**低精度 Attention**（SageAttention / SVDQuant）。本文聚焦**图像**（视频 / 3D 扩散见下一篇）。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [Speculative Decoding + EAGLE-3](/posts/speculative-decoding-eagle3-vllm/) · [MoE → Dense 蒸馏](/posts/moe-to-dense-distillation/)

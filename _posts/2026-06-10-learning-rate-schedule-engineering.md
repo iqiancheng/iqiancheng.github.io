@@ -3,12 +3,11 @@ layout: post
 title: "为什么多模态训练不要 Warmup：从四份真实 LR 配置看学习率调度的工程哲学"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练工程]
+categories: [ai-ml]
 tags: [optimizer]
 mermaid: true
 math: true
 ---
-
 我第一次看到多模态预训练的配置文件时，被一行参数震住了：
 
 ```yaml

@@ -3,14 +3,13 @@ layout: post
 author: Joseph
 title: "RAID (E) 标记与 volume2 只读：一次 SATA 物理层雪崩的复盘"
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, storage]
+categories: [homelab]
 tags: [nas, hardware]
 description: >
   天钡 WTR R1 (Intel N100) + SA6400 loader 重启后 /volume2 只读、所有包无法启动。
   md3 线性阵列中 sata1p3 被标记 (E)。深度诊断确认是 SATA 物理层 ICRC 错误导致的三级雪崩——从线缆接触到 scemd 再到 synopkg feasibility check。
 toc: true
 ---
-
 ## 背景
 
 [上一篇 GFW 审计](/posts/synology-nas-gfw-audit-mihomo/) 结束后重启 NAS 做存活验证，结果 Package Center 全线崩溃：

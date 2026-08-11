@@ -3,14 +3,13 @@ layout: post
 author: Joseph
 title: "一次重启引发的血案：SATA 瞬断如何拖垮 RAID / scemd / synopkg"
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, networking]
+categories: [homelab]
 tags: [docker, proxy, nas, debugging]
 description: >
   NAS 重启后所有依赖 volume2 的包全部挂掉——不是 GFW 的问题，是一块 SATA 盘的瞬时读错误
   触发了从 RAID → scemd → synopkg 的三级雪崩。完整复盘故障链路、恢复步骤、以及挖出来的 Synology 内部机制。
 toc: true
 ---
-
 ## 背景
 
 [上一篇 GFW 审计博文](/posts/synology-nas-gfw-audit-mihomo/) 收尾时做了 NAS 重启演练，验证 mihomo TUN、Cloud Sync、Container Manager 等组件在重启后能否自动恢复。

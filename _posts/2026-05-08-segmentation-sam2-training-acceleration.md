@@ -3,12 +3,11 @@ layout: post
 title: "视频图像分割模型技术洞察与训练加速：SAM 2 / SAM 3 / Grounded-SAM / 视频 Mask 的 2024~2026 栈"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化, 分割]
+categories: [ai-ml]
 tags: [attention, diffusion]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"视觉分割"专题。2024 SAM 2 把"可提示分割"从图像扩到视频，2025~2026 Grounded-SAM / Florence-2 / SAM 3 进一步把分割和**开放词汇检测 / VLM** 打通。这一篇讲清 **分割任务的独有加速挑战**（Mask Head / Memory Attention / 视频一致性）和训练端的工程套路。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [图像 Diffusion 深化](/posts/image-diffusion-acceleration-flux-sd3-dmd2/) · [视频 & 3D 扩散加速](/posts/video-3d-diffusion-acceleration/)

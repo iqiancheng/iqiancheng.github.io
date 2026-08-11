@@ -3,11 +3,10 @@ layout: post
 title: "30 条数据 + GRPO 就能涨 10 分：2025-2026 RL for LLM 的算法选型与框架实战"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 强化学习]
+categories: [ai-ml]
 tags: [rl]
 mermaid: true
 ---
-
 ## 开场：30 条数据的奇迹
 
 先看一组让人不太敢信的实验数据：

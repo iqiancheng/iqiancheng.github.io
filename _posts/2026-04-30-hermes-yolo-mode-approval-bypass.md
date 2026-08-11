@@ -3,11 +3,10 @@ layout: post
 title: "Hermes Agent 完全 YOLO 模式：彻底关掉「approve this command?」确认框"
 date: 2026-04-30 00:00:00 +0800
 author: Joseph
-categories: [工具, Agent]
+categories: [tools]
 tags: [agent, tooling, cli]
 mermaid: true
 ---
-
 ## 问题背景
 
 用 Hermes Agent 跑自动化任务时，它会对"危险命令"（`rm -rf`、`git push --force`、`docker` 等）弹出确认提示，要手动 approve 才能继续。单次交互场景还好，但在自动化 pipeline 或高频调试环境里，这种中断极其烦人。

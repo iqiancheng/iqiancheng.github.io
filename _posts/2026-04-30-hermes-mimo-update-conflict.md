@@ -3,11 +3,10 @@ layout: post
 title: "Hermes Update 冲突排查：本地 Xiaomi MIMO 补丁的保全与重放"
 date: 2026-04-30 00:00:00 +0800
 author: Joseph
-categories: [工具, Agent]
+categories: [tools]
 tags: [agent, github]
 mermaid: true
 ---
-
 ## 背景
 
 `hermes update` 拉取了 1150 个新 commit 之后，本地针对 Xiaomi MIMO 的两处兼容补丁产生冲突，需要手动处理。

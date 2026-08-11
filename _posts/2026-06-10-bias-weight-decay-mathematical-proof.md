@@ -4,11 +4,10 @@ title: "Layer Scalar 不加 Weight Decay 漂到 56, 为什么 Bias 不加却安�
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 训练工程]
+categories: [ai-ml]
 tags: [training, architecture, quantization, optimizer, methodology]
 math: true
 ---
-
 某 3B 模型的 Layer Scalar 不加 weight decay 漂到了 56.25（详见上篇）。顺理成章的追问：bias 也不加 weight decay，它为什么不漂？答案藏在一个简单的数学性质里——bias 对所有样本加相同常数，帮了一部分就必然害另一部分。这形成了天然的有限平衡点。
 
 ## 1. 行业标准：所有主流框架都把 bias 排除在 weight decay 之外

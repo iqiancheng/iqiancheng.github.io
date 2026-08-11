@@ -3,11 +3,10 @@ layout: post
 title: "4K→1M 上下文扩展只用了 2000 步：三份真实长文训练配置的工程复盘"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 长上下文]
+categories: [ai-ml]
 tags: [attention, rope, long-context]
 mermaid: true
 ---
-
 ## 复盘：128K Eval 上 PPL 突然爆炸的定位过程
 
 某 671B MoE 模型完成 14.8T tokens 主预训练后，第一次把序列长度从 4K 推到 32K 做 eval——PPL 从 7.2 飙到 142。位置编码完全没见过 >4K 的位置，外推失败是意料之中的。

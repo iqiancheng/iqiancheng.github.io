@@ -3,12 +3,11 @@ layout: post
 title: "MoE 教师 → Dense 学生：2024~2026 开源社区的落地范式"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练加速]
+categories: [ai-ml]
 tags: [architecture, moe, distillation, rl]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"MoE → Dense 蒸馏"专题。2024~2026 开源社区最成功的一条落地路线——**先用巨大 MoE 预训练到 SOTA，再蒸馏成消费级 Dense 模型**。代表作：Qwen3-MoE → Qwen3-Dense / Gemma-Large → Gemma-3n / DeepSeek-V3 → DeepSeek-R1-Distill 系列。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [Speculative Decoding 实战](/posts/speculative-decoding-eagle3-vllm/) · [效果指标全景](/posts/training-inference-quality-metrics/)

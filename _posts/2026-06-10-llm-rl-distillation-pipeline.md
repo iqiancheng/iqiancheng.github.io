@@ -3,12 +3,11 @@ layout: post
 title: "蒸馏就是 RL、学生能超越老师：On-Policy Distillation 统一框架与六个落地范式"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, 强化学习, 知识蒸馏]
+categories: [ai-ml]
 tags: [distillation, rl, metrics]
 mermaid: true
 math: true
 ---
-
 最近一段时间，行业里关于「蒸馏」和「RL」的边界越来越模糊。2026 年初的几篇工作从理论上证明了 On-Policy Distillation (OPD) 与 KL 约束的 RL 是严格等价的——这不是 analogy，是数学证明。这个结论的工程意义极其深远：所有成熟的 RL trick 可以直接搬到蒸馏场景，而且学生模型可以超越老师。
 
 这篇文章从这个统一视角出发，梳理我们在实际 pipeline 中反复验证过的六块核心设计决策。

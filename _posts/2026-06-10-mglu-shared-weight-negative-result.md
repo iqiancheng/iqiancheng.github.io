@@ -3,11 +3,10 @@ layout: post
 title: "up_proj 和 gated_proj 共享权重减 50% FFN 参数: 16 个验证集全部退化的干净失败"
 date: 2026-06-10 20:00:00 +0800
 author: Joseph
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [architecture, pytorch, methodology, efficiency]
 mermaid: true
 ---
-
 某 3B 模型想减 FFN 参数：让 up_proj 和 gated_proj 共享权重，只用 1-bit mask 区分。听起来很聪明——参数减半，推理 IO 少一半。实测：16 个验证集全部退化，平均 +0.04，没有任何一个域有收益。67B token 后放弃。
 
 ## MGLU 是什么

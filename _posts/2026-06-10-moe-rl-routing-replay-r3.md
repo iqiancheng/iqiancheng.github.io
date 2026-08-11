@@ -3,11 +3,10 @@ layout: post
 title: "MoE 做 RL 训练时 Routing 决策飘了：一个零成本的 Replay 方案消除了精度不一致"
 date: 2026-06-10 20:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练工程]
+categories: [ai-ml]
 tags: [moe, rl, stability]
 mermaid: true
 ---
-
 某 309B MoE 模型做 Agentic RL 训练，reward 上升但比预期慢 30%。排查发现一个隐蔽问题：rollout 阶段（FP8）和梯度更新阶段（BF16）对同一个 token 选择了不同的 expert——MoE 的离散路由决策让浮点精度差异变成了路径分歧。修复只需 50 行代码：记录 rollout 时的路由索引，训练时直接重放。
 
 ---

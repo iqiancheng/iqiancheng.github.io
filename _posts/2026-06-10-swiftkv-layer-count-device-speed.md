@@ -4,10 +4,9 @@ title: "SwiftKV 预测 12 层 loss 最低, 但最终选了 16 层: 端侧首词�
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [architecture, kv-cache, edge]
 ---
-
 某 3B 端侧模型做 SwiftKV 层数消融，发现 12 层共享 loss 最低（-0.010），但最终选了 16 层（-0.009）。差那 0.001？因为 16 层在目标芯片上首词提速 35%，KV cache 省了 50%。这是一个"loss 不是唯一判据"的典型工程决策。
 
 ---

@@ -4,9 +4,9 @@ title: "Design Spec — 训推加速系列深化 9 篇（2026-05-08）"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
 math: true
+categories: [ai-ml]
 tags: [inference, training, methodology]
 ---
-
 本篇基于 [训推加速技术地图 post](/posts/training-inference-acceleration-map/) 的各行展开深化。
 
 ## 0. 共享约定（所有 9 篇通用）

@@ -3,12 +3,11 @@ layout: post
 title: "训练 Loss 不动但模型已坏？Adam 漂移、Softmax 饱和、梯度稀释三大隐形杀手"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练动力学]
+categories: [ai-ml]
 tags: [attention, quantization, optimizer, distillation, multimodal]
 mermaid: true
 math: true
 ---
-
 大模型训练中，很多"诡异现象"其实都有干净的数学解释。本文分享三个我在实际训练中踩过的坑，每个都涉及一个容易被忽视的底层机制。它们的共同特点是：**training loss 看起来完全正常，但模型已经在某个维度上悄悄劣化了**。
 
 ---

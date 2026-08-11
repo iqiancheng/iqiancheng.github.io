@@ -3,11 +3,10 @@ layout: post
 title: "multi_doc_qa 从 0.086 涨到 0.200: SWA + LowRank Gated + Hybrid RoPE 的长文配方"
 date: 2026-06-10 20:00:00 +0800
 author: Joseph
-categories: [深度学习, 长上下文]
+categories: [ai-ml]
 tags: [training, attention, rope, long-context]
 mermaid: true
 ---
-
 某 3B 模型的 baseline 在 multi_doc_qa 上只有 0.086（几乎是 random）。加上 SWA + LowRank Gated + Hybrid RoPE 三件套后涨到 0.200——2.3 倍提升。最关键的组件不是 SWA（它只解决 OOM），而是 Hybrid RoPE（它让 attention 能做跨文档的内容匹配）。
 
 ---

@@ -4,10 +4,9 @@ title: "新架构 34/35 验证集更好、ceval +2.67 pt, 但 iter-time 慢了 3
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 模型架构]
+categories: [productivity]
 tags: [training, architecture, methodology, efficiency]
 ---
-
 某 0.6B 验证模型做了新老架构对比：新架构 34/35 验证集更好，ceval +2.67, hellaswag +2.65, humaneval +1.59。但 iter-time 从 12.09s 涨到 38.32s——慢了 3.17 倍。同样的 GPU 时间，老架构能多训 3 倍 token。这是一个典型的"更好但更贵"的工程决策。
 
 ## 实验设定

@@ -3,12 +3,11 @@ layout: post
 title: "普通人如何用好 Claude 协作办公：开发环境优化实战"
 date: 2026-06-01 00:00:00 +0800
 author: Joseph
-categories: [工具, LLM]
+categories: [tools]
 tags: [agent, tooling, cli]
 math: true
 mermaid: true
 ---
-
 ## TL;DR
 
 **Claude 不只是写代码的工具，它更是一个随叫随到的系统管理员。** 你只需要描述问题（"新开 tab 太慢"、"关闭编辑器总弹框"），Claude 就能完成诊断、定位瓶颈、修改配置、验证结果的完整闭环。本文通过三个真实场景，展示普通开发者如何用 Claude 把日常环境调优的时间从"搜一下午 StackOverflow"压缩到"5 分钟对话"。

@@ -3,11 +3,10 @@ layout: post
 title: "上线才发现的坑：Token Budget 设计、Function Calling 格式战争与 Proxy Metric 翻车"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 工程实践]
+categories: [networking]
 tags: [llm, training, scaling-law, rl, agent]
 mermaid: true
 ---
-
 做 LLM 工程和做传统后端最大的区别在于：**很多坑不会以 error 的形式出现，而是以"指标莫名下降 2 个点"的形式出现。** 这篇文章汇总了我在生产环境中踩过的几类隐性陷阱，希望能帮你少走弯路。
 
 ---

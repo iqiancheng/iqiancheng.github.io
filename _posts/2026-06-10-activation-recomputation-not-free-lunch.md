@@ -3,11 +3,10 @@ layout: post
 title: "Activation Recomputation 不是免费午餐：recompute 24 层 vs 16 层导致 loss 显著偏高"
 date: 2026-06-10 16:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练工程]
+categories: [ai-ml]
 tags: [quantization, edge, memory]
 mermaid: true
 ---
-
 某 3B 模型的代码预训练实验，`recompute-num-layers` 从 16 改到 24，loss 明显偏高。教科书说 activation recomputation "对训练无影响，只是用计算换内存"——但在 BF16 精度下，这个假设在 24/32 层时不成立。
 
 ---

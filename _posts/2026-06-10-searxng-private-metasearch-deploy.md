@@ -3,11 +3,10 @@ layout: post
 title: "自部署 SearXNG 私有元搜索引擎：从零到 JSON API 可用的完整实战"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [工具, 运维, 自托管]
+categories: [homelab]
 tags: [docker, networking, security, github, search]
 mermaid: true
 ---
-
 ## 背景与动机
 
 日常技术调研需要频繁搜索 GitHub、Reddit、X (Twitter)、V2EX、Stack Overflow 等平台，但：

@@ -3,10 +3,9 @@ layout: post
 title: "Stash Availability Check Tiles：一键检测 AI 与流媒体服务可用性"
 date: 2026-04-27 00:00:00 +0800
 author: Joseph
-categories: [工具, iOS]
+categories: [networking]
 tags: [agent, proxy]
 ---
-
 切换代理节点后，最常见的问题是"这个节点能用 ChatGPT 吗？Netflix 解锁了吗？"。每次手动打开浏览器逐个测试太麻烦，于是我基于 [StashNetworks/misc](https://github.com/StashNetworks/misc) 的 collapsed-tiles 机制，Vibe Coding 开发了一套覆盖主流 AI 服务和流媒体的一键检测磁贴，安装后直接在 Stash 首页折叠展示各服务的可用状态。
 
 项目地址：[pengyanai/misc](https://github.com/pengyanai/misc)

@@ -3,12 +3,11 @@ layout: post
 title: "KV Cache 砍 90%、推理提速 7x：六个正交架构创新如何叠加生效"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [training, architecture, attention, moe, kv-cache]
 mermaid: true
 math: true
 ---
-
 做了几年大模型架构相关的工作，越来越感觉到：好的架构设计不是在"调参数"，而是在"找结构"。参数是连续的、可优化的，而结构是离散的、需要洞察的。这篇文章整理了最近一批让我觉得"有品味"的架构设计，它们的共同特征是：**找到问题的正交分解，然后用结构性手段各个击破**。
 
 ---

@@ -3,10 +3,9 @@ layout: post
 title: "Tailscale VPS Exit Node 实战：自定义 UDP 端口 + UDP GRO 调优 + DNS 防泄漏"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [网络, 运维, 工具]
+categories: [networking]
 tags: [networking, security, devops]
 ---
-
 ## 背景
 
 手上有一台闲置的境外云厂商 VPS (Ubuntu 24.04)，希望：

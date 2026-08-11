@@ -3,12 +3,11 @@ layout: post
 title: "Visual PLE 五种方法全军覆没：NTP-only 范式下自监督闭环缺失的完整诊断"
 date: 2026-06-10 20:00:00 +0800
 author: Joseph
-categories: [深度学习, 多模态]
+categories: [ai-ml]
 tags: [multimodal]
 mermaid: true
 math: true
 ---
-
 Text PLE 给某 3B 多模态模型带来了 loss -0.023 的显著收益，仅增加 +883M 参数（dP=256）。我们自然想把同样的思路用到视觉 token 上。结果：5 种方法全军覆没，NTP loss 变化全在千分位级别。cos_sim 诊断显示 embedding 结构和随机初始化无异。这篇文章是对这次失败的完整诊断。
 
 ---

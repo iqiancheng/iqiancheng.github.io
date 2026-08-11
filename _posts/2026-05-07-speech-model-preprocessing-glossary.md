@@ -3,10 +3,9 @@ layout: post
 title: "语音模型预处理流程及常用术语详解：从声波到 Log-Mel 到 Audio-LLM"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [语音, 深度学习]
+categories: [ai-ml]
 tags: [speech]
 ---
-
 ## 为什么要专门写一篇"预处理 + 术语表"
 
 开源语音模型（Whisper / Conformer / Paraformer / SenseVoice / Qwen2-Audio）的配置文件里动辄出现 `n_mels=80`、`hop_length=160`、`win_length=400`、`sample_rate=16000`、`fbank`、`CMVN`、`SpecAugment`、`frame shift` 这些名词——如果对每一项都只有"大概知道"，调参、排错、换模型时就会反复掉坑里。

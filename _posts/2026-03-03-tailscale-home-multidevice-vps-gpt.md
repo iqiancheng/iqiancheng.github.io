@@ -3,11 +3,10 @@ layout: post
 title: "Tailscale 家庭多设备与 VPS 组网：GPT 访问、出口节点与文件共享"
 date: 2026-03-03 00:00:00 +0800
 author: Joseph
-categories: [网络, 家庭实验室]
+categories: [homelab]
 tags: [llm, networking]
 mermaid: true
 ---
-
 本文基于 Tailscale 官方文档与社区（GitHub、Reddit、知乎及中文博客）的实践，梳理家庭多设备（iPhone/iPad、家中 M1 Mac mini、海外 VPS）组网时，如何配置出口节点访问海外 GPT、子网路由打通家庭内网，以及网络与文件共享，并说明连接原理与可选加速手段。
 
 **目录**

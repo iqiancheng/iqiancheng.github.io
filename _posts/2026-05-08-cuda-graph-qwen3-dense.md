@@ -3,12 +3,11 @@ layout: post
 title: "Qwen3-8B 下 CUDA Graph 的合理使用：训练 / 推理分场景 + 陷阱清单"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [ai-ml]
 tags: [inference, attention, triton, pytorch, qwen]
 mermaid: true
 math: true
 ---
-
 > 系列姊妹篇：[看懂 Qwen3 + 识别算子融合机会](/posts/qwen3-understand-model-identify-fusion/) · [Triton Kernel 实战](/posts/triton-kernel-fusion-practice/) · [精度对齐实战](/posts/fused-kernel-accuracy-alignment/) · [Gradient Checkpointing 最大化](/posts/gradient-checkpointing-qwen3-dense/)
 >
 > CUDA Graph 是训推最后一个"免费午餐"——但前提是你**知道什么时候用、什么时候别碰**。动态 shape / 长度变化 / Python 控制流都会把它变成负收益。本篇按训练和推理两个场景分别讲 Qwen3-8B 下的合理用法 + 常见陷阱。

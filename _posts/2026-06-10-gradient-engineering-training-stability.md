@@ -3,12 +3,11 @@ layout: post
 title: "Grad-norm 一直 0.21 突然飙到 50：从真实训练日志看梯度工程的六个生死细节"
 date: 2026-06-10 14:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练工程]
+categories: [ai-ml]
 tags: [quantization, optimizer, memory, stability]
 mermaid: true
 math: true
 ---
-
 0.6B 对比实验跑了两周，grad-norm 曲线一直稳稳地贴在 0.21 附近。两个结构变体（v3.0 和 v3.5）几乎重合，我一度以为 gradient clipping 这个超参数根本不重要——反正 clip threshold 设的 1.0，norm 才 0.21，差着快 5 倍，clipping 永远不会触发。
 
 直到第 47000 步。

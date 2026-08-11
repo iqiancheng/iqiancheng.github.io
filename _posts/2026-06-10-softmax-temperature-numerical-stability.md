@@ -3,12 +3,11 @@ layout: post
 title: "RMSNorm scalar 漂移到 56 训练 Loss 却不动：Softmax 的量化照妖镜与温度调控术"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, 数值计算]
+categories: [ai-ml]
 tags: [attention, quantization, optimizer, distillation, kernels]
 mermaid: true
 math: true
 ---
-
 一个 3B 模型训练到中后期，RMSNorm 最后一层的 learnable scalar 从初始值 1.0 悄悄漂移到了 56。训练 loss？纹丝不动。验证 perplexity？看不出异常。直到模型做 INT8 量化部署——精度断崖式下跌，top-1 accuracy 掉了 12 个点。这篇文章从这个真实 case 出发，把 softmax 的数值陷阱、温度调控、精度问题串成一条线。
 
 ---

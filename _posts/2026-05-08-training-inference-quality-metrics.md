@@ -3,12 +3,11 @@ layout: post
 title: "训推加速模型效果指标全景：客观指标 + 主观评价 + 加速退化信号"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 评测]
+categories: [ai-ml]
 tags: [speech, metrics]
 mermaid: true
 math: true
 ---
-
 > 姊妹篇：[效率指标全景](/posts/training-inference-efficiency-metrics/) · [精度对齐实战](/posts/fused-kernel-accuracy-alignment/) · [GPU SOP](/posts/training-inference-acceleration-troubleshooting-sop/)
 >
 > 效率指标讲"多快"，效果指标讲"没变差"。加速最大的陷阱不是"跑不起来"，而是**跑起来了但效果悄悄掉了**。这篇梳理训推加速场景下所有常用效果指标——从 loss 和 perplexity 这些"模型自己考自己"的，到 MMLU/GSM8K 这些"下游任务"的，到 Elo 和 MOS 这些"人来判的"——一次讲清什么情况用什么。

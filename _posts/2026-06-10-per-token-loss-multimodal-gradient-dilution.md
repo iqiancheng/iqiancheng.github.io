@@ -4,11 +4,10 @@ title: "一个 Megatron flag 把多模态梯度稀释了 17 倍：--calculate-pe
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 训练工程]
+categories: [cloud-devops]
 tags: [optimizer, multimodal, pytorch, metrics, debugging]
 math: true
 ---
-
 某 3B 多模态模型完成了 5.2T token 的 PT-1 阶段，多模态指标（OCRBench、物体识别）全线偏低。排查了数据、模型结构、学习率……最后发现是训练脚本里多了一个 Megatron flag：`--calculate-per-token-loss=true`。这个 flag 把多模态梯度贡献从 16% 稀释到了 0.94%——整整 17 倍。
 
 一个 boolean 参数，吃掉了几百万 GPU hours 的多模态学习效果。这篇文章复盘整个事故的数学原理、代码路径和工程教训。

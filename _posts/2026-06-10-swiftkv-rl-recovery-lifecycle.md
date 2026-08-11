@@ -4,10 +4,9 @@ title: "KV Cache 共享让文本榜单掉了 1.9%，但 RL 四轮迭代后反超
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 强化学习]
+categories: [engineering]
 tags: [training, architecture, kv-cache, rl]
 ---
-
 某 3B 端侧模型为省 KV Cache 做跨层共享（最后 8 层复用第 24 层的 KV），SFT 后文本榜单直接掉了 1.9%——工具调用 -10.3，长文检索 -14.8，推理 -10。看起来方案要放弃了。但四轮 RL 迭代后，模型不仅恢复了退化，还反超 baseline 1.4 个点。
 
 这个案例揭示了一个重要的工程规律：**架构层面的 trade-off 不应在 SFT 阶段就下定论，RL post-training 拥有补偿架构退化的能力。**

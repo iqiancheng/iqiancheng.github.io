@@ -3,11 +3,10 @@ layout: post
 title: "GitHub 搜索高级技巧：Web UI、URL 拼接与 REST API 全指南"
 date: 2026-06-17 00:00:00 +0800
 author: Austin
-categories: [工具, 效率]
+categories: [tools]
 tags: [tooling, github, search]
 toc: true
 ---
-
 GitHub 的搜索功能远比大多数人用到的强大。除了搜索框里敲关键词，它还支持丰富的限定符（qualifiers）、URL 参数拼接、以及 REST API 编程式搜索。本文系统梳理三种搜索方式的高级技巧，帮你快速定位代码、仓库和 Issue。
 
 ---

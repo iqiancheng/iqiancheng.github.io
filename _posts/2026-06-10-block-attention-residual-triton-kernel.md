@@ -4,11 +4,10 @@ title: "Attention Residual 拿了 0.025 的 loss 收益, 但 PyTorch 实现慢�
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 训练工程]
+categories: [ai-ml]
 tags: [training, architecture, attention, kernels, triton]
 math: true
 ---
-
 某 3B 模型架构搜索中，Block Attention Residual 带来了 0.025 的 loss 收益——不加任何参数。但 PyTorch 实现直接慢了 90%，整个训练周期要翻倍。Triton kernel 迭代两版后把开销压到 14%，让这个"免费"的收益真正能用上。
 
 这个 case 的核心教训：**研究上有效的结构创新，离工程落地往往差一个 kernel 的距离。**

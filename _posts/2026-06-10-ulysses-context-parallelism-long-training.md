@@ -3,11 +3,10 @@ layout: post
 title: "seq_len 从 4K 推到 16K、CP=2 一开就慢了 20%：Ulysses Context Parallelism 的工程取舍全记录"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 分布式训练]
+categories: [productivity]
 tags: [attention, long-context, memory, parallelism]
 mermaid: true
 ---
-
 ## 开场：一个 FD 阶段的性能骤降事故
 
 我们在某 3B 多模态模型的 Fast Decay (FD) 阶段，需要将序列长度从 4096 推到 16384。这是长上下文训练的标准操作——在短序列完成主体预训练后，拉长序列让模型学习长距离依赖。

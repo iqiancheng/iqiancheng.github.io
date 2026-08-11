@@ -3,11 +3,10 @@ layout: post
 title: "接受率从 0% 调到 90%：MTP 投机解码的工程调优全记录与 Drafter 质量诊断"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 推理优化]
+categories: [ai-ml]
 tags: [inference, speculative-decoding]
 mermaid: true
 ---
-
 ## 一个真实的 Debug 案例：接受率为 0%
 
 上个月，我们在部署某 671B MoE 模型的投机解码时，遇到了一个令人崩溃的问题：**acceptance rate 恒定为 0%**。每一个 draft token 都被 target model 拒绝，投机解码不仅没有加速，反而因为额外的 drafter 推理开销导致整体吞吐下降了 15%。

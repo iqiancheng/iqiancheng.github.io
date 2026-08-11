@@ -3,11 +3,10 @@ layout: post
 title: "训推加速技术地图：三维分类 + 全景图 + 决策流 + 大模型加速术语表"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [ai-ml]
 tags: [inference, attention, moe, quantization, speculative-decoding]
 mermaid: true
 ---
-
 > 系列前面 10 篇每篇聚焦一个具体技术。这篇**从全局视角**把它们放在同一张地图上——按**阶段 / 瓶颈 / 触达层**三维分类，给决策流，最后附 60+ 条**大模型训推加速术语表**。新人入场看完这篇再决定深挖哪个子方向。
 
 ---

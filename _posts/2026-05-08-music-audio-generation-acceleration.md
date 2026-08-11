@@ -3,12 +3,11 @@ layout: post
 title: "音乐生成加速：Suno / MusicLM / UniAudio / Stable Audio "
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化, 生成模型]
+categories: [ai-ml]
 tags: [audio]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"音乐生成"专题。音乐生成是个独立于 TTS 的生成方向——**多轨 / 长序列 / 高保真 / 风格多样**是它独有的挑战。本篇拆解 2024~2026 的两大范式（Audio Token AR vs Latent Diffusion）、加速专项、主流系统。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [语音 / 音频加速](/posts/speech-audio-acceleration-stack/)（补前置概念）

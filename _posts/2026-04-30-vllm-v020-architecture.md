@@ -3,11 +3,10 @@ layout: post
 title: "vLLM v0.20 架构深度解析：双引擎、调度器、KV Cache 与分布式推理"
 date: 2026-04-30 00:00:00 +0800
 author: Joseph
-categories: [LLM推理, 架构]
+categories: [engineering]
 tags: [attention, kv-cache, speculative-decoding, kernels, vllm]
 mermaid: true
 ---
-
 ## 引子
 
 vLLM 是目前生产环境中最广泛使用的大模型推理框架之一。v0.20 版本在保持向后兼容的同时，将主力执行路径完全迁移到了全新的 **V1 引擎**——进程分离架构、ZMQ IPC 通信、全新调度器。

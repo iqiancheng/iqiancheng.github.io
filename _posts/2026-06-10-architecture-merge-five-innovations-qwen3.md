@@ -4,10 +4,9 @@ title: "5 个独立创新逐步叠加, 从 loss 1.966 到 1.882 追平 Qwen3-4B:
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [architecture, attention, scaling-law, multimodal, methodology]
 ---
-
 某 3B 模型和某开源 4B 模型的 loss 差了 0.08。纯粹加参数只能追回一半。最终靠 5 个正交创新逐步叠加——SWA、Gated Attention、SwiftKV、PLE、FFN 扩展——loss 从 1.966 直降到 1.882，反超目标。SFT 评测 0.65 完全追平。
 
 这篇文章记录整个集成过程：每一步的独立验证、合并后的实际增益、以及为什么这些技术能无损叠加。

@@ -4,11 +4,10 @@ title: "Router 梯度和 Expert 梯度分开裁剪, Loss Spike 频率降了 80%:
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 训练工程]
+categories: [tools]
 tags: [moe, optimizer, stability]
 math: true
 ---
-
 某 1T 参数 MoE 模型训练中 loss spike 频繁出现。换了优化器之后，spike 频率直降 80%。核心 insight 极其简单：Router 梯度和 Expert 梯度的统计特性完全不同，不应该用同一个裁剪阈值。
 
 这篇文章从优化器视角分析 MoE 训练不稳定性的根源，以及 MuonClip 如何通过三个针对性设计解决这个问题。

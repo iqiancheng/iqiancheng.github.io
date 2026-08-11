@@ -3,14 +3,13 @@ layout: post
 author: Joseph
 title: "Tailscale 接家里 NAS 踩坑全记录：SSH 免密 / DERP / NAT 打洞 / Peer Relay"
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, networking]
+categories: [homelab]
 tags: [networking, nas]
 description: >
   在华为凌霄子母路由 Q6 + 移动宽带环境下，给 Synology SA6400 NAS 配置 Tailscale 的完整实战记录。
   覆盖 SSH 免密登录、DSM 透明代理踩坑、NAT 打洞失败、DERP vs Peer Relay 原理解析，以及 WebDAV 替代 SMB 的实际性能验证。
 toc: true
 ---
-
 ## 背景
 
 家里的 Synology SA6400（DSM 7.x, 内核 5.10.55）搭载在华为凌霄子母路由 Q6 后面，运营商是中国移动。目标是让手机在外面能流畅访问 NAS 文件，同时 NAS 加入 Tailscale 网络便于远程管理。

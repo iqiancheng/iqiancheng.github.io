@@ -3,12 +3,11 @@ layout: post
 title: "RMSNorm 后的 Layer Scalar 漂移到 56 但训练 Loss 纹丝不动：一个 Adam 优化器的隐形 Bug"
 date: 2026-06-10 18:00:00 +0800
 author: Joseph
-categories: [深度学习, 训练工程]
+categories: [engineering]
 tags: [quantization, optimizer, pytorch, debugging]
 mermaid: true
 math: true
 ---
-
 某 3B 模型训练到 Stage2 结束，例行检查参数分布时发现最后一层的 learnable scalar 从初始 1.0 漂移到了 56.25。但训练 loss 和所有评测指标完全没有任何异常。这个参数在"假装学习"——而且会在端侧 INT4 量化时致命。
 
 这篇文章记录完整的排查过程：从发现现象、定位根因、理解数学原理，到三次修复尝试（两次失败），最终给出一个三文件改动的干净解。

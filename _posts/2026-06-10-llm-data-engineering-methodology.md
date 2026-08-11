@@ -3,12 +3,11 @@ layout: post
 title: "同样的数据重复 20 遍不过拟合？数据配比中那些反直觉的 Scaling Law"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 数据工程]
+categories: [ai-ml]
 tags: [llm, architecture, scaling-law, multimodal, data]
 mermaid: true
 math: true
 ---
-
 大模型训练中，数据工程的决策往往比模型架构更影响最终效果。本文从四个维度系统梳理数据配比、重复、多样性与质量的量化决策框架，提供可直接落地的方法论。
 
 ---

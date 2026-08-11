@@ -6,9 +6,9 @@ author: Joseph
 # categories: [deep-learning, llm]
 # tags: [optimizer, adam, zero, distributed-training, memory]
 math: true
+categories: [ai-ml]
 tags: [memory, training, optimizer]
 ---
-
 最近在做 LLM 训练相关的工作，反复被一个问题困住：明明模型参数只有 7B，为什么光是训练就要 100 多 GB 显存？排查下来，一半的"黑洞"藏在优化器状态里。这篇文章就是我梳理这块知识的记录，从 Adam 的基本原理出发，一路聊到分布式训练下的优化手段。
 
 ---

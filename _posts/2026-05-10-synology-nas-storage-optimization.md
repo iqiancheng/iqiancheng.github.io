@@ -3,14 +3,13 @@ layout: post
 author: Joseph
 title: '给 NAS 做一次"体检"：Btrfs 压缩、scrub 排程与 SSD 缓存审计'
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, storage]
+categories: [homelab]
 tags: [nas]
 description: >
   在完成网络层 TCP 调优和 WebDAV MPM 优化后，对 Synology SA6400 的存储层进行审计。
   覆盖 Btrfs zstd 压缩、每月数据清理排程、SSD 缓存状态分析与 LINEAR JBOD 风险评估。
 toc: true
 ---
-
 ## 背景
 
 [前一篇网络优化](/posts/tailscale-synology-nas-real-world/) 已经把局域网 WebDAV 速度从 4.2 MB/s 推到 9.8 MB/s，[安全加固](/posts/synology-nas-security-hardening/) 把端口从 27 个砍到 16 个。这一篇往下走一层：存储。

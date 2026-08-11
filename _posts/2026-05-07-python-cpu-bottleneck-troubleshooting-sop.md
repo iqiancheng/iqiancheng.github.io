@@ -3,11 +3,10 @@ layout: post
 title: "训推加速 Python 侧排障 SOP：OOM / GIL / asyncio / DataLoader / IO"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [Python, 性能优化]
+categories: [tools]
 tags: [agent, tooling, methodology, debugging, memory]
 mermaid: true
 ---
-
 > 这是"训推加速三部曲"的 **CPU 侧补完**：
 >
 > 1. [高效 CLI 工具栈](/posts/training-inference-engineer-cli-toolkit/) —— 讲工具

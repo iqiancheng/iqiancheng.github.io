@@ -3,12 +3,11 @@ layout: post
 title: "语音 / 音频模型加速新常识：从 Audio Tokenizer 到 Full-duplex 对话"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [语音, 深度学习, 性能优化]
+categories: [ai-ml]
 tags: [speech]
 mermaid: true
 math: true
 ---
-
 > 本文是训推加速系列里第一篇专门讲**语音 / 音频**的 post。系列前面的篇讲的都是 LLM、Diffusion、MoE——这篇聚焦语音栈独有的加速技术：**Audio Tokenizer / AuT / K2 / Zipformer / Flow Matching TTS / Mimi codec / HiFi-GAN / Full-duplex 对话**。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/)（全局视角 + 术语表）· [语音模型基础篇](/posts/speech-models-fundamentals-pretrained-asr/)（CTC vs Seq2Seq）· [语音识别架构演进](/posts/speech-recognition-architecture-evolution/)（从 HMM-GMM 到 Qwen3-ASR）· [语音模型预处理与术语](/posts/speech-model-preprocessing-glossary/)

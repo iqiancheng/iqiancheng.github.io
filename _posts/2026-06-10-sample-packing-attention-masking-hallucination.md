@@ -4,9 +4,9 @@ title: "Sample Packing + Attention Masking：未定义变量减少 52.7% 的预�
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
 mermaid: true
+categories: [ai-ml]
 tags: [data, llm, architecture, attention]
 ---
-
 13B 模型预训练 500B tokens，仅仅把数据组织方式从 Concatenation 换成 Best-Fit Packing + Attention Masking，HumanEval 的 undefined variable rate 就降了 52.7%。没改一行模型代码。
 
 这个结果让我重新审视了一个长期被忽略的工程细节：我们喂给模型的 token sequence 到底是怎么拼出来的？

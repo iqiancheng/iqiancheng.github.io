@@ -2,10 +2,9 @@
 layout: post
 title: Practical SSH Port Forwarding Scenarios
 date: 2014-05-27 00:33:00 +0800
-categories: [tooling, networking]
+categories: [networking]
 tags: [networking, cli, security]
 ---
-
 SSH port forwarding is a powerful tool for securely tunneling network traffic. Here are three common types—local (`-L`), remote (`-R`), and dynamic (`-D`)—explained with practical use cases.
 
 ## 1. Local Forwarding (`-L`)

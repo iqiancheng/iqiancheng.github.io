@@ -4,10 +4,9 @@ title: "把 point 当普通文本训练, UIAgent 指标直接崩了: 多模态 S
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 多模态]
+categories: [tools]
 tags: [multimodal, tokenizer, debugging]
 ---
-
 某 3B 多模态模型做 special token 重命名（防止与纯文本冲突），UIAgent 指标直接崩了。其它评测全部正常。排查了一天发现原因荒谬地简单：`<point>` 没有进重命名列表，被当成了普通文本训练。把它注册为 special token 后指标立即恢复。
 
 这篇文章记录这个 bug 的完整排查过程，以及它揭示的 special token 工程陷阱。

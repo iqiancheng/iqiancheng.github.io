@@ -3,10 +3,9 @@ layout: post
 title: "大陆高速访问 GitHub 资源：jsDelivr CDN 拼接技巧与镜像实测"
 date: 2026-04-27 00:00:00 +0800
 author: Joseph
-categories: [网络, 工具]
+categories: [networking]
 tags: [proxy, github, devops]
 ---
-
 `raw.githubusercontent.com` 在大陆经常超时或被 SNI 阻断。本文记录通过 jsDelivr 及其多个子域名/镜像，在不挂代理的情况下高速拉取 GitHub 仓库中的静态资源（配置文件、图片、JS 脚本等）的实践。
 
 ---

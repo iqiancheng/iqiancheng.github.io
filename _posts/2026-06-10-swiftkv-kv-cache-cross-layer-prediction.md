@@ -4,9 +4,9 @@ title: "SwiftKV — KV Cache 跨层预测从预训练到 RL 的完整工程叙�
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
 mermaid: true
+categories: [ai-ml]
 tags: [kv-cache, architecture, training, efficiency]
 ---
-
 我们拿到某 3B 模型的跨层 KV 共享版本，整体指标涨了 0.3%，但文本榜单掉了 1.9%——BFCL 直接掉了 10 个点（39.3 → 29.0），LV_multifieldqa 掉了 14.8（42.5 → 27.7），AIME2025 pass@16 掉了 10（43.3 → 33.3）。怎么办？
 
 这不是一个简单的"超参没调好"能解释的问题。Training loss 对比 baseline 只高了 0.003，说明 KV 共享在 token-level modeling 上确实存在信息瓶颈。但放弃它意味着放弃 50% 的 KV cache 节省和 24-35% 的 first-token 加速——对端侧部署来说，这几乎是不可接受的。

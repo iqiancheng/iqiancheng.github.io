@@ -3,12 +3,11 @@ layout: post
 title: "SWA + Gated Attention loss 降了 0.013：从一个 3B 模型实验看 Attention 演化的工程选择"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [attention, kv-cache]
 mermaid: true
 math: true
 ---
-
 400B tokens 训完，五个 attention 变体的 loss 曲线终于分开了。在一个 2.46B 参数的 3B 模型上，SWA512 + Elementwise Gated Attention 相比 baseline 的 training loss 从 1.999 降到 1.986——绝对值 0.013 看起来不大，但在这个规模上已经相当于多喂了几十 B 的高质量数据。更有意思的是，这个结果背后藏着一整套 attention 工程选型的逻辑链。
 
 这篇文章从这组真实实验出发，沿着 KV Cache 计算、GQA 配比、Sliding Window、Gated Attention、Sparse Attention 这条线，讲清楚 attention 演化中每个工程决策的 why 和 how。

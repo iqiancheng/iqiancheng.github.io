@@ -3,11 +3,10 @@ layout: post
 title: "AI Coding Agent 的多 Agent 协作架构深度调研：从 Claude Code 到 Hermes Agent"
 date: 2026-04-29 00:00:00 +0800
 author: Joseph
-categories: [AI Agent, 架构]
+categories: [tools]
 tags: [agent]
 mermaid: true
 ---
-
 ## 引子
 
 2025 年底到 2026 年初，AI Coding Agent 进入了一个新的阶段——**单 Agent 不够用了**。当任务复杂度超过单个 Agent 的上下文窗口和推理能力时，"让多个 Agent 协同工作"成为必然选择。

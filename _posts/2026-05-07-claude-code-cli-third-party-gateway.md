@@ -3,11 +3,10 @@ layout: post
 title: "Claude Code CLI 接入第三方 API Key 和 Base URL 实战指南"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [工具, LLM]
+categories: [networking]
 tags: [agent, cli, proxy]
 mermaid: true
 ---
-
 ## TL;DR
 
 **Claude Code CLI 支持任意 Anthropic Messages 协议兼容的网关**，只需要两个环境变量 `ANTHROPIC_BASE_URL` + `ANTHROPIC_API_KEY`，或者写到 `~/.claude/settings.json` 的 `env` 段里持久化。全程不需要 Anthropic 官方账号登录。本文覆盖四种配置方式、优先级顺序、多账号切换、以及几个常见坑。

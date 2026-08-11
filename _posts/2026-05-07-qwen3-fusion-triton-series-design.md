@@ -3,9 +3,9 @@ layout: post
 title: "Design Spec — 训推加速系列：看懂 Qwen3 + Fusion 识别 + Triton 实战"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
+categories: [ai-ml]
 tags: [qwen, triton, kernels, methodology]
 ---
-
 ## 1. 系列定位
 
 两篇姊妹篇，延续训推加速 playbook：

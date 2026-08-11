@@ -3,14 +3,13 @@ layout: post
 author: Joseph
 title: "Docker 镜像加速站 2026 实测：14 站还剩几家能用？"
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, devops]
+categories: [homelab]
 tags: [docker, proxy, nas, devops]
 description: >
   在 Synology NAS 上对 14 个 Docker 镜像加速站逐一测试，找出 2026 年仍可用的站，
   给出 Synology DSM 上的配置方法和测试命令。
 toc: true
 ---
-
 ## 背景
 
 [前三篇 NAS 博文](/posts/synology-nas-advanced-exploration/) 规划了 Docker 容器扩展路线，但在实际 `docker pull` 时发现 Docker Hub (`registry-1.docker.io`) 被墙，所有国内传统镜像站也大面积停服。需要找到 2026 年仍可用的镜像加速方案。

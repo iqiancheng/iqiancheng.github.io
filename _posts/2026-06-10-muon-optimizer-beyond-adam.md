@@ -3,12 +3,11 @@ layout: post
 title: "Loss Spike 频率降了 80%：从 Adam 到 MuonClip，万亿参数 MoE 的优化器进化实战"
 date: 2026-06-10 10:00:00 +0800
 author: Joseph
-categories: [深度学习, 优化器]
+categories: [tools]
 tags: [moe, optimizer, stability]
 mermaid: true
 math: true
 ---
-
 两份优化器配置，同一个 3B 模型底座，一份跑纯文本预训练，一份跑多模态对齐。把它们的超参数差异摊开来看，就能直观理解为什么 Adam 在大规模训练中需要如此多的"场景特化"——以及为什么业界正在转向 Muon。
 
 ---

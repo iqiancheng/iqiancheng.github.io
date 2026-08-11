@@ -3,12 +3,11 @@ layout: post
 title: "Moonshot Kimi 系列技术洞察：从 K1.5 到 K2.6 的架构、优化器、训推工程"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 公司技术洞察]
+categories: [engineering]
 tags: [llm, attention, moe, optimizer, multimodal]
 mermaid: true
 math: true
 ---
-
 > 一篇公司技术洞察。内容基于公开论文 / 技术报告 / HuggingFace / GitHub 的可核实材料整理，细节以 Moonshot 官方发布为准。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [MoE 训练加速](/posts/moe-training-acceleration-deepep-qwen3/) · [RL 训练加速](/posts/rl-training-qwen3-vllm-verl/)

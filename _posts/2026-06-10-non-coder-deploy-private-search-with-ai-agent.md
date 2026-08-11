@@ -3,11 +3,10 @@ layout: post
 title: "不写一行代码，用 AI Agent 10 分钟搭建你的私人搜索引擎"
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
-categories: [工具, AI 协作, 自托管]
+categories: [homelab]
 tags: [agent, docker, search, prompt]
 mermaid: true
 ---
-
 ## 这篇文章给谁看
 
 你是产品经理、运营、分析师——不会写代码，但：

@@ -4,11 +4,10 @@ title: "CoLA 说参数减 45% 不掉点，我们的 3B 实验说 6.85T tokens �
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [architecture, scaling-law, methodology, efficiency]
 math: true
 ---
-
 CoLA 论文声称参数减 45% 不掉点。我们在某 3B 模型的 FFN 上实测：全低秩方案(r=640) 训了 158B token，loss 差 0.18 当场判死刑。单点低秩(up_proj, r=1280) 好得多——但 power-law 外推说 6.85T tokens 才能追平 baseline。这比我们的训练预算大了 3.8 倍。
 
 这篇文章记录一个完整的负面结果。不是"方法不行"，而是"在我们的设定下，代价远超论文承诺"。

@@ -3,14 +3,13 @@ layout: post
 author: Joseph
 title: "家庭 NAS 翻墙实战：GFW 连通性审计 + mihomo 分层代理"
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, networking]
+categories: [homelab]
 tags: [docker, proxy, nas, security, github]
 description: >
   对中国大陆环境下的 Synology NAS 进行全量 GFW 连通性审计，找出被墙的关键服务（GitHub、Docker Hub、Google），
   部署 mihomo 代理实现分层访问策略——国内 CDN mirror 处理日常流量，代理解决被墙资源。
 toc: true
 ---
-
 ## 背景
 
 [上一篇 Docker 镜像加速](/posts/docker-registry-mirrors-china/) 解决了 `docker pull` 的问题，但 NAS 上还有更多服务受 GFW 影响——Git clone 超时、raw 脚本下载失败、部分容器注册表不可达。

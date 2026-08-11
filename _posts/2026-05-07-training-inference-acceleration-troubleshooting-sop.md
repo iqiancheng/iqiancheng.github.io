@@ -3,11 +3,10 @@ layout: post
 title: "训推加速问题定位 SOP 与 Know-how：从 GPU 低利用率到 NCCL hang 到推理吞吐"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化]
+categories: [tools]
 tags: [pytorch, vllm, agent, methodology, debugging]
 mermaid: true
 ---
-
 > 这是 [《训推工程师 & AI Agent 时代的高效 CLI 工具栈》](/posts/training-inference-engineer-cli-toolkit/) 的姊妹篇。
 >
 > 前一篇讲"**用什么工具**"，这一篇讲"**遇到问题怎么从症状一路打到根因**"——训推工程师的排障地图。每个症状下给出定位动线 + 对应工具 + 关键决策点 + 权威资料链接。

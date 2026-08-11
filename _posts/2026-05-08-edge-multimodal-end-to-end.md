@@ -3,11 +3,10 @@ layout: post
 title: "端侧多模态端到端加速：MiniCPM-o / Gemma 3n / Qwen3-Omni "
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 性能优化, 端侧部署]
+categories: [cloud-devops]
 tags: [multimodal, edge]
 mermaid: true
 ---
-
 > 训推加速系列深化之"端侧多模态"专题。2024~2026 多模态模型从"云端专属"下沉到"手机 / 笔记本 / 嵌入式"——**<3B 参数 + <5GB 显存 + 实时性** 三重约束下的端到端多模态加速栈。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [语音 / 音频加速](/posts/speech-audio-acceleration-stack/) · [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)

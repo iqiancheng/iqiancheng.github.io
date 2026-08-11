@@ -4,11 +4,10 @@ title: "CoLA 放在 up_proj 收敛快 2.3 倍: FFN 内部低秩最优落点的�
 date: 2026-06-10 00:00:00 +0800
 author: Joseph
 mermaid: true
-categories: [深度学习, 模型架构]
+categories: [engineering]
 tags: [architecture, pytorch, methodology, efficiency]
 math: true
 ---
-
 CoLA 论文说低秩化能减 45% 参数不掉点。我们在某 3B 模型上验证：放在 down_proj 收敛比放在 up_proj 慢 2.3 倍，放在全部三个投影直接崩了（+0.17 loss）。FFN 内部不是哪里都能做低秩的——up_proj 是唯一可行的落点。
 
 ## SwiGLU FFN 结构与三个可选落点

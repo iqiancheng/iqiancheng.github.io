@@ -3,9 +3,9 @@ layout: post
 title: "Design Spec — 训推加速三新篇：精度对齐 / Gradient Checkpointing / CUDA Graph"
 date: 2026-05-07 00:00:00 +0800
 author: Joseph
+categories: [ai-ml]
 tags: [training, memory, efficiency, methodology]
 ---
-
 ## 1. 定位
 
 延续训推加速系列（已完成 6 篇：CLI toolkit / GPU SOP / CPU SOP / Qwen3 fusion 识别 / Triton 实战 / 以及其他预处理姊妹篇），新增 3 篇**实战技巧深化**：

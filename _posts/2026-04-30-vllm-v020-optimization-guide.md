@@ -3,11 +3,10 @@ layout: post
 title: "vLLM v0.20 显存优化与推理加速实战指南"
 date: 2026-04-30 00:00:00 +0800
 author: Joseph
-categories: [LLM推理, 优化]
+categories: [ai-ml]
 tags: [inference, attention, kv-cache, quantization, speculative-decoding]
 mermaid: true
 ---
-
 ## 引子
 
 部署大模型时，工程师面对的核心矛盾始终是：**显存不够用**和**推理速度不够快**。vLLM v0.20 在这两个维度上提供了系统性的工具箱——从 KV Cache 量化、PagedAttention、前缀缓存，到 CUDA Graph、torch.compile 融合、投机解码，每一层都有可调旋钮。

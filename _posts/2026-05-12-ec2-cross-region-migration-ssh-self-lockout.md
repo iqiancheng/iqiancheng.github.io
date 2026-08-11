@@ -4,11 +4,10 @@ title: "跨区迁移 EC2 + 一条命令把自己 SSH 踢出门：Ubuntu 24.04 so
 excerpt: "把 VPS 跨区迁移 + SSH 改端口，三分钟把自己踢出门的完整复盘：Ubuntu 24.04 的 ssh.socket、ufw 双层防火墙、EBS detach 救援、三重保险改端口流程。"
 date: 2026-05-12 00:00:00 +0800
 author: Joseph
-categories: [运维, AWS, 事故复盘]
+categories: [networking]
 tags: [networking, proxy, security, debugging, devops]
 mermaid: true
 ---
-
 ## TL;DR
 
 把一台 us-east-1 的 VPS（跑着 trojan-go + Tailscale exit node）跨区迁移到 ap-southeast-1，顺便把 SSH 端口从 22 改到 5432。结果**三分钟内把自己的唯一 SSH 通道改没了**，靠 EBS detach-attach 到一台临时 helper 实例才救回来。完整复盘 + Ubuntu 24.04 socket activation 的正确姿势 + 之后做同类操作的"三重保险"清单。

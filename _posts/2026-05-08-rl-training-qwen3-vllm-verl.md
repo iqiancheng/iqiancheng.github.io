@@ -3,12 +3,11 @@ layout: post
 title: "RL 训练加速实战：Qwen3.5 + vLLM + veRL 的 fully-async 架构"
 date: 2026-05-08 00:00:00 +0800
 author: Joseph
-categories: [深度学习, 强化学习, 性能优化]
+categories: [engineering]
 tags: [rl, vllm, qwen]
 mermaid: true
 math: true
 ---
-
 > 训推加速系列深化之"RL 训练"专题。2024~2026 o1 系 reasoning 模型火爆后，**大规模 RL post-training** 成为所有头部实验室的必修课。本篇以 **Qwen3.5 + vLLM + veRL** 为 standing example，讲清 RL 训练的瓶颈、fully-async 架构、GRPO / DAPO / GSPO 等算法、工程陷阱。
 >
 > 姊妹篇：[训推加速技术地图](/posts/training-inference-acceleration-map/) · [Speculative Decoding + EAGLE-3](/posts/speculative-decoding-eagle3-vllm/) · [MoE→Dense 蒸馏](/posts/moe-to-dense-distillation/)

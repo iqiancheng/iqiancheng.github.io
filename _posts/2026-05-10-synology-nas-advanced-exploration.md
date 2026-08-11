@@ -3,7 +3,7 @@ layout: post
 author: Joseph
 title: "家用 NAS 进阶路线图：Python API + Docker 生态 + 自托管清单"
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, devops]
+categories: [homelab]
 tags: [tooling, docker, networking, nas, github]
 description: >
   基于 SA6400 (DSM 7.x, Epyc, 2×14.6TB HDD + 1.8TB NVMe) 的现有配置和兴趣点，
@@ -11,7 +11,6 @@ description: >
   梳理短期可执行清单和长期演进路线。
 toc: true
 ---
-
 ## 背景
 
 前三篇博文分别覆盖了[组网与 WebDAV 部署](/posts/tailscale-synology-nas-real-world/)、[安全加固](/posts/synology-nas-security-hardening/)和[存储优化](/posts/synology-nas-storage-optimization/)，把 NAS 从裸奔状态推到了"网络-安全-存储"三层基准线。这一篇往上层走：**围绕现有 Docker 服务、Python API 能力和兴趣方向，规划 NAS 作为家庭数据中心的技术演进路线**。

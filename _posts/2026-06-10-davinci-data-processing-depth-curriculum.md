@@ -3,11 +3,10 @@ layout: post
 title: "Format Switch 的收益是 Ratio 调整的 8-60 倍: daVinci-LLM 200 次消融揭示的预训练数据工程三大定律"
 date: 2026-06-10 20:00:00 +0800
 author: Joseph
-categories: [深度学习, 数据工程]
+categories: [ai-ml]
 tags: [training, scaling-law, methodology, data]
 mermaid: true
 ---
-
 某 3B 模型（从零训练 8T tokens）整体 51.72 分与 7B 参数的 OLMo-3 打平。关键不是用了更多数据——而是 200 次消融发现的三条定律：处理深度是与数据量并列的 scaling 维度，格式切换的收益是比例调整的 8-60 倍，不同能力域的饱和速率可以差 4 倍以上。
 
 ---

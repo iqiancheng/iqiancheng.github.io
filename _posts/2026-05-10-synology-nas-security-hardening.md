@@ -3,13 +3,12 @@ layout: post
 author: Joseph
 title: "家用 NAS 从裸奔到合规：12 项风险的完整审计与加固"
 date: 2026-05-10 00:00:00 +0800
-categories: [homelab, security]
+categories: [homelab]
 tags: [networking, nas, security]
 description: >
   对一台运行 DSM 7.x 的 Synology NAS 进行完整安全审计，发现 Telnet 开启、SSH 双端口暴露、防火墙裸奔、admin 账户存在等 12 项风险，并逐项修复。
 toc: true
 ---
-
 ## 背景
 
 同一台 Synology NAS（DSM 7.x, SA6400），在完成 [Tailscale 组网和 WebDAV 部署](/posts/tailscale-synology-nas-real-world/) 后，进行了一次完整的安全审计。
