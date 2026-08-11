@@ -24,3 +24,65 @@
     margin-right: -0.25rem;
   }
 }
+
+/* Collapsible sidebar: lg+ only. body[data-sidebar-collapsed] narrows
+   #sidebar to an icon rail and pulls #main-wrapper left with it. */
+:root {
+  --sidebar-collapsed-width: 3rem;
+}
+
+#sidebar-collapse-btn {
+  display: none;
+}
+
+@media (min-width: 850px) {
+  #sidebar-collapse-btn {
+    display: flex;
+  }
+
+  body[data-sidebar-collapsed='true'] {
+    #sidebar {
+      width: var(--sidebar-collapsed-width);
+
+      .nav-link span,
+      .site-title,
+      .site-subtitle {
+        display: none;
+      }
+
+      .profile-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        align-items: center;
+
+        #avatar {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+
+      .nav-item {
+        padding-left: 0;
+        padding-right: 0;
+
+        .nav-link {
+          justify-content: center;
+
+          i {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .sidebar-bottom {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+      }
+    }
+
+    #main-wrapper {
+      margin-left: var(--sidebar-collapsed-width);
+    }
+  }
+}
