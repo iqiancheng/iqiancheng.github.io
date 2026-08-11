@@ -1,24 +1,79 @@
 (function () {
   var KEY = 'sidebar-collapsed';
   var root = document.documentElement;
-  var btn = document.getElementById('sidebar-collapse-btn');
-  if (!btn) return;
+  var trigger = document.getElementById('sidebar-trigger');
+  if (!trigger) return;
 
-  function apply(collapsed) {
-    root.setAttribute('data-sidebar-collapsed', collapsed ? 'true' : 'false');
-    var icon = btn.querySelector('i');
+  var mq = window.matchMedia('(min-width: 850px)');
+
+  function isDesktop() {
+    return mq.matches;
+  }
+
+  function collapsed() {
+    return root.getAttribute('data-sidebar-collapsed') === 'true';
+  }
+
+  function setIcon(next) {
+    var icon = trigger.querySelector('i');
     if (icon) {
-      icon.className = collapsed ? 'fas fa-angle-right' : 'fas fa-angle-left';
+      icon.className = next ? 'fas fa-angle-right fa-fw' : 'fas fa-bars fa-fw';
     }
   }
 
-  apply(root.getAttribute('data-sidebar-collapsed') === 'true');
-
-  btn.addEventListener('click', function () {
-    var next = root.getAttribute('data-sidebar-collapsed') !== 'true';
-    apply(next);
+  function apply(next) {
+    root.setAttribute('data-sidebar-collapsed', next ? 'true' : 'false');
+    setIcon(next);
     try {
       localStorage.setItem(KEY, next ? 'true' : 'false');
     } catch (e) {}
-  });
+  }
+
+  function initDesktop() {
+    var saved = localStorage.getItem(KEY) === 'true';
+    root.setAttribute('data-sidebar-collapsed', saved ? 'true' : 'false');
+    setIcon(saved);
+  }
+
+  var themeOnclick = trigger.onclick;
+
+  function install() {
+    themeOnclick = trigger.onclick;
+    trigger.onclick = function (e) {
+      if (!isDesktop()) {
+        if (typeof themeOnclick === 'function') {
+          return themeOnclick.call(this, e);
+        }
+        return true;
+      }
+      e && e.preventDefault();
+      apply(!collapsed());
+      return false;
+    };
+  }
+
+  function onBreakpoint() {
+    if (isDesktop()) {
+      initDesktop();
+    } else {
+      root.removeAttribute('data-sidebar-collapsed');
+      setIcon(false);
+    }
+  }
+
+  if (isDesktop()) {
+    initDesktop();
+  }
+
+  if (mq.addEventListener) {
+    mq.addEventListener('change', onBreakpoint);
+  } else {
+    mq.addListener(onBreakpoint);
+  }
+
+  if (document.readyState === 'complete') {
+    install();
+  } else {
+    window.addEventListener('load', install);
+  }
 })();

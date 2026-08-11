@@ -25,34 +25,16 @@
   }
 }
 
-/* Collapsible sidebar: lg+ only. body[data-sidebar-collapsed] narrows
-   #sidebar to an icon rail and pulls #main-wrapper left with it. */
+/* Collapsible sidebar: lg+ only. html[data-sidebar-collapsed] narrows
+   #sidebar to an icon rail and pulls #main-wrapper left with it.
+   The topbar #sidebar-trigger (hamburger) is reused as the toggle. */
 :root {
   --sidebar-collapsed-width: 3rem;
 }
 
-#sidebar-collapse-btn {
-  display: none;
-}
-
-.sidebar-collapse-wrap {
-  display: none;
-}
-
 @media (min-width: 850px) {
-  .sidebar-collapse-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 1rem 1.5rem;
-  }
-
-  #sidebar .sidebar-bottom {
-    margin-bottom: 0.5rem;
-  }
-
-  #sidebar-collapse-btn {
-    display: flex;
+  #sidebar-trigger {
+    display: block;
   }
 
   html[data-sidebar-collapsed='true'] {
@@ -100,12 +82,6 @@
       .sidebar-bottom {
         padding-left: 0;
         padding-right: 0;
-        margin-bottom: 0.5rem;
-        justify-content: center;
-      }
-
-      .sidebar-collapse-wrap {
-        padding: 0 0 1.5rem;
         justify-content: center;
       }
     }
