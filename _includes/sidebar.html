@@ -41,12 +41,6 @@
   </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    <button type="button" class="btn btn-link nav-link" id="sidebar-collapse-btn" aria-label="Collapse sidebar">
-      <i class="fas fa-angle-left"></i>
-    </button>
-
-    <span class="icon-border"></span>
-
     {% unless site.theme_mode %}
       <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
         <i class="fas fa-adjust"></i>
@@ -99,5 +93,11 @@
     {% endfor %}
   </div>
   <!-- .sidebar-bottom -->
+
+  <div class="sidebar-collapse-wrap w-100">
+    <button type="button" class="btn btn-link nav-link" id="sidebar-collapse-btn" aria-label="Collapse sidebar">
+      <i class="fas fa-angle-left"></i>
+    </button>
+  </div>
 </aside>
 <!-- #sidebar -->

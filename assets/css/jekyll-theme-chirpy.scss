@@ -35,7 +35,18 @@
   display: none;
 }
 
+.sidebar-collapse-wrap {
+  display: none;
+}
+
 @media (min-width: 850px) {
+  .sidebar-collapse-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1rem 1.5rem;
+  }
+
   #sidebar-collapse-btn {
     display: flex;
   }
@@ -56,13 +67,16 @@
       }
 
       .profile-wrapper {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        display: flex;
         align-items: center;
+        justify-content: center;
 
         #avatar {
           width: 2rem;
           height: 2rem;
+          margin: 0 !important;
         }
       }
 
@@ -82,6 +96,11 @@
       .sidebar-bottom {
         padding-left: 0;
         padding-right: 0;
+        justify-content: center;
+      }
+
+      .sidebar-collapse-wrap {
+        padding: 0 0 1.5rem;
         justify-content: center;
       }
     }
