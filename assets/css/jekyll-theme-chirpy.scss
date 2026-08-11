@@ -10,12 +10,21 @@
 
 /* append your custom style below */
 
-/* Align the topbar search box's right edge with the "Recently Updated"
-   (#access-lastmod) right edge across xl/xxl/xxxl breakpoints.
-   The panel content sits 0.75rem (12px) inside #panel-wrapper's right edge,
-   and #topbar has 1rem (16px) right padding (px-lg-3). Setting margin-right
-   to -4px pulls the search 4px past the topbar padding edge, landing its
-   right edge exactly on #access-lastmod's right edge. */
+/* Align the topbar search box's right edge with the post-list / panel
+   content right edge across breakpoints.
+   - lg..xl (panel hidden): main has px-md-4 (1.5rem=24px) right padding, so
+     the post-list content ends 24px left of main's right edge. Push the
+     search left by 1.5rem to match the post-list right edge.
+   - xl+ (panel visible): panel content sits 0.75rem (12px) inside
+     #panel-wrapper's right edge, and #topbar has 1rem (16px) right padding
+     (px-lg-3). margin-right: -4px pulls the search 4px past the topbar
+     padding edge, landing on #access-lastmod's right edge. */
+@media (min-width: 850px) and (max-width: 1199px) {
+  #search {
+    margin-right: 1.5rem;
+  }
+}
+
 @media (min-width: 1200px) {
   #search {
     margin-right: -4px;
