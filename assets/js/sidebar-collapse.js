@@ -14,16 +14,16 @@
     return root.getAttribute('data-sidebar-collapsed') === 'true';
   }
 
-  function setIcon(next) {
+  function setIcon() {
     var icon = trigger.querySelector('i');
     if (icon) {
-      icon.className = next ? 'fas fa-angle-right fa-fw' : 'fas fa-bars fa-fw';
+      icon.className = 'fas fa-bars fa-fw';
     }
   }
 
   function apply(next) {
     root.setAttribute('data-sidebar-collapsed', next ? 'true' : 'false');
-    setIcon(next);
+    setIcon();
     try {
       localStorage.setItem(KEY, next ? 'true' : 'false');
     } catch (e) {}
@@ -32,7 +32,7 @@
   function initDesktop() {
     var saved = localStorage.getItem(KEY) === 'true';
     root.setAttribute('data-sidebar-collapsed', saved ? 'true' : 'false');
-    setIcon(saved);
+    setIcon();
   }
 
   var themeOnclick = trigger.onclick;
@@ -57,7 +57,7 @@
       initDesktop();
     } else {
       root.removeAttribute('data-sidebar-collapsed');
-      setIcon(false);
+      setIcon();
     }
   }
 
