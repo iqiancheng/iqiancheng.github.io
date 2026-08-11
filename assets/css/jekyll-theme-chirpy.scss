@@ -45,9 +45,14 @@
       width: var(--sidebar-collapsed-width);
 
       .nav-link span,
-      .site-title,
       .site-subtitle {
         display: none;
+      }
+
+      .site-title,
+      .sidebar-bottom a,
+      .sidebar-bottom .icon-border {
+        display: none !important;
       }
 
       .profile-wrapper {
