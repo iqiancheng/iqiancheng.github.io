@@ -33,8 +33,22 @@
 }
 
 @media (min-width: 850px) {
+  /* Anchor the trigger to #main-wrapper (already position: relative from theme),
+     not #topbar-wrapper. The topbar sits inside Bootstrap's auto-margin-centered
+     .container, which would detach the trigger from the sidebar edge whenever the
+     viewport is wider than the container max-width. #main-wrapper's left edge
+     always tracks the sidebar's right edge (its margin-left = sidebar width). */
   #sidebar-trigger {
     display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3rem;
+    z-index: 3;
+  }
+
+  #breadcrumb {
+    margin-left: 2.5rem;
   }
 
   html[data-sidebar-collapsed='true'] {
