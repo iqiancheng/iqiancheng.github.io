@@ -25,6 +25,82 @@
   }
 }
 
+/* Search box: focus animation + ⌘K hint badge.
+   The theme toggles .input-focus on the <search> wrapper via commons.min.js
+   on input focus/blur. We layer a stronger visual state on top: border +
+   soft ring + slight scale-up, plus a placeholder shift and a ⌘K kbd badge
+   that hides once the user is typing. */
+#search {
+  transition: border-color 0.22s ease, box-shadow 0.22s ease,
+    background-color 0.22s ease, width 0.22s ease;
+  gap: 0.35rem;
+
+  /* ⌘K hint badge — sits at the right edge of the search box. */
+  .search-kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-width: 1.6rem;
+    height: 1.3rem;
+    margin-left: auto;
+    padding: 0 0.3rem;
+    font-family: var(--font-family-code, ui-monospace, SFMono-Regular, Menlo,
+      monospace);
+    font-size: 0.65rem;
+    line-height: 1;
+    color: var(--text-muted-color);
+    background: var(--card-bg, var(--main-bg));
+    border: 1px solid var(--search-border-color);
+    border-radius: 0.3rem;
+    user-select: none;
+    transition: opacity 0.18s ease, margin 0.22s ease;
+  }
+
+  &.input-focus {
+    border-color: var(--link-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+    background: var(--main-bg);
+
+    .search-kbd {
+      opacity: 0;
+      margin-left: calc(-1.6rem - 0.7rem);
+      pointer-events: none;
+    }
+  }
+
+  @media (min-width: 850px) {
+    &:hover {
+      border-color: var(--input-focus-border-color);
+    }
+  }
+}
+
+/* Input: take all remaining flex space so the placeholder fully shows.
+   On focus the kbd badge collapses (opacity 0 + negative margin), which
+   lets the input grow leftward — animated via the width/flex transition. */
+#search-input {
+  flex: 1 1 0;
+  min-width: 0;
+  transition: flex-grow 0.22s ease;
+
+  &::placeholder {
+    color: var(--text-muted-color);
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+    text-overflow: ellipsis;
+  }
+
+  &:focus::placeholder {
+    opacity: 0.55;
+  }
+}
+
+#search.input-focus #search-input {
+  flex-grow: 2;
+}
+
 /* Collapsible sidebar: lg+ only. html[data-sidebar-collapsed] narrows
    #sidebar to an icon rail and pulls #main-wrapper left with it.
    The topbar #sidebar-trigger (hamburger) is reused as the toggle. */
