@@ -51,7 +51,7 @@
     display: flex;
   }
 
-  body[data-sidebar-collapsed='true'] {
+  html[data-sidebar-collapsed='true'] {
     #sidebar {
       width: var(--sidebar-collapsed-width);
 
