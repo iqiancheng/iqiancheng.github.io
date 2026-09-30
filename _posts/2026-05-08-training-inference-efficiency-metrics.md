@@ -23,7 +23,7 @@ math: true
 | §三 | 延迟类（推理） | TTFT · TPOT · ITL · E2E · P50/P90/P99 |
 | §四 | 硬件利用率（核心） | MFU · HFU · SM occupancy · HBM 带宽利用率 |
 | §五 | 显存类 | Peak / Activation / KV cache 占比 |
-| §六 | 成本 & 能效 | $/token · Tokens/Watt |
+| §六 | 成本 & 能效 | \$/token · Tokens/Watt |
 | §七 | 综合指标 | Goodput · SLO attainment |
 | §八 | 公式速查表 | 一页看完 |
 | §九 | 权威参考 | NVIDIA / Chinchilla / vLLM 等 |
@@ -39,9 +39,9 @@ math: true
 - **训练 lead**：我们 step time 420 ms，挺快的
 - **Infra**：MFU 才 38%，差得远
 - **PM**：用户反馈推理慢，P99 TTFT 2.3s
-- **财务**：每 M token 成本 $0.18
+- **财务**：每 M token 成本 \\$0.18
 
-这 4 个数字描述的是**不同维度**——step time 是单点延迟，MFU 是硬件效率，TTFT 是用户体感，$/token 是经济账——**没有对齐就会出现"改了指标反而变差"的假优化**。
+这 4 个数字描述的是**不同维度**——step time 是单点延迟，MFU 是硬件效率，TTFT 是用户体感，\\$/token 是经济账——**没有对齐就会出现"改了指标反而变差"的假优化**。
 
 本文把所有常用指标按**吞吐 / 延迟 / 利用率 / 显存 / 成本 / 综合**六类展开，每类给出：
 - **数学定义**（含单位）
@@ -369,7 +369,7 @@ $$
 \$/\text{1M tokens} = \frac{\text{GPU hourly rate} \times \text{hours}}{\text{tokens processed} / 10^6}
 $$
 
-H100 云价 ~$3/h，训练 ~**$0.15/M tokens**（示意，取决于 MFU）；推理 batched serving ~**$0.05~0.30/M output tokens**。
+H100 云价 ~\\$3/h，训练 ~**\\$0.15/M tokens**（示意，取决于 MFU）；推理 batched serving ~**\\$0.05~0.30/M output tokens**。
 
 ### 6.2 Tokens per Watt（能效）
 
@@ -377,7 +377,7 @@ $$
 \text{tokens/W} = \frac{\text{tokens/sec}}{\text{GPU power draw (W)}}
 $$
 
-H100 TDP 700W，典型推理 ~80 tokens/sec/GPU → 约 **0.11 tokens/W**。数据中心大规模部署时**能效**比 $/token 更关键——电网容量通常是硬约束。
+H100 TDP 700W，典型推理 ~80 tokens/sec/GPU → 约 **0.11 tokens/W**。数据中心大规模部署时**能效**比 \$/token 更关键——电网容量通常是硬约束。
 
 ### 6.3 GPU-hour 成本
 

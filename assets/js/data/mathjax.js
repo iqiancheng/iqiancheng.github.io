@@ -6,16 +6,19 @@ layout: compress
 
 {%- comment -%}
   Goals:
-  1) Prefer \(...\) / \[...\] (what kramdown/Chirpy often emit from $$...$$).
-  2) Keep $$...$$ as display; avoid bare $...$ so markdown/currency/`code` collide less.
+  1) Accept $...$ and \(...\) for inline math (posts write inline math as $...$).
+  2) Keep $$...$$ / \[...\] as display math.
   3) Skip code/pre/rouge so backtick runs never get half-eaten by the math scanner.
   4) processEscapes: allow \* \_ \$ inside TeX without markdown stealing them.
+  5) Literal currency (e.g. $10M) must be escaped as \$ in the markdown source,
+     otherwise a pair of $ on one line is parsed as inline math.
   See: https://docs.mathjax.org/en/latest/options/input/tex.html
 {%- endcomment -%}
 
 MathJax = {
   tex: {
     inlineMath: [
+      ['$', '$'],
       ['\\(', '\\)']
     ],
     displayMath: [
