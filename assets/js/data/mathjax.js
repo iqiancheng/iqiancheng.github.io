@@ -35,8 +35,6 @@ MathJax = {
       'script', 'noscript', 'style', 'textarea', 'pre', 'code',
       'annotation', 'annotation-xml', 'kbd', 'samp'
     ],
-    // Empty processHtmlClass ⇒ process whole document except ignored classes/tags.
-    // Critical: do NOT process <code>/<pre> (backtick runs stay literal).
     ignoreHtmlClass: 'tex2jax_ignore|rouge|highlight|language-plaintext|language-text|no-math',
     processHtmlClass: ''
   },
