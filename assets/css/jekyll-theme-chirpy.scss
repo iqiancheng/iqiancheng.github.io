@@ -10,6 +10,22 @@
 
 /* append your custom style below */
 
+/* Code blocks: the theme's refactor-content.html strips the <pre> wrapper
+   (kramdown emits <div class="highlight"><pre class="highlight"><code>),
+   leaving <div class="highlight"><code>. That removes two things at once:
+   (1) the UA default `white-space: pre` on <pre>, so the browser collapses
+       newlines + indentation (white-space: normal) — the "all jumbled" bug;
+   (2) every `.highlight pre {…}` rule in the theme, so font-size / line-height
+       / word-wrap no longer apply either.
+   Re-apply all of it on the actual structure. .highlight already has
+   overflow:auto, so long lines scroll instead of wrapping. */
+.highlight code {
+  white-space: pre;
+  font-size: 0.85rem;
+  line-height: 1.4rem;
+  word-wrap: normal;
+}
+
 /* Align #search right edge with the post-list (lg-xl) and #access-lastmod (xl+).
    lg: offset main's px-md-4 (1.5rem) right padding; xl: 0.75rem panel inset
    minus 1rem topbar padding (px-lg-3) = -0.25rem. */

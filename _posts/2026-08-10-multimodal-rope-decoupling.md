@@ -18,14 +18,14 @@ RoPE（Rotary Position Embedding）是当下 LLM 的事实标准位置编码—�
 
 **1. 旋转矩阵** $$R(m)$$。把每个 token 的 query/key 向量按位置 $$m$$ 旋转一个角度。因为旋转可以复合，位置 $$m$$ 的 query 和位置 $$n$$ 的 key 做点积时，旋转角自动变成 $$n-m$$——**相对位置**。这同时拿到了绝对位置编码的实现简洁和相对位置编码的语义表达力。
 
-![RoPE 实现：query/key 按 2D 块旋转，角度正比于位置](https://ar5iv.labs.arxiv.org/html/2104.09864/assets/x1.png)
+![RoPE 实现：query/key 按 2D 块旋转，角度正比于位置](https://ar5iv.labs.arxiv.org/html/2104.09864/assets/roformer_RoPE_v2.svg)
 *Figure 1. Implementation of Rotary Position Embedding (RoPE). Query/key 向量被拆成 2D 坐标对，每个坐标对按正比于位置的角度旋转。*
 
 **2. 频率公式** $$\theta_i = \mathrm{base}^{(-2i/d)}$$。第 $$i$$ 个坐标对的旋转频率随通道索引**单调衰减**。这个公式是后面所有论文的"单点杠杆"——谁改它，谁就改动了整个编码的几何。
 
 **3. 长程衰减。** 高频通道的旋转角随距离增长得极快，远距离 token 的点积振荡并平均掉——RoPE **隐式**地让注意力偏向近邻 token，这个性质是从数学里"白拿"的，不是手设计的。
 
-![RoPE 长程衰减：远距离 token 注意力自然衰减](https://ar5iv.labs.arxiv.org/html/2104.09864/assets/x2.png)
+![RoPE 长程衰减：远距离 token 注意力自然衰减](https://ar5iv.labs.arxiv.org/html/2104.09864/assets/long-term-decay.svg)
 *Figure 2. Long-term decay of RoPE. 旋转编码天然让远距离 token 的注意力衰减，无需显式窗口。*
 
 这三件事——一次旋转、一个频率调度、一个衰减性质——就是整个多模态 RoPE 战场的地基。后面每一篇变体，都在问："这个频率调度 $$\theta_i$$ 放到多模态里，还成立吗？"

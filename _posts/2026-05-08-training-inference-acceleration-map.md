@@ -156,7 +156,7 @@ graph LR
 
 ### 3.3 分布式训练的地基：DeepSpeed / ZeRO
 
-![ZeRO memory partitioning](https://ar5iv.labs.arxiv.org/html/1910.02054/assets/x1.png)  
+![ZeRO memory partitioning](https://ar5iv.labs.arxiv.org/html/1910.02054/assets/memory-consumption-v4.PNG)  
 *图：ZeRO 论文 Figure 1——Baseline（每卡完整 P+G+Opt）→ P_os（按卡分 Optimizer States）→ P_os+g（再分 Gradients）→ P_os+g+p（最终所有都分）。7.5B 模型从 120GB / 卡 降到 1.9GB / 卡。PyTorch FSDP 直接继承这个范式。来源：Rajbhandari et al. 2020, [arXiv:1910.02054](https://arxiv.org/abs/1910.02054)*
 
 ---

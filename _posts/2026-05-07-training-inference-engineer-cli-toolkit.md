@@ -150,7 +150,7 @@ alias tree='eza --tree --level=3 --icons'
 
 训练完剩下一堆 checkpoint + tfevents + rank log，清理前看哪里胖：
 
-![dust snap](https://raw.githubusercontent.com/bootandy/dust/master/media/snap.png)
+![dust demo](https://raw.githubusercontent.com/bootandy/dust/master/media/demo.gif)
 *图：dust 输出——横向条形图 + 百分比一目了然，替代 `du -sh * \| sort -h`。来源：bootandy/dust GitHub*
 
 ---
